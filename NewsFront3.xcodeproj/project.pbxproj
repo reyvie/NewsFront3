@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3BB03EA2366B033000DCAA0 /* Qanelas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3BB03E82366B028000DCAA0 /* Qanelas-Bold.ttf */; };
-		B3BB03EB2366B036000DCAA0 /* Qanelas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3BB03E92366B028000DCAA0 /* Qanelas-Regular.ttf */; };
 		B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22A2362BA34007FF11E /* AppDelegate.swift */; };
 		B3D4E22D2362BA34007FF11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22C2362BA34007FF11E /* ViewController.swift */; };
 		B3D4E2302362BA34007FF11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D4E22E2362BA34007FF11E /* Main.storyboard */; };
@@ -16,7 +14,7 @@
 		B3D4E2352362BA3B007FF11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D4E2332362BA3B007FF11E /* LaunchScreen.storyboard */; };
 		B3D4E2402362BA3C007FF11E /* NewsFront3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E23F2362BA3C007FF11E /* NewsFront3Tests.swift */; };
 		B3D4E24B2362BA3C007FF11E /* NewsFront3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E24A2362BA3C007FF11E /* NewsFront3UITests.swift */; };
-		B3F2AC3923680082004EB38C /* Qanelas-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3F2AC3823680082004EB38C /* Qanelas-SemiBold.ttf */; };
+		B3F2AC3B23680712004EB38C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B3F2AC3A23680712004EB38C /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B3BB03E82366B028000DCAA0 /* Qanelas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Bold.ttf"; sourceTree = "<group>"; };
-		B3BB03E92366B028000DCAA0 /* Qanelas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Regular.ttf"; sourceTree = "<group>"; };
 		B3D4E2272362BA34007FF11E /* NewsFront3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFront3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E22A2362BA34007FF11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3D4E22C2362BA34007FF11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +48,7 @@
 		B3D4E2462362BA3C007FF11E /* NewsFront3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsFront3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E24A2362BA3C007FF11E /* NewsFront3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFront3UITests.swift; sourceTree = "<group>"; };
 		B3D4E24C2362BA3C007FF11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3F2AC3823680082004EB38C /* Qanelas-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Qanelas-SemiBold.ttf"; path = "NewsFront3/Fonts/Qanelas-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		B3F2AC3A23680712004EB38C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B3BB03E72366B028000DCAA0 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				B3BB03E82366B028000DCAA0 /* Qanelas-Bold.ttf */,
-				B3F2AC3823680082004EB38C /* Qanelas-SemiBold.ttf */,
-				B3BB03E92366B028000DCAA0 /* Qanelas-Regular.ttf */,
-			);
-			name = Fonts;
-			path = ../../../Downloads/Fonts;
-			sourceTree = "<group>";
-		};
 		B3D4E21E2362BA34007FF11E = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +105,7 @@
 				B3D4E2312362BA3B007FF11E /* Assets.xcassets */,
 				B3D4E2332362BA3B007FF11E /* LaunchScreen.storyboard */,
 				B3D4E2362362BA3B007FF11E /* Info.plist */,
-				B3BB03E72366B028000DCAA0 /* Fonts */,
+				B3F2AC3A23680712004EB38C /* Fonts */,
 			);
 			path = NewsFront3;
 			sourceTree = "<group>";
@@ -248,11 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D4E2352362BA3B007FF11E /* LaunchScreen.storyboard in Resources */,
-				B3F2AC3923680082004EB38C /* Qanelas-SemiBold.ttf in Resources */,
 				B3D4E2322362BA3B007FF11E /* Assets.xcassets in Resources */,
-				B3BB03EA2366B033000DCAA0 /* Qanelas-Bold.ttf in Resources */,
 				B3D4E2302362BA34007FF11E /* Main.storyboard in Resources */,
-				B3BB03EB2366B036000DCAA0 /* Qanelas-Regular.ttf in Resources */,
+				B3F2AC3B23680712004EB38C /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
