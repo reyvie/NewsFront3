@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let newLayer = CAGradientLayer()
-        newLayer.colors = [UIColor.darkGray, UIColor.blue.cgColor]
-        newLayer.frame = view.frame
-
-        view.layer.insertSublayer(newLayer, at: 1)
-        
+//        let newLayer = CAGradientLayer()
+//        newLayer.colors = [UIColor.darkGray, UIColor.blue.cgColor]
+//        newLayer.frame = view.frame
+//
+//        view.layer.insertSublayer(newLayer, at: 1)
+//        
         RegisterButton.layer.cornerRadius = 3
         EmailTextField.layer.cornerRadius = 3
         EmailTextField.layer.borderWidth = 1.5;

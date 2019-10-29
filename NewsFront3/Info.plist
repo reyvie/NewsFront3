@@ -42,6 +42,8 @@
 	<string>Qanelas-Bold.ttf</string>
 	<key>Item 2</key>
 	<string>Qanelas-Regular.ttf</string>
+	<key>Item 3</key>
+	<string>Qanelas-SemiBold.ttf</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
