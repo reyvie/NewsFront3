@@ -13,7 +13,7 @@
         <array key="Qanelas-Bold.ttf">
             <string>Qanelas-Bold</string>
         </array>
-        <array key="Qanelas-Regular.ttf">
+        <array key="Qanelas-Regular.otf">
             <string>Qanelas-Regular</string>
         </array>
         <array key="Qanelas-SemiBold.ttf">
@@ -234,12 +234,14 @@
             <objects>
                 <viewController id="ax2-Zv-AJg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYX-qE-tbc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GBt-Fy-UId"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="LIKED" selectedImage="like" id="UDl-Rm-82B"/>
+                    <tabBarItem key="tabBarItem" title="LIKED" image="like" selectedImage="like" id="UDl-Rm-82B">
+                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auJ-aZ-2WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,12 +252,14 @@
             <objects>
                 <viewController id="VpG-1F-YJD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Nh-DD-vdF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="A5k-Sj-aVq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="TAGS" selectedImage="tags" id="7E7-dW-zWf"/>
+                    <tabBarItem key="tabBarItem" title="TAGS" image="tags" selectedImage="tags" id="7E7-dW-zWf">
+                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBQ-8n-2aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,12 +270,14 @@
             <objects>
                 <viewController id="2Fl-it-TlR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kka-uS-Ay6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Yyt-R4-Cwd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SETTINGS" selectedImage="settings" id="9ik-ba-Tf9"/>
+                    <tabBarItem key="tabBarItem" title="SETTINGS" image="settings" selectedImage="settings" id="9ik-ba-Tf9">
+                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJj-90-WAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +288,7 @@
             <objects>
                 <viewController id="baE-SR-9Gs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jgj-mR-3Q3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXW-yj-0mr">
@@ -358,7 +364,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y4T-Wq-Ih9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HOME" selectedImage="homeIcon" id="sft-kG-Ofb"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="homeIcon" selectedImage="homeIcon" id="sft-kG-Ofb">
+                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyU-zF-DQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -368,10 +376,11 @@
         <scene sceneID="WwQ-Ro-79g">
             <objects>
                 <tabBarController id="LRl-Pb-f1m" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOc-qb-mCx">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="DOc-qb-mCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0078431372550000003" green="0.40000000000000002" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="baE-SR-9Gs" kind="relationship" relationship="viewControllers" id="5BQ-e8-67u"/>
