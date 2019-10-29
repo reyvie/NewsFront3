@@ -151,44 +151,44 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-od-Z6A">
                                 <rect key="frame" x="75" y="248.5" width="225" height="45"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="HIl-89-cVQ"/>
                                             <constraint firstAttribute="width" constant="45" id="osB-Hu-1vM"/>
                                         </constraints>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0">
                                         <rect key="frame" x="60" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="8yA-7O-2w3"/>
                                             <constraint firstAttribute="width" constant="45" id="raR-2y-C1V"/>
                                         </constraints>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK">
                                         <rect key="frame" x="120" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="V40-ch-wjb"/>
                                             <constraint firstAttribute="width" constant="45" id="prh-pF-dOU"/>
                                         </constraints>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V">
                                         <rect key="frame" x="180" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="a6S-T7-7Gs"/>
                                             <constraint firstAttribute="width" constant="45" id="rkb-qy-1xT"/>
                                         </constraints>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
                                     </textField>
                                 </subviews>
@@ -240,7 +240,7 @@
                         <viewLayoutGuide key="safeArea" id="GBt-Fy-UId"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="LIKED" image="like" selectedImage="like" id="UDl-Rm-82B">
-                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="badgeColor" red="0.0078431372550000003" green="0.40000000000000002" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auJ-aZ-2WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,7 +258,7 @@
                         <viewLayoutGuide key="safeArea" id="A5k-Sj-aVq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="TAGS" image="tags" selectedImage="tags" id="7E7-dW-zWf">
-                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="badgeColor" red="0.0078431372550000003" green="0.40000000000000002" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBQ-8n-2aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +276,7 @@
                         <viewLayoutGuide key="safeArea" id="Yyt-R4-Cwd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="SETTINGS" image="settings" selectedImage="settings" id="9ik-ba-Tf9">
-                        <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="badgeColor" red="0.0078431372550000003" green="0.40000000000000002" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJj-90-WAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,20 +392,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDw-Zh-pI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="913" y="1031"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="z6N-BY-BvE">
-            <objects>
-                <viewController id="GHc-Aw-5iF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0dE-4G-5vq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tGQ-8s-ugn"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4cp-YB-9VI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
