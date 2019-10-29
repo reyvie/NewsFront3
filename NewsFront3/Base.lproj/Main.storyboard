@@ -66,7 +66,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerValidation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lLs-jO-f3F"/>
-                                    <segue destination="DQa-UK-Bb2" kind="showDetail" animates="NO" id="uje-oq-SQ5"/>
+                                    <segue destination="DQa-UK-Bb2" kind="show" id="5Ze-P5-GId"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWSFRONT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOo-Rd-RTf">
@@ -80,9 +80,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfg-Ho-1Hi">
-                                <rect key="frame" x="20" y="333" width="335" height="29"/>
+                                <rect key="frame" x="20" y="334" width="335" height="21"/>
                                 <fontDescription key="fontDescription" name="Qanelas-Light" family="Qanelas" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.099794383325293778" blue="0.28884835835889322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.59690556533575145" blue="0.58212769380962137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -91,8 +91,8 @@
                             <constraint firstItem="3qb-Kh-76A" firstAttribute="top" secondItem="tZo-MI-3Zn" secondAttribute="bottom" constant="80" id="1Jw-bp-Oie"/>
                             <constraint firstItem="Udq-3c-Dky" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Kp-Lt-qkf"/>
                             <constraint firstItem="3qb-Kh-76A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6eM-0e-WTn"/>
-                            <constraint firstItem="3qb-Kh-76A" firstAttribute="top" secondItem="vfg-Ho-1Hi" secondAttribute="bottom" constant="1.5" id="Aji-x1-RB6"/>
-                            <constraint firstItem="vfg-Ho-1Hi" firstAttribute="top" secondItem="rOo-Rd-RTf" secondAttribute="bottom" constant="14.5" id="H8i-1H-vHY"/>
+                            <constraint firstItem="3qb-Kh-76A" firstAttribute="top" secondItem="vfg-Ho-1Hi" secondAttribute="bottom" constant="8.5" id="Aji-x1-RB6"/>
+                            <constraint firstItem="vfg-Ho-1Hi" firstAttribute="top" secondItem="rOo-Rd-RTf" secondAttribute="bottom" constant="15.5" id="H8i-1H-vHY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vfg-Ho-1Hi" secondAttribute="trailing" constant="20" id="Vqi-dq-cEg"/>
                             <constraint firstItem="Udq-3c-Dky" firstAttribute="top" secondItem="3qb-Kh-76A" secondAttribute="bottom" constant="20" id="Wdq-Rp-oti"/>
                             <constraint firstItem="tZo-MI-3Zn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fQ7-qf-VTv"/>
@@ -105,7 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="EmailTextField" destination="3qb-Kh-76A" id="cc5-gU-yjM"/>
-                        <outlet property="RegisterButton" destination="Udq-3c-Dky" id="WPL-qJ-7No"/>
+                        <outlet property="RegisterButton" destination="Udq-3c-Dky" id="ybn-1v-VNa"/>
                         <outlet property="lblValidationMsg" destination="vfg-Ho-1Hi" id="hRC-qH-EAx"/>
                     </connections>
                 </viewController>
@@ -126,6 +126,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-vi-mST">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-Db-jGK">
                                 <rect key="frame" x="67.5" y="313.5" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -159,8 +163,15 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newsfrontlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-ye-5uj">
+                                <rect key="frame" x="147.5" y="63.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="D46-14-WWG"/>
+                                    <constraint firstAttribute="height" constant="80" id="GSi-1T-2FW"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-od-Z6A">
-                                <rect key="frame" x="75" y="248.5" width="225" height="45"/>
+                                <rect key="frame" x="75" y="248" width="225" height="45"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -208,17 +219,6 @@
                                     <constraint firstItem="EZL-Jf-IT0" firstAttribute="height" secondItem="JHN-JT-ftg" secondAttribute="height" id="cdN-UM-0qg"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newsfrontlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-ye-5uj">
-                                <rect key="frame" x="147.5" y="63.5" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="D46-14-WWG"/>
-                                    <constraint firstAttribute="height" constant="80" id="GSi-1T-2FW"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-vi-mST">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -391,21 +391,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyU-zF-DQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="231.19999999999999" y="1835.5322338830586"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gcj-Ou-mUP">
-            <objects>
-                <viewController id="2so-5i-Dxs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="utU-nw-fLg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Psv-g0-qAR"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ffv-rY-3fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="231" y="2532"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WwQ-Ro-79g">

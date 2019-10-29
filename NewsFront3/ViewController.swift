@@ -22,10 +22,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         ButtonDesign()
         //bgGradient()
+        lblValidationMsg.isHidden = true
     }
 
     func ButtonDesign(){
-        RegisterButton.layer.cornerRadius = 3
+        //RegisterButton.layer.cornerRadius = 3
         EmailTextField.layer.cornerRadius = 3
         EmailTextField.layer.borderWidth = 1.5;
         EmailTextField.layer.borderColor = UIColor.white.cgColor
