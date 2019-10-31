@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Qanelas-Bold.otf">
+        <array key="Qanelas-Bold.ttf">
             <string>Qanelas-Bold</string>
         </array>
         <array key="Qanelas-Light.ttf">
@@ -124,8 +124,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-vi-mST">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-image" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-vi-mST">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bNv-Kh-vGW" appends="YES" id="fQV-lF-EhC"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-Db-jGK">
                                 <rect key="frame" x="67.5" y="313.5" width="240" height="40"/>
@@ -257,13 +261,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="F7A-5X-H9H"/>
                     <connections>
+                        <outlet property="confirmButton" destination="75E-Db-jGK" id="MmB-gY-brt"/>
                         <outlet property="field1" destination="JHN-JT-ftg" id="U5f-eU-iGe"/>
                         <outlet property="field2" destination="EZL-Jf-IT0" id="BHR-SS-Mnv"/>
                         <outlet property="field3" destination="fec-p2-PPK" id="h5i-0r-eiM"/>
                         <outlet property="field4" destination="z1X-Tn-m7V" id="rFU-vP-bOh"/>
+                        <outlet property="resendCodeLabel" destination="fG5-JT-Zg2" id="BhU-Ej-DaK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYl-xs-fjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bNv-Kh-vGW">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="UCk-Ok-o0w" id="Z48-Wv-ox2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="932" y="130.88455772113943"/>
         </scene>

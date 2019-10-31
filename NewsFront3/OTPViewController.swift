@@ -15,13 +15,17 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var field3: UITextField!
     @IBOutlet weak var field4: UITextField!
     
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var resendCodeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         field1.delegate = self
         field2.delegate = self
         field3.delegate = self
         field4.delegate = self
-        field1.becomeFirstResponder()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -68,17 +72,42 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func field1DidBeginEditing(_ sender: UITextField) {
+        field1.becomeFirstResponder()
         field1.selectAll(nil)
     }
     @IBAction func field2DidBeginEditing(_ sender: UITextField) {
+        field2.becomeFirstResponder()
         field2.selectAll(nil)
     }
     @IBAction func field3DidBeginEditing(_ sender: UITextField) {
+        field3.becomeFirstResponder()
         field3.selectAll(nil)
     }
     
     @IBAction func field4DidBeginEditing(_ sender: UITextField) {
+        field4.becomeFirstResponder()
         field4.selectAll(nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.7) > resendCodeLabel.frame.origin.y {
+                self.view.frame.origin.y -= (keyboardSize.height * 1.7) - resendCodeLabel.frame.origin.y
+                print("4label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.7), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height*1.7)) )
+            }else{
+                print("6label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.7), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height*1.7)) )
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    @IBAction func hideKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
     }
     
     
