@@ -49,16 +49,20 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
     }
     @IBAction func field2EditingChanged(_ sender: UITextField) {
         maxLength(textFieldName: field2, max: 1)
-        field3.becomeFirstResponder()
+        
         if(field2.text?.count ?? 0 < 1 || field2.text?.count == nil){
             field1.becomeFirstResponder()
+        }else{
+            field3.becomeFirstResponder()
         }
     }
     @IBAction func field3EditingChanged(_ sender: UITextField) {
         maxLength(textFieldName: field3, max: 1)
-        field4.becomeFirstResponder()
+        
         if(field3.text?.count ?? 0 < 1 || field3.text?.count == nil){
             field2.becomeFirstResponder()
+        }else{
+            field4.becomeFirstResponder()
         }
     }
     @IBAction func field4EditingChanged(_ sender: UITextField) {
@@ -91,11 +95,11 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.7) > resendCodeLabel.frame.origin.y {
-                self.view.frame.origin.y -= (keyboardSize.height * 1.7) - resendCodeLabel.frame.origin.y
-                print("4label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.7), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height*1.7)) )
+            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.6) > resendCodeLabel.frame.origin.y {
+                self.view.frame.origin.y -= (keyboardSize.height * 1.6) - resendCodeLabel.frame.origin.y
+                print("4label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.6), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.6)) )
             }else{
-                print("6label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.7), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height*1.7)) )
+                print("6label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.6), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.6)) )
             }
         }
     }
