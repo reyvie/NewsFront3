@@ -18,6 +18,17 @@ class ViewController: UIViewController {
         EmailTextField.resignFirstResponder()
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        ButtonDesign()
+        //bgGradient()
+        lblValidationMsg.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > RegisterButton.frame.origin.y {
@@ -38,19 +49,10 @@ class ViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        ButtonDesign()
-        //bgGradient()
-        lblValidationMsg.isHidden = true
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
+    
     func ButtonDesign(){
-        RegisterButton.layer.cornerRadius = 3
-        EmailTextField.layer.cornerRadius = 3
+        RegisterButton.layer.cornerRadius = 5
+        EmailTextField.layer.cornerRadius = 5
         EmailTextField.layer.borderWidth = 1.5;
         EmailTextField.layer.borderColor = UIColor.white.cgColor
         EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
@@ -64,6 +66,28 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(newLayer, at: 1)
     }
 
+    func isValidEmail(emailID:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: emailID)
+    }
+    
+    func errorDesign() {
+        EmailTextField.layer.borderColor = UIColor.red.cgColor
+                EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        lblValidationMsg.textColor = UIColor.red
+    }
+    func correctFormatDesign(){
+        EmailTextField.layer.borderColor = UIColor.white.cgColor
+        lblValidationMsg.textColor = UIColor.white
+        EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
+    
+    
+    
+    
     @IBAction func registerValidation(_ sender: UIButton) {
         lblValidationMsg.isHidden = true
         
@@ -86,23 +110,5 @@ class ViewController: UIViewController {
     }
     
 
-    
-    func isValidEmail(emailID:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: emailID)
-    }
-    
-    func errorDesign() {
-        EmailTextField.layer.borderColor = UIColor.red.cgColor
-                EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-        lblValidationMsg.textColor = UIColor.red
-    }
-    func correctFormatDesign(){
-        EmailTextField.layer.borderColor = UIColor.white.cgColor
-        lblValidationMsg.textColor = UIColor.white
-        EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-    }
 }
 

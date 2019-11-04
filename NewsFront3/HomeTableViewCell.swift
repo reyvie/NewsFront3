@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol VideoCellDelegate {
+    func didTapLike(LikeStatus: String)
+    func didTapAcknowledge(AcknowledgeStatus: String)
+}
+
 class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var homeLabel: UILabel!
     
@@ -29,5 +34,8 @@ class HomeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
 
 }

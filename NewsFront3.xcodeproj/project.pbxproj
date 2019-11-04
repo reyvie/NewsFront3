@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E8D51236A889A00040214 /* OTPViewController.swift */; };
+		B3856801236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */; };
 		B398B6A62369976B003C2A1D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B398B6A52369976B003C2A1D /* Fonts */; };
 		B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22A2362BA34007FF11E /* AppDelegate.swift */; };
 		B3D4E22D2362BA34007FF11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22C2362BA34007FF11E /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		B31E8D51236A889A00040214 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fullDetailsOfNewsViewController.swift; sourceTree = "<group>"; };
 		B398B6A52369976B003C2A1D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B3D4E2272362BA34007FF11E /* NewsFront3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFront3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E22A2362BA34007FF11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				B3D4E22C2362BA34007FF11E /* ViewController.swift */,
 				B3E33856236FAF4C005DD61A /* HomeTableViewCell.swift */,
 				B3E33858236FC010005DD61A /* HomeViewController.swift */,
+				B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */,
 				B3D4E22E2362BA34007FF11E /* Main.storyboard */,
 				B3D4E2312362BA3B007FF11E /* Assets.xcassets */,
 				B3D4E2332362BA3B007FF11E /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3856801236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift in Sources */,
 				B3E33859236FC010005DD61A /* HomeViewController.swift in Sources */,
 				B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */,
 				B3D4E22D2362BA34007FF11E /* ViewController.swift in Sources */,

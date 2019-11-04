@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OTPViewController: UIViewController, UITextFieldDelegate{
+@IBDesignable class OTPViewController: UIViewController, UITextFieldDelegate{
     //MARK: Properties
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -26,6 +26,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        verificationBoxDesign();
         // Do any additional setup after loading the view.
     }
     
@@ -114,5 +115,36 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
     }
     
+    func verificationBoxDesign(){
+        field1.layer.borderColor = UIColor.white.cgColor
+        field2.layer.borderColor = UIColor.white.cgColor
+        field3.layer.borderColor = UIColor.white.cgColor
+        field4.layer.borderColor = UIColor.white.cgColor
+        
+        field1.layer.cornerRadius = 5
+        field2.layer.cornerRadius = 5
+        field3.layer.cornerRadius = 5
+        field4.layer.cornerRadius = 5
+        
+        field1.layer.borderWidth = 1.5;
+        field2.layer.borderWidth = 1.5;
+        field3.layer.borderWidth = 1.5;
+        field4.layer.borderWidth = 1.5;
+        
+        confirmButton.layer.cornerRadius = 5
+        
+    }
     
+    @IBAction func confirmButtonAction(_ sender: UIButton) {
+        let codetextFieldCombined: String = field1.text! + field2.text! + field3.text! + field4.text!
+        
+        print(codetextFieldCombined)
+        
+        if(codetextFieldCombined == "1111"){
+        self.performSegue(withIdentifier: "otpToHomePage", sender: nil)
+        }
+
+        
+        
+    }
 }
