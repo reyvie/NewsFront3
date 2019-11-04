@@ -95,11 +95,11 @@ class OTPViewController: UIViewController, UITextFieldDelegate{
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.6) > resendCodeLabel.frame.origin.y {
-                self.view.frame.origin.y -= (keyboardSize.height * 1.6) - resendCodeLabel.frame.origin.y
-                print("4label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.6), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.6)) )
+            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.5) > resendCodeLabel.frame.origin.y {
+                self.view.frame.origin.y -= (keyboardSize.height * 1.5) - resendCodeLabel.frame.origin.y
+                print("4label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.5), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.5)) )
             }else{
-                print("6label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.6), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.6)) )
+                print("6label height: ", resendCodeLabel.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*1.5), "diff: ", (resendCodeLabel.frame.origin.y - (keyboardSize.height * 1.5)) )
             }
         }
     }
