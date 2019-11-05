@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         ButtonDesign()
-        //bgGradient()
+        bgGradient()
         lblValidationMsg.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -58,10 +58,36 @@ class ViewController: UIViewController {
         EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
     
     func bgGradient(){
+    
+        let color1 = hexStringToUIColor(hex: "#8C9800")
+        let color2 = hexStringToUIColor(hex: "#31C5E4")
+        
+        
         let newLayer = CAGradientLayer()
-        newLayer.colors = [UIColor.darkGray, UIColor.blue.cgColor]
+        newLayer.colors = [color1, color2]
         newLayer.frame = view.frame
         view.layer.insertSublayer(newLayer, at: 1)
     }

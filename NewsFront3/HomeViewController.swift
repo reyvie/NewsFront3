@@ -10,10 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: Dummy Data
     let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
     let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago"]
     let likeStatus = ["Like", "Liked"]
     let acknowledgeStatus = ["Acknowledge", "Acknowledged"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Do any additional setup after loading the view.
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
