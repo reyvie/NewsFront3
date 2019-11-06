@@ -11,16 +11,19 @@
         <array key="Qanelas-Bold.ttf">
             <string>Qanelas-Bold</string>
         </array>
-        <array key="Qanelas-Heavy.otf">
+        <array key="Qanelas-Heavy.ttf">
             <string>Qanelas-Heavy</string>
         </array>
-        <array key="Qanelas-Light.ttf">
+        <array key="Qanelas-Light.otf">
             <string>Qanelas-Light</string>
+        </array>
+        <array key="Qanelas-Medium.ttf">
+            <string>Qanelas-Medium</string>
         </array>
         <array key="Qanelas-Regular.ttf">
             <string>Qanelas-Regular</string>
         </array>
-        <array key="Qanelas-SemiBold.otf">
+        <array key="Qanelas-SemiBold.ttf">
             <string>Qanelas-SemiBold</string>
         </array>
     </customFonts>
@@ -217,7 +220,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-od-Z6A">
                                 <rect key="frame" x="75" y="248.5" width="225" height="45"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -232,7 +235,7 @@
                                             <action selector="field1EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="vn7-Pp-Un2"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="60" y="0.0" width="45" height="45"/>
                                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -247,7 +250,7 @@
                                             <action selector="field2EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="ORJ-hp-R8u"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="120" y="0.0" width="45" height="45"/>
                                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -262,7 +265,7 @@
                                             <action selector="field3EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="9kw-DJ-Fcy"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="180" y="0.0" width="45" height="45"/>
                                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -324,7 +327,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="156" y="1030"/>
+            <point key="canvasLocation" x="156" y="1029.5352323838081"/>
         </scene>
         <!--LIKED-->
         <scene sceneID="eb7-I0-6xz">
@@ -463,18 +466,102 @@
         <!--SETTINGS-->
         <scene sceneID="Wyx-74-Lrz">
             <objects>
-                <viewController title="SETTINGS" modalPresentationStyle="fullScreen" id="2Fl-it-TlR" sceneMemberID="viewController">
+                <viewController title="SETTINGS" modalPresentationStyle="fullScreen" id="2Fl-it-TlR" customClass="SettingsViewController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kka-uS-Ay6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6a-Ds-CTg">
+                                <rect key="frame" x="0.0" y="56" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select tag you want to subscribe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-jC-2zZ">
+                                        <rect key="frame" x="20" y="5" width="215" height="55"/>
+                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sku-Oa-yhD">
+                                        <rect key="frame" x="315" y="0.0" width="40" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="02R-Ug-H6i"/>
+                                        </constraints>
+                                        <state key="normal" image="subscribe"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="2Hj-Jy-fKL"/>
+                                    <constraint firstItem="e6d-jC-2zZ" firstAttribute="top" secondItem="K6a-Ds-CTg" secondAttribute="top" constant="5" id="6bg-tp-nAj"/>
+                                    <constraint firstItem="e6d-jC-2zZ" firstAttribute="leading" secondItem="K6a-Ds-CTg" secondAttribute="leading" constant="20" id="7MW-7M-CEO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sku-Oa-yhD" secondAttribute="bottom" id="gX0-9d-2oF"/>
+                                    <constraint firstAttribute="bottom" secondItem="e6d-jC-2zZ" secondAttribute="bottom" constant="5" id="mEC-Oa-Jg1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sku-Oa-yhD" secondAttribute="trailing" constant="20" id="wx0-er-8X5"/>
+                                    <constraint firstItem="Sku-Oa-yhD" firstAttribute="top" secondItem="K6a-Ds-CTg" secondAttribute="top" id="y3n-EC-S2Z"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyz-W2-MzS">
+                                <rect key="frame" x="0.0" y="121" width="375" height="477"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" rowHeight="47" id="lBL-mV-iL8" customClass="SettingsTableViewCell" customModule="NewsFront3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="47"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lBL-mV-iL8" id="T48-DD-sYc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h32-fN-VIf">
+                                                    <rect key="frame" x="20" y="4" width="276" height="37.5"/>
+                                                    <fontDescription key="fontDescription" name="Qanelas-Medium" family="Qanelas" pointSize="14"/>
+                                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title=" TeamChamps" image="TeamChamps">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                </button>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-e8-dPo">
+                                                    <rect key="frame" x="306" y="5" width="51" height="37"/>
+                                                    <color key="onTintColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ur7-e8-dPo" firstAttribute="top" secondItem="T48-DD-sYc" secondAttribute="top" constant="5" id="BQl-xA-gcI"/>
+                                                <constraint firstItem="Ur7-e8-dPo" firstAttribute="leading" secondItem="h32-fN-VIf" secondAttribute="trailing" constant="10" id="JB5-zN-dMW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ur7-e8-dPo" secondAttribute="trailing" constant="20" id="RiG-q5-ff6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ur7-e8-dPo" secondAttribute="bottom" constant="5" id="VcL-hf-kWo"/>
+                                                <constraint firstItem="h32-fN-VIf" firstAttribute="leading" secondItem="T48-DD-sYc" secondAttribute="leading" constant="20" id="rrM-BZ-kXP"/>
+                                                <constraint firstAttribute="bottom" secondItem="h32-fN-VIf" secondAttribute="bottom" constant="5.5" id="sDi-d4-8Rq"/>
+                                                <constraint firstItem="h32-fN-VIf" firstAttribute="top" secondItem="T48-DD-sYc" secondAttribute="top" constant="4" id="wZr-m5-8ZF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tagLabelBtn" destination="h32-fN-VIf" id="fIt-cY-4aW"/>
+                                            <outlet property="tagSwitch" destination="Ur7-e8-dPo" id="ykQ-tf-nqJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2Fl-it-TlR" id="5kg-Qd-Een"/>
+                                    <outlet property="delegate" destination="2Fl-it-TlR" id="dQc-xW-yg7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K6a-Ds-CTg" firstAttribute="leading" secondItem="Yyt-R4-Cwd" secondAttribute="leading" id="2qE-yH-2sw"/>
+                            <constraint firstItem="Pyz-W2-MzS" firstAttribute="bottom" secondItem="Yyt-R4-Cwd" secondAttribute="bottom" id="2yu-9c-w2n"/>
+                            <constraint firstItem="K6a-Ds-CTg" firstAttribute="trailing" secondItem="Yyt-R4-Cwd" secondAttribute="trailing" id="DQM-4r-omX"/>
+                            <constraint firstItem="Pyz-W2-MzS" firstAttribute="top" secondItem="K6a-Ds-CTg" secondAttribute="bottom" id="L48-O4-0BB"/>
+                            <constraint firstItem="Pyz-W2-MzS" firstAttribute="leading" secondItem="Yyt-R4-Cwd" secondAttribute="leading" id="P1i-Jr-wtn"/>
+                            <constraint firstItem="K6a-Ds-CTg" firstAttribute="top" secondItem="Yyt-R4-Cwd" secondAttribute="top" id="ge9-3x-idE"/>
+                            <constraint firstItem="Yyt-R4-Cwd" firstAttribute="trailing" secondItem="Pyz-W2-MzS" secondAttribute="trailing" id="mTl-1p-PDM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yyt-R4-Cwd"/>
                     </view>
                     <navigationItem key="navigationItem" title="NEWSFRONT" id="PtN-Na-4SE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJj-90-WAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2132" y="2545"/>
+            <point key="canvasLocation" x="2132" y="2544.3778110944531"/>
         </scene>
         <!--Full Details Of News View Controller-->
         <scene sceneID="99n-M3-Xg6">
@@ -724,16 +811,29 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
             </objects>
             <point key="canvasLocation" x="-220" y="2544"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="WwQ-Ro-79g">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="LRl-Pb-f1m" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="LRl-Pb-f1m" customClass="MyTabBarController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="M4g-Ak-A6S"/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="DOc-qb-mCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="barTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
+                                <color key="value" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="PMJ-9T-xeK" kind="relationship" relationship="viewControllers" id="5BQ-e8-67u"/>
@@ -836,10 +936,12 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
         <image name="Like" width="16" height="16"/>
         <image name="Liked" width="16" height="16"/>
         <image name="Newsfrontlogo" width="150" height="150"/>
+        <image name="TeamChamps" width="16" height="16"/>
         <image name="Up up in the Clouds!" width="429" height="429"/>
         <image name="bg-image" width="500" height="334"/>
         <image name="homeIcon" width="16" height="16"/>
         <image name="settings" width="16" height="16"/>
+        <image name="subscribe" width="32" height="32"/>
         <image name="tags" width="16" height="16"/>
     </resources>
 </document>

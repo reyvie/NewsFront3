@@ -12,8 +12,51 @@
 		B314A6D823714AC7007CC5D7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314A6D723714AC7007CC5D7 /* UIColor.swift */; };
 		B314A6DA2371594F007CC5D7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314A6D92371594F007CC5D7 /* GradientView.swift */; };
 		B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E8D51236A889A00040214 /* OTPViewController.swift */; };
+		B358109B2372D3C600829BEC /* Qanelas-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810732372D3C600829BEC /* Qanelas-SemiBold.ttf */; };
+		B358109C2372D3C600829BEC /* Qanelas-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810742372D3C600829BEC /* Qanelas-ThinItalic.otf */; };
+		B358109D2372D3C600829BEC /* Qanelas-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810752372D3C600829BEC /* Qanelas-Bold.otf */; };
+		B358109E2372D3C600829BEC /* Qanelas-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810762372D3C600829BEC /* Qanelas-BoldItalic.otf */; };
+		B358109F2372D3C600829BEC /* Qanelas-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810772372D3C600829BEC /* Qanelas-ExtraBold.ttf */; };
+		B35810A02372D3C600829BEC /* Qanelas-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810782372D3C600829BEC /* Qanelas-Black.ttf */; };
+		B35810A12372D3C600829BEC /* Qanelas-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810792372D3C600829BEC /* Qanelas-RegularItalic.ttf */; };
+		B35810A22372D3C600829BEC /* Qanelas-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358107A2372D3C600829BEC /* Qanelas-ExtraBoldItalic.otf */; };
+		B35810A32372D3C600829BEC /* Qanelas-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358107B2372D3C600829BEC /* Qanelas-Medium.ttf */; };
+		B35810A42372D3C600829BEC /* Qanelas-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358107C2372D3C600829BEC /* Qanelas-Thin.otf */; };
+		B35810A52372D3C600829BEC /* Qanelas-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358107D2372D3C600829BEC /* Qanelas-UltraLight.ttf */; };
+		B35810A62372D3C600829BEC /* Qanelas-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358107E2372D3C600829BEC /* Qanelas-SemiBoldItalic.ttf */; };
+		B35810A72372D3C600829BEC /* Qanelas-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358107F2372D3C600829BEC /* Qanelas-MediumItalic.ttf */; };
+		B35810A82372D3C600829BEC /* Qanelas-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810802372D3C600829BEC /* Qanelas-Medium.otf */; };
+		B35810A92372D3C600829BEC /* Qanelas-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810812372D3C600829BEC /* Qanelas-RegularItalic.otf */; };
+		B35810AA2372D3C600829BEC /* Qanelas-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810822372D3C600829BEC /* Qanelas-ExtraBoldItalic.ttf */; };
+		B35810AB2372D3C600829BEC /* Qanelas-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810832372D3C600829BEC /* Qanelas-UltraLight.otf */; };
+		B35810AC2372D3C600829BEC /* Qanelas-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810842372D3C600829BEC /* Qanelas-Thin.ttf */; };
+		B35810AD2372D3C600829BEC /* Qanelas-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810852372D3C600829BEC /* Qanelas-MediumItalic.otf */; };
+		B35810AE2372D3C600829BEC /* Qanelas-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810862372D3C600829BEC /* Qanelas-SemiBoldItalic.otf */; };
+		B35810AF2372D3C600829BEC /* Qanelas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810872372D3C600829BEC /* Qanelas-Bold.ttf */; };
+		B35810B02372D3C600829BEC /* Qanelas-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810882372D3C600829BEC /* Qanelas-SemiBold.otf */; };
+		B35810B12372D3C600829BEC /* Qanelas-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810892372D3C600829BEC /* Qanelas-ThinItalic.ttf */; };
+		B35810B22372D3C600829BEC /* Qanelas-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358108A2372D3C600829BEC /* Qanelas-Black.otf */; };
+		B35810B32372D3C600829BEC /* Qanelas-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358108B2372D3C600829BEC /* Qanelas-ExtraBold.otf */; };
+		B35810B42372D3C600829BEC /* Qanelas-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358108C2372D3C600829BEC /* Qanelas-BoldItalic.ttf */; };
+		B35810B52372D3C600829BEC /* Qanelas-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358108D2372D3C600829BEC /* Qanelas-UltraLightItalic.otf */; };
+		B35810B62372D3C600829BEC /* Qanelas-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358108E2372D3C600829BEC /* Qanelas-BlackItalic.otf */; };
+		B35810B72372D3C600829BEC /* Qanelas-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B358108F2372D3C600829BEC /* Qanelas-LightItalic.ttf */; };
+		B35810B82372D3C600829BEC /* Qanelas-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810902372D3C600829BEC /* Qanelas-HeavyItalic.ttf */; };
+		B35810B92372D3C600829BEC /* Qanelas-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810912372D3C600829BEC /* Qanelas-Light.otf */; };
+		B35810BA2372D3C600829BEC /* Qanelas-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810922372D3C600829BEC /* Qanelas-Heavy.ttf */; };
+		B35810BB2372D3C600829BEC /* Qanelas-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810932372D3C600829BEC /* Qanelas-Regular.otf */; };
+		B35810BC2372D3C600829BEC /* Qanelas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810942372D3C600829BEC /* Qanelas-Regular.ttf */; };
+		B35810BD2372D3C600829BEC /* Qanelas-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810952372D3C600829BEC /* Qanelas-UltraLightItalic.ttf */; };
+		B35810BE2372D3C600829BEC /* Qanelas-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810962372D3C600829BEC /* Qanelas-BlackItalic.ttf */; };
+		B35810BF2372D3C600829BEC /* Qanelas-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810972372D3C600829BEC /* Qanelas-LightItalic.otf */; };
+		B35810C02372D3C600829BEC /* Qanelas-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810982372D3C600829BEC /* Qanelas-Light.ttf */; };
+		B35810C12372D3C600829BEC /* Qanelas-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810992372D3C600829BEC /* Qanelas-HeavyItalic.otf */; };
+		B35810C22372D3C600829BEC /* Qanelas-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358109A2372D3C600829BEC /* Qanelas-Heavy.otf */; };
 		B3856801236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */; };
-		B398B6A62369976B003C2A1D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B398B6A52369976B003C2A1D /* Fonts */; };
+		B3A49F192372693000D73011 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F182372693000D73011 /* MyTextField.swift */; };
+		B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */; };
+		B3A49F1D2372AE6C00D73011 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1C2372AE6C00D73011 /* SettingsTableViewCell.swift */; };
+		B3A49F1F2372C18600D73011 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1E2372C18600D73011 /* MyTabBarController.swift */; };
 		B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22A2362BA34007FF11E /* AppDelegate.swift */; };
 		B3D4E22D2362BA34007FF11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22C2362BA34007FF11E /* ViewController.swift */; };
 		B3D4E2302362BA34007FF11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D4E22E2362BA34007FF11E /* Main.storyboard */; };
@@ -48,8 +91,51 @@
 		B314A6D723714AC7007CC5D7 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B314A6D92371594F007CC5D7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B31E8D51236A889A00040214 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		B35810732372D3C600829BEC /* Qanelas-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-SemiBold.ttf"; sourceTree = "<group>"; };
+		B35810742372D3C600829BEC /* Qanelas-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ThinItalic.otf"; sourceTree = "<group>"; };
+		B35810752372D3C600829BEC /* Qanelas-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Bold.otf"; sourceTree = "<group>"; };
+		B35810762372D3C600829BEC /* Qanelas-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-BoldItalic.otf"; sourceTree = "<group>"; };
+		B35810772372D3C600829BEC /* Qanelas-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B35810782372D3C600829BEC /* Qanelas-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Black.ttf"; sourceTree = "<group>"; };
+		B35810792372D3C600829BEC /* Qanelas-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-RegularItalic.ttf"; sourceTree = "<group>"; };
+		B358107A2372D3C600829BEC /* Qanelas-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		B358107B2372D3C600829BEC /* Qanelas-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Medium.ttf"; sourceTree = "<group>"; };
+		B358107C2372D3C600829BEC /* Qanelas-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Thin.otf"; sourceTree = "<group>"; };
+		B358107D2372D3C600829BEC /* Qanelas-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-UltraLight.ttf"; sourceTree = "<group>"; };
+		B358107E2372D3C600829BEC /* Qanelas-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B358107F2372D3C600829BEC /* Qanelas-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B35810802372D3C600829BEC /* Qanelas-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Medium.otf"; sourceTree = "<group>"; };
+		B35810812372D3C600829BEC /* Qanelas-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-RegularItalic.otf"; sourceTree = "<group>"; };
+		B35810822372D3C600829BEC /* Qanelas-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B35810832372D3C600829BEC /* Qanelas-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-UltraLight.otf"; sourceTree = "<group>"; };
+		B35810842372D3C600829BEC /* Qanelas-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Thin.ttf"; sourceTree = "<group>"; };
+		B35810852372D3C600829BEC /* Qanelas-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-MediumItalic.otf"; sourceTree = "<group>"; };
+		B35810862372D3C600829BEC /* Qanelas-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		B35810872372D3C600829BEC /* Qanelas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Bold.ttf"; sourceTree = "<group>"; };
+		B35810882372D3C600829BEC /* Qanelas-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-SemiBold.otf"; sourceTree = "<group>"; };
+		B35810892372D3C600829BEC /* Qanelas-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ThinItalic.ttf"; sourceTree = "<group>"; };
+		B358108A2372D3C600829BEC /* Qanelas-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Black.otf"; sourceTree = "<group>"; };
+		B358108B2372D3C600829BEC /* Qanelas-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ExtraBold.otf"; sourceTree = "<group>"; };
+		B358108C2372D3C600829BEC /* Qanelas-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B358108D2372D3C600829BEC /* Qanelas-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-UltraLightItalic.otf"; sourceTree = "<group>"; };
+		B358108E2372D3C600829BEC /* Qanelas-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-BlackItalic.otf"; sourceTree = "<group>"; };
+		B358108F2372D3C600829BEC /* Qanelas-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-LightItalic.ttf"; sourceTree = "<group>"; };
+		B35810902372D3C600829BEC /* Qanelas-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		B35810912372D3C600829BEC /* Qanelas-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Light.otf"; sourceTree = "<group>"; };
+		B35810922372D3C600829BEC /* Qanelas-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Heavy.ttf"; sourceTree = "<group>"; };
+		B35810932372D3C600829BEC /* Qanelas-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Regular.otf"; sourceTree = "<group>"; };
+		B35810942372D3C600829BEC /* Qanelas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Regular.ttf"; sourceTree = "<group>"; };
+		B35810952372D3C600829BEC /* Qanelas-UltraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-UltraLightItalic.ttf"; sourceTree = "<group>"; };
+		B35810962372D3C600829BEC /* Qanelas-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B35810972372D3C600829BEC /* Qanelas-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-LightItalic.otf"; sourceTree = "<group>"; };
+		B35810982372D3C600829BEC /* Qanelas-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Light.ttf"; sourceTree = "<group>"; };
+		B35810992372D3C600829BEC /* Qanelas-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-HeavyItalic.otf"; sourceTree = "<group>"; };
+		B358109A2372D3C600829BEC /* Qanelas-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Heavy.otf"; sourceTree = "<group>"; };
 		B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fullDetailsOfNewsViewController.swift; sourceTree = "<group>"; };
-		B398B6A52369976B003C2A1D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		B3A49F182372693000D73011 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B3A49F1C2372AE6C00D73011 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		B3A49F1E2372C18600D73011 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		B3D4E2272362BA34007FF11E /* NewsFront3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFront3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E22A2362BA34007FF11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3D4E22C2362BA34007FF11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +178,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B35810722372D3C600829BEC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B35810732372D3C600829BEC /* Qanelas-SemiBold.ttf */,
+				B35810742372D3C600829BEC /* Qanelas-ThinItalic.otf */,
+				B35810752372D3C600829BEC /* Qanelas-Bold.otf */,
+				B35810762372D3C600829BEC /* Qanelas-BoldItalic.otf */,
+				B35810772372D3C600829BEC /* Qanelas-ExtraBold.ttf */,
+				B35810782372D3C600829BEC /* Qanelas-Black.ttf */,
+				B35810792372D3C600829BEC /* Qanelas-RegularItalic.ttf */,
+				B358107A2372D3C600829BEC /* Qanelas-ExtraBoldItalic.otf */,
+				B358107B2372D3C600829BEC /* Qanelas-Medium.ttf */,
+				B358107C2372D3C600829BEC /* Qanelas-Thin.otf */,
+				B358107D2372D3C600829BEC /* Qanelas-UltraLight.ttf */,
+				B358107E2372D3C600829BEC /* Qanelas-SemiBoldItalic.ttf */,
+				B358107F2372D3C600829BEC /* Qanelas-MediumItalic.ttf */,
+				B35810802372D3C600829BEC /* Qanelas-Medium.otf */,
+				B35810812372D3C600829BEC /* Qanelas-RegularItalic.otf */,
+				B35810822372D3C600829BEC /* Qanelas-ExtraBoldItalic.ttf */,
+				B35810832372D3C600829BEC /* Qanelas-UltraLight.otf */,
+				B35810842372D3C600829BEC /* Qanelas-Thin.ttf */,
+				B35810852372D3C600829BEC /* Qanelas-MediumItalic.otf */,
+				B35810862372D3C600829BEC /* Qanelas-SemiBoldItalic.otf */,
+				B35810872372D3C600829BEC /* Qanelas-Bold.ttf */,
+				B35810882372D3C600829BEC /* Qanelas-SemiBold.otf */,
+				B35810892372D3C600829BEC /* Qanelas-ThinItalic.ttf */,
+				B358108A2372D3C600829BEC /* Qanelas-Black.otf */,
+				B358108B2372D3C600829BEC /* Qanelas-ExtraBold.otf */,
+				B358108C2372D3C600829BEC /* Qanelas-BoldItalic.ttf */,
+				B358108D2372D3C600829BEC /* Qanelas-UltraLightItalic.otf */,
+				B358108E2372D3C600829BEC /* Qanelas-BlackItalic.otf */,
+				B358108F2372D3C600829BEC /* Qanelas-LightItalic.ttf */,
+				B35810902372D3C600829BEC /* Qanelas-HeavyItalic.ttf */,
+				B35810912372D3C600829BEC /* Qanelas-Light.otf */,
+				B35810922372D3C600829BEC /* Qanelas-Heavy.ttf */,
+				B35810932372D3C600829BEC /* Qanelas-Regular.otf */,
+				B35810942372D3C600829BEC /* Qanelas-Regular.ttf */,
+				B35810952372D3C600829BEC /* Qanelas-UltraLightItalic.ttf */,
+				B35810962372D3C600829BEC /* Qanelas-BlackItalic.ttf */,
+				B35810972372D3C600829BEC /* Qanelas-LightItalic.otf */,
+				B35810982372D3C600829BEC /* Qanelas-Light.ttf */,
+				B35810992372D3C600829BEC /* Qanelas-HeavyItalic.otf */,
+				B358109A2372D3C600829BEC /* Qanelas-Heavy.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B3D4E21E2362BA34007FF11E = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +250,7 @@
 			children = (
 				B314A6D92371594F007CC5D7 /* GradientView.swift */,
 				B31E8D51236A889A00040214 /* OTPViewController.swift */,
+				B3A49F182372693000D73011 /* MyTextField.swift */,
 				B3D4E22A2362BA34007FF11E /* AppDelegate.swift */,
 				B3D4E22C2362BA34007FF11E /* ViewController.swift */,
 				B314A6D723714AC7007CC5D7 /* UIColor.swift */,
@@ -126,10 +260,13 @@
 				B314A6D323710B11007CC5D7 /* LikeViewController.swift */,
 				B314A6D523711077007CC5D7 /* LikeTableViewCell.swift */,
 				B3D4E22E2362BA34007FF11E /* Main.storyboard */,
+				B3A49F1E2372C18600D73011 /* MyTabBarController.swift */,
+				B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */,
+				B3A49F1C2372AE6C00D73011 /* SettingsTableViewCell.swift */,
 				B3D4E2312362BA3B007FF11E /* Assets.xcassets */,
 				B3D4E2332362BA3B007FF11E /* LaunchScreen.storyboard */,
 				B3D4E2362362BA3B007FF11E /* Info.plist */,
-				B398B6A52369976B003C2A1D /* Fonts */,
+				B35810722372D3C600829BEC /* Fonts */,
 			);
 			path = NewsFront3;
 			sourceTree = "<group>";
@@ -259,10 +396,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B398B6A62369976B003C2A1D /* Fonts in Resources */,
+				B35810B82372D3C600829BEC /* Qanelas-HeavyItalic.ttf in Resources */,
+				B35810A82372D3C600829BEC /* Qanelas-Medium.otf in Resources */,
 				B3D4E2352362BA3B007FF11E /* LaunchScreen.storyboard in Resources */,
+				B35810A92372D3C600829BEC /* Qanelas-RegularItalic.otf in Resources */,
+				B35810AD2372D3C600829BEC /* Qanelas-MediumItalic.otf in Resources */,
+				B35810B02372D3C600829BEC /* Qanelas-SemiBold.otf in Resources */,
+				B358109F2372D3C600829BEC /* Qanelas-ExtraBold.ttf in Resources */,
+				B35810BF2372D3C600829BEC /* Qanelas-LightItalic.otf in Resources */,
+				B35810B32372D3C600829BEC /* Qanelas-ExtraBold.otf in Resources */,
+				B35810BE2372D3C600829BEC /* Qanelas-BlackItalic.ttf in Resources */,
+				B35810A42372D3C600829BEC /* Qanelas-Thin.otf in Resources */,
+				B35810C22372D3C600829BEC /* Qanelas-Heavy.otf in Resources */,
+				B35810BC2372D3C600829BEC /* Qanelas-Regular.ttf in Resources */,
+				B35810A02372D3C600829BEC /* Qanelas-Black.ttf in Resources */,
+				B35810AB2372D3C600829BEC /* Qanelas-UltraLight.otf in Resources */,
+				B35810AE2372D3C600829BEC /* Qanelas-SemiBoldItalic.otf in Resources */,
+				B35810A22372D3C600829BEC /* Qanelas-ExtraBoldItalic.otf in Resources */,
 				B3D4E2322362BA3B007FF11E /* Assets.xcassets in Resources */,
+				B35810B72372D3C600829BEC /* Qanelas-LightItalic.ttf in Resources */,
+				B35810AA2372D3C600829BEC /* Qanelas-ExtraBoldItalic.ttf in Resources */,
+				B35810A12372D3C600829BEC /* Qanelas-RegularItalic.ttf in Resources */,
+				B35810AC2372D3C600829BEC /* Qanelas-Thin.ttf in Resources */,
 				B3D4E2302362BA34007FF11E /* Main.storyboard in Resources */,
+				B35810B42372D3C600829BEC /* Qanelas-BoldItalic.ttf in Resources */,
+				B35810BA2372D3C600829BEC /* Qanelas-Heavy.ttf in Resources */,
+				B35810A72372D3C600829BEC /* Qanelas-MediumItalic.ttf in Resources */,
+				B35810BB2372D3C600829BEC /* Qanelas-Regular.otf in Resources */,
+				B35810B62372D3C600829BEC /* Qanelas-BlackItalic.otf in Resources */,
+				B35810A32372D3C600829BEC /* Qanelas-Medium.ttf in Resources */,
+				B35810C12372D3C600829BEC /* Qanelas-HeavyItalic.otf in Resources */,
+				B35810AF2372D3C600829BEC /* Qanelas-Bold.ttf in Resources */,
+				B35810C02372D3C600829BEC /* Qanelas-Light.ttf in Resources */,
+				B358109D2372D3C600829BEC /* Qanelas-Bold.otf in Resources */,
+				B35810B12372D3C600829BEC /* Qanelas-ThinItalic.ttf in Resources */,
+				B35810A52372D3C600829BEC /* Qanelas-UltraLight.ttf in Resources */,
+				B358109B2372D3C600829BEC /* Qanelas-SemiBold.ttf in Resources */,
+				B35810B22372D3C600829BEC /* Qanelas-Black.otf in Resources */,
+				B35810BD2372D3C600829BEC /* Qanelas-UltraLightItalic.ttf in Resources */,
+				B358109C2372D3C600829BEC /* Qanelas-ThinItalic.otf in Resources */,
+				B35810B52372D3C600829BEC /* Qanelas-UltraLightItalic.otf in Resources */,
+				B35810A62372D3C600829BEC /* Qanelas-SemiBoldItalic.ttf in Resources */,
+				B358109E2372D3C600829BEC /* Qanelas-BoldItalic.otf in Resources */,
+				B35810B92372D3C600829BEC /* Qanelas-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,12 +467,16 @@
 				B3E33859236FC010005DD61A /* HomeViewController.swift in Sources */,
 				B314A6DA2371594F007CC5D7 /* GradientView.swift in Sources */,
 				B314A6D623711077007CC5D7 /* LikeTableViewCell.swift in Sources */,
+				B3A49F192372693000D73011 /* MyTextField.swift in Sources */,
+				B3A49F1D2372AE6C00D73011 /* SettingsTableViewCell.swift in Sources */,
 				B314A6D423710B11007CC5D7 /* LikeViewController.swift in Sources */,
 				B314A6D823714AC7007CC5D7 /* UIColor.swift in Sources */,
 				B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */,
 				B3D4E22D2362BA34007FF11E /* ViewController.swift in Sources */,
 				B3E33857236FAF4C005DD61A /* HomeTableViewCell.swift in Sources */,
 				B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */,
+				B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */,
+				B3A49F1F2372C18600D73011 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

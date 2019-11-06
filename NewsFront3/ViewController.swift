@@ -33,9 +33,9 @@ class ViewController: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > RegisterButton.frame.origin.y {
                 self.view.frame.origin.y -= (keyboardSize.height * 2) - RegisterButton.frame.origin.y + 20
-                print("label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)) )
+//                print("label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)) )
             }else{
-                print("2label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)))
+//                print("2label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)))
             }
         }
     }
