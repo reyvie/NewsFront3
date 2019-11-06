@@ -30,19 +30,29 @@ import UIKit
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var resendCodeLabel: UILabel!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         field1.delegate = self
         field2.delegate = self
         field3.delegate = self
         field4.delegate = self
+        delayWithSeconds(0.3) {
+            self.field1.becomeFirstResponder()
+        }
         
-        field1.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         verificationBoxDesign();
         // Do any additional setup after loading the view.
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
     
     
