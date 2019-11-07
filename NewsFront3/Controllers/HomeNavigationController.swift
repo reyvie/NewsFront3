@@ -1,23 +1,22 @@
 //
-//  MyTabBarController.swift
+//  HomeNavigationController.swift
 //  NewsFront3
 //
-//  Created by Reyvie Bautista on 11/6/19.
+//  Created by Reyvie Bautista on 11/7/19.
 //  Copyright © 2019 ReyvieB. All rights reserved.
 //
 
 import UIKit
-@IBDesignable
-class MyTabBarController: UITabBarController {
+
+class HomeNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tabBar.barTintColor = .systemBlue
-//        tabBar.isTranslucent = false
-//        tabBar.unselectedItemTintColor = .systemGray
-//        tabBar.selectedItem?.badgeColor = .white
+//        self.navigationController?.navigationBar.titleTextAttributes =
+//        [NSAttributedString.Key.foregroundColor: UIColor.black,
+//         NSAttributedString.Key.font: UIFont(name: "Qanelas-SemiBold", size: 10)!]
         // Do any additional setup after loading the view.
-    }
+        }
     
 
     /*

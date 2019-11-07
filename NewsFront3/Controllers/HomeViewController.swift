@@ -11,10 +11,11 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Dummy Data
-    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
-    let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago"]
-    let likeStatus = ["Like", "Liked"]
-    let acknowledgeStatus = ["Acknowledge", "Acknowledged"]
+    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
+    
+    let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago"]
+    let likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
+    let acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledge"]
     
     
     override func viewDidLoad() {
@@ -48,12 +49,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if(likeStatus[indexPath.row] == "Like"){
             cell.likeButton.setTitleColor(UIColor.black, for: .normal)
         }else{
-            cell.likeButton.setTitleColor(UIColor.blue, for: .normal)
+            cell.likeButton.setTitleColor(UIColor.systemBlue, for: .normal)
         }
         if(acknowledgeStatus[indexPath.row] == "Acknowledge"){
             cell.acknowledgeButton.setTitleColor(UIColor.black, for: .normal)
         }else{
-            cell.acknowledgeButton.setTitleColor(UIColor.blue, for: .normal)
+            cell.acknowledgeButton.setTitleColor(UIColor.systemBlue, for: .normal)
         }
         
         

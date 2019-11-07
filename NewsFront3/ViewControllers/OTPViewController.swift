@@ -9,6 +9,7 @@
 import UIKit
 
 @IBDesignable class OTPViewController: UIViewController, UITextFieldDelegate, MyTextFieldDelegate{
+    @IBOutlet weak var codeSentLabel: UILabel!
     func didPressBackspace(textField: MyTextField, txtfieldNumber: Int) {
         print("BACKSPACED")
         print(textField.hasText)
@@ -20,6 +21,7 @@ import UIKit
             print(txtfieldNumber)
         }
     }
+    var email: String = ""
     
     //MARK: Properties
     @IBOutlet weak var field1: UITextField!
@@ -38,7 +40,11 @@ import UIKit
         field2.delegate = self
         field3.delegate = self
         field4.delegate = self
-        delayWithSeconds(0.3) {
+        
+        codeSentLabel.text = "Enter the code was sent to your \n email: " + email
+        
+        
+        delayWithSeconds(0.4) {
             self.field1.becomeFirstResponder()
         }
         
@@ -208,6 +214,10 @@ import UIKit
         let codetextFieldCombined: String = field1.text! + field2.text! + field3.text! + field4.text!
         if(codetextFieldCombined == "1111"){
         self.performSegue(withIdentifier: "otpToHomePage", sender: nil)
+        }else{
+            let alert = UIAlertController(title: "Error", message: "The OTP entered is incorrect", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
 
         

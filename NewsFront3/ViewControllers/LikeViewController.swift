@@ -9,10 +9,13 @@
 import UIKit
 
 class LikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
-    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines", "Cloudstaff - The #1 workplace in the Philippines"]
-    let datePosted = ["1", "2", "3"]
-    let likeStatus = ["Liked", "Like", "Liked"]
-    let acknowledgeStatus = ["Acknowledge", "Acknowledged", "Acknowledge"]
+    
+    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
+    
+    let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago"]
+    let likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
+    let acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledge"]
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        var likedTotal = 0;
@@ -42,7 +45,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if(acknowledgeStatus[indexPath.row] == "Acknowledge"){
                 cell.acknowledgeButton.setTitleColor(UIColor.black, for: .normal)
             }else{
-                cell.acknowledgeButton.setTitleColor(UIColor.blue, for: .normal)
+                cell.acknowledgeButton.setTitleColor(UIColor.systemBlue, for: .normal)
             }
             return (cell)
         } else{
@@ -53,7 +56,20 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "LikeViewController")
+//
+//        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

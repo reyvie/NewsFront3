@@ -29,7 +29,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return (cell)
     }
     
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            //tableView.deselectRow(at: indexPath, animated: true)
 
+            
+    //        let vc = storyboard?.instantiateViewController(withIdentifier: "LikeViewController")
+    //
+    //        self.navigationController?.pushViewController(vc!, animated: true)
+            
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
 

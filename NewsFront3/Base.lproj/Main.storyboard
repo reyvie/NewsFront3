@@ -5,25 +5,26 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Qanelas-Bold.ttf">
             <string>Qanelas-Bold</string>
         </array>
-        <array key="Qanelas-Heavy.ttf">
+        <array key="Qanelas-Heavy.otf">
             <string>Qanelas-Heavy</string>
         </array>
-        <array key="Qanelas-Light.otf">
+        <array key="Qanelas-Light.ttf">
             <string>Qanelas-Light</string>
         </array>
-        <array key="Qanelas-Medium.ttf">
+        <array key="Qanelas-Medium.otf">
             <string>Qanelas-Medium</string>
         </array>
         <array key="Qanelas-Regular.ttf">
             <string>Qanelas-Regular</string>
         </array>
-        <array key="Qanelas-SemiBold.ttf">
+        <array key="Qanelas-SemiBold.otf">
             <string>Qanelas-SemiBold</string>
         </array>
     </customFonts>
@@ -163,7 +164,7 @@
                                     <outletCollection property="gestureRecognizers" destination="bNv-Kh-vGW" appends="YES" id="fQV-lF-EhC"/>
                                 </connections>
                             </imageView>
-                            <view userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-xi-bi4" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-xi-bi4" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
@@ -311,6 +312,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F7A-5X-H9H"/>
                     <connections>
+                        <outlet property="codeSentLabel" destination="MAH-ZC-zDb" id="vEn-EA-Sgo"/>
                         <outlet property="confirmButton" destination="75E-Db-jGK" id="MmB-gY-brt"/>
                         <outlet property="field1" destination="JHN-JT-ftg" id="U5f-eU-iGe"/>
                         <outlet property="field2" destination="EZL-Jf-IT0" id="BHR-SS-Mnv"/>
@@ -337,10 +339,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Jo-P4E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Jo-P4E">
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="-2" reuseIdentifier="likeCell" rowHeight="80" id="d7q-B7-ugc" customClass="LikeTableViewCell" customModule="NewsFront3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="-2" reuseIdentifier="likeCell" rowHeight="80" id="d7q-B7-ugc" customClass="LikeTableViewCell" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7q-B7-ugc" id="Vaw-wn-NDh">
@@ -450,18 +452,93 @@
         <!--TAGS-->
         <scene sceneID="cu3-VZ-Wah">
             <objects>
-                <viewController title="TAGS" modalPresentationStyle="fullScreen" id="VpG-1F-YJD" sceneMemberID="viewController">
+                <viewController title="TAGS" modalPresentationStyle="fullScreen" id="VpG-1F-YJD" customClass="TagsViewController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Nh-DD-vdF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qmz-au-BAf">
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="H0O-LW-a8e">
+                                    <size key="itemSize" width="137" height="117"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="cell" id="cdl-ki-4iy" customClass="TagsCollectionViewCell" customModule="NewsFront3" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="140" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YQv-kM-nNQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeamChamps" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V53-eK-YxP">
+                                                    <rect key="frame" x="40" y="93.5" width="100" height="18.5"/>
+                                                    <fontDescription key="fontDescription" name="Qanelas-SemiBold" family="Qanelas" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TeamChamps" translatesAutoresizingMaskIntoConstraints="NO" id="5W8-qh-blA">
+                                                    <rect key="frame" x="8" y="93.5" width="24" height="18.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="hMM-R7-BeV"/>
+                                                        <constraint firstAttribute="width" constant="24" id="vop-iO-3rF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TeamChamps Image" translatesAutoresizingMaskIntoConstraints="NO" id="zov-oB-Wn4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="85.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="85" id="mWh-KU-xOq"/>
+                                                        <constraint firstAttribute="width" secondItem="zov-oB-Wn4" secondAttribute="height" multiplier="41:25" id="u1A-La-5If"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V53-eK-YxP" firstAttribute="top" secondItem="zov-oB-Wn4" secondAttribute="bottom" constant="8" id="Gvh-HS-Tgt"/>
+                                                <constraint firstAttribute="trailing" secondItem="V53-eK-YxP" secondAttribute="trailing" id="IeY-Rx-80o"/>
+                                                <constraint firstAttribute="bottom" secondItem="V53-eK-YxP" secondAttribute="bottom" constant="8" id="Ill-L3-D5v"/>
+                                                <constraint firstAttribute="trailing" secondItem="zov-oB-Wn4" secondAttribute="trailing" id="Jiq-zG-WbG"/>
+                                                <constraint firstItem="5W8-qh-blA" firstAttribute="top" secondItem="zov-oB-Wn4" secondAttribute="bottom" constant="8" id="O4g-hI-5pr"/>
+                                                <constraint firstItem="V53-eK-YxP" firstAttribute="leading" secondItem="5W8-qh-blA" secondAttribute="trailing" constant="8" id="PZP-NC-YNX"/>
+                                                <constraint firstItem="5W8-qh-blA" firstAttribute="leading" secondItem="YQv-kM-nNQ" secondAttribute="leading" constant="8" id="Rpw-gD-RbT"/>
+                                                <constraint firstAttribute="bottom" secondItem="5W8-qh-blA" secondAttribute="bottom" constant="8" id="hyK-gP-co4"/>
+                                                <constraint firstItem="zov-oB-Wn4" firstAttribute="top" secondItem="YQv-kM-nNQ" secondAttribute="top" id="t2P-FJ-Fem"/>
+                                                <constraint firstItem="zov-oB-Wn4" firstAttribute="leading" secondItem="YQv-kM-nNQ" secondAttribute="leading" id="yky-8a-Y6a"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="140" height="120"/>
+                                        <connections>
+                                            <outlet property="tagIcon" destination="5W8-qh-blA" id="L3L-BC-ieF"/>
+                                            <outlet property="tagImage" destination="zov-oB-Wn4" id="RG4-1S-bHx"/>
+                                            <outlet property="tagLabel" destination="V53-eK-YxP" id="cz4-l5-7no"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="VpG-1F-YJD" id="Y9H-AN-dUd"/>
+                                    <outlet property="delegate" destination="VpG-1F-YJD" id="Zlp-9J-brZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A5k-Sj-aVq" firstAttribute="bottom" secondItem="qmz-au-BAf" secondAttribute="bottom" id="4PL-35-XIx"/>
+                            <constraint firstItem="qmz-au-BAf" firstAttribute="leading" secondItem="A5k-Sj-aVq" secondAttribute="leading" id="Leq-bM-oe9"/>
+                            <constraint firstItem="qmz-au-BAf" firstAttribute="top" secondItem="A5k-Sj-aVq" secondAttribute="top" id="PqV-VO-hBS"/>
+                            <constraint firstItem="A5k-Sj-aVq" firstAttribute="trailing" secondItem="qmz-au-BAf" secondAttribute="trailing" id="va9-6V-YBC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="A5k-Sj-aVq"/>
                     </view>
                     <navigationItem key="navigationItem" title="NEWSFRONT" id="CBS-e3-EwX"/>
+                    <connections>
+                        <outlet property="collectionView" destination="qmz-au-BAf" id="da2-bv-eln"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBQ-8n-2aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="2545"/>
+            <point key="canvasLocation" x="1324" y="2544.3778110944531"/>
         </scene>
         <!--SETTINGS-->
         <scene sceneID="Wyx-74-Lrz">
@@ -475,8 +552,8 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select tag you want to subscribe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-jC-2zZ">
-                                        <rect key="frame" x="20" y="5" width="215" height="55"/>
-                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="15"/>
+                                        <rect key="frame" x="20" y="5" width="218" height="55"/>
+                                        <fontDescription key="fontDescription" name="Qanelas-SemiBold" family="Qanelas" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -499,11 +576,11 @@
                                     <constraint firstItem="Sku-Oa-yhD" firstAttribute="top" secondItem="K6a-Ds-CTg" secondAttribute="top" id="y3n-EC-S2Z"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyz-W2-MzS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyz-W2-MzS">
                                 <rect key="frame" x="0.0" y="121" width="375" height="477"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" rowHeight="47" id="lBL-mV-iL8" customClass="SettingsTableViewCell" customModule="NewsFront3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingCell" rowHeight="47" id="lBL-mV-iL8" customClass="SettingsTableViewCell" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lBL-mV-iL8" id="T48-DD-sYc">
@@ -520,6 +597,9 @@
                                                 </button>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-e8-dPo">
                                                     <rect key="frame" x="306" y="5" width="51" height="37"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="gNV-ja-dwQ"/>
+                                                    </constraints>
                                                     <color key="onTintColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </switch>
                                             </subviews>
@@ -568,11 +648,11 @@
             <objects>
                 <viewController storyboardIdentifier="fullDetailsOfNewsViewController" modalPresentationStyle="fullScreen" id="SF2-rM-6iA" customClass="fullDetailsOfNewsViewController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="heb-2f-IPC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="931"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up, Up in the Clouds!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCt-It-oi4">
-                                <rect key="frame" x="16" y="180" width="343" height="41"/>
+                                <rect key="frame" x="16" y="236" width="343" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="ZuX-0w-IKX"/>
                                 </constraints>
@@ -581,14 +661,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Up up in the Clouds!" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-pj-uao">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Dg8-4W-TiF"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="npn-if-4gd"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4B-cQ-1mu">
-                                <rect key="frame" x="92" y="221" width="100" height="20"/>
+                                <rect key="frame" x="92" y="277" width="100" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Hrx-sb-Lcr"/>
                                     <constraint firstAttribute="width" constant="100" id="m3x-Yz-ShI"/>
@@ -600,7 +680,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34d 22h 59m ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-kw-YPZ">
-                                <rect key="frame" x="202" y="221" width="157" height="20"/>
+                                <rect key="frame" x="202" y="277" width="157" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Bul-Ao-cMx"/>
                                 </constraints>
@@ -609,7 +689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-Qr-ctb">
-                                <rect key="frame" x="16" y="221" width="66" height="20"/>
+                                <rect key="frame" x="16" y="277" width="66" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="572-ES-FBf"/>
                                     <constraint firstAttribute="height" constant="20" id="XPv-xD-X3M"/>
@@ -621,18 +701,16 @@
                                 </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="aun-Cr-EJN">
-                                <rect key="frame" x="0.0" y="256" width="375" height="700"/>
+                                <rect key="frame" x="0.0" y="312" width="375" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSg-nv-TJM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="875"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-jw-3rM">
-                                                <rect key="frame" x="18" y="0.0" width="341" height="526"/>
+                                                <rect key="frame" x="18" y="0.0" width="341" height="248"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et sollicitudin urna. Pellentesque in sapien fringilla, elementum magna eget, tincidunt urna. Donec urna velit, facilisis vitae odio et, ornare ultricies elit. Suspendisse consectetur ante vitae nisi efficitur gravida. Aenean dapibus lorem id dolor iaculis tincidunt. In massa purus, blandit sit amet dapibus non, ultricies sit amet justo. Praesent ultricies nulla vel justo condimentum fermentum. Phasellus rutrum libero at porta hendrerit.
 
-Curabitur vitae scelerisque lectus, convallis ultricies turpis. Fusce sed sem felis. Sed nec dui luctus, sollicitudin lectus at, consequat orci. Proin purus nisl, tincidunt vel sodales id, mattis sed orci. Morbi at erat sit amet dui imperdiet molestie. Suspendisse sit amet nibh vel odio vulputate bibendum. Aliquam erat volutpat. Vestibulum lacus urna, ultricies id fringilla pharetra, convallis malesuada ligula. Mauris molestie dui sapien, vel mollis massa egestas sit amet.
-
-Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursus in, pellentesque ac eros. Aliquam vehicula eleifend quam, a laoreet mi iaculis vitae. Curabitur id enim eros. Mauris id condimentum tortor, ut tincidunt libero. Ut finibus sollicitudin risus vitae hendrerit. Fusce ut leo nisl. Pellentesque vitae sollicitudin massa. Quisque luctus, massa quis sollicitudin mollis, odio sem accumsan lacus, at faucibus sem elit quis est. Quisque a quam ut nulla malesuada venenatis. Proin tincidunt, nunc eget volutpat interdum, eros nisl interdum magna, id mattis dolor dui in dolor. Vestibulum quam sapien, consequat eget vestibulum id, faucibus a sem. Proin ut interdum lacus, ac viverra elit. Donec id fringilla orci. Vestibulum non mauris posuere, mollis nisl sed, varius mi.</string>
+Curabitur vitae scelerisque lectus, convallis ultricies turpis. Fusce sed sem felis. Sed nec dui luctus, sollicitudin lectus at, consequat orci. Proin purus nisl, tincidunt vel sodales id, mattis sed orci. Morbi at erat sit amet dui imperdiet molestie. Suspendisse sit amet nibh vel odio vulputate bibendum. Aliquam erat </string>
                                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -702,7 +780,7 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="250" id="veT-x2-xxz" customClass="HomeTableViewCell" customModule="NewsFront3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="250" id="veT-x2-xxz" customClass="HomeTableViewCell" customModule="NewsFront3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="veT-x2-xxz" id="3g3-fs-eUZ">
@@ -803,9 +881,10 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y4T-Wq-Ih9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NEWSFRONT" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="eMf-ye-mhr">
-                        <barButtonItem key="backBarButtonItem" title="Cloudstaff" id="yQi-8K-yo3"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="NEWSFRONT" largeTitleDisplayMode="never" id="eMf-ye-mhr"/>
+                    <connections>
+                        <segue destination="SF2-rM-6iA" kind="show" id="csI-ET-AAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyU-zF-DQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -849,7 +928,7 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
         <!--HOME-->
         <scene sceneID="GwY-QJ-CRS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PMJ-9T-xeK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PMJ-9T-xeK" customClass="HomeNavigationController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" image="homeIcon" selectedImage="homeIcon" id="sft-kG-Ofb">
                         <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
@@ -857,6 +936,14 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WSv-tl-L9M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Qanelas-Heavy" family="Qanelas" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -878,6 +965,10 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dx0-Yy-Gzx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Qanelas-Heavy" family="Qanelas" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -899,6 +990,10 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="siG-j4-6W5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Qanelas-Heavy" family="Qanelas" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -920,6 +1015,10 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8a5-fE-ZSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Qanelas-Heavy" family="Qanelas" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -937,6 +1036,7 @@ Suspendisse tempor dignissim condimentum. Curabitur leo felis, posuere non cursu
         <image name="Liked" width="16" height="16"/>
         <image name="Newsfrontlogo" width="150" height="150"/>
         <image name="TeamChamps" width="16" height="16"/>
+        <image name="TeamChamps Image" width="240" height="80"/>
         <image name="Up up in the Clouds!" width="429" height="429"/>
         <image name="bg-image" width="500" height="334"/>
         <image name="homeIcon" width="16" height="16"/>

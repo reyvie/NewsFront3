@@ -16,12 +16,17 @@ class SettingsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        switchSize()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func switchSize(){
+        tagSwitch.transform = CGAffineTransform(scaleX: 0.70, y: 0.70)
     }
 
 }

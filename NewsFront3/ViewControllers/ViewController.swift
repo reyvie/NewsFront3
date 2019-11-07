@@ -127,12 +127,23 @@ class ViewController: UIViewController {
             lblValidationMsg.isHidden = false
             lblValidationMsg.text = "Please enter valid email address"
             errorDesign()
+            
+            
         }else {
             self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
+            
             correctFormatDesign()
         }
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushToOTPSegue"
+        {
+            let controller = segue.destination as! OTPViewController
+            controller.email = EmailTextField.text!
+        }
     }
     
 
