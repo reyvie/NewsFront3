@@ -11,10 +11,19 @@ import UIKit
 class fullDetailsOfNewsViewController: UIViewController {
 
     @IBOutlet weak var textContent: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var acknowledgeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textContent.sizeToFit()
+        
+        //textContent.sizeToFit()
+//        scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
+
         // Do any additional setup after loading the view.
     }
     

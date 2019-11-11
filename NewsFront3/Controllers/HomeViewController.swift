@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
     
     let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago"]
-    let likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
+    var likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
     let acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledge"]
     
     
@@ -41,11 +41,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.dateTimePostedLabel.text = datePosted[indexPath.row]
         
+        cell.likeButton.tag = indexPath.row
+   
         cell.likeButton.setImage(UIImage(named: likeStatus[indexPath.row] + ".png"), for: .normal)
         cell.likeButton.setTitle(likeStatus[indexPath.row], for: .normal)
         cell.acknowledgeButton.setImage(UIImage(named: acknowledgeStatus[indexPath.row] + ".png"), for: .normal)
         cell.acknowledgeButton.setTitle(acknowledgeStatus[indexPath.row], for: .normal)
-        
+
         if(likeStatus[indexPath.row] == "Like"){
             cell.likeButton.setTitleColor(UIColor.black, for: .normal)
         }else{
@@ -61,7 +63,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return (cell)
     }
     
-
+    @IBAction func handleLikes(_ sender: UIButton) {
+        print(sender.tag)
+        if ( likeStatus[sender.tag] == "like") {
+            likeStatus[sender.tag] = "unlike"
+        }else{
+            likeStatus[sender.tag] = "like"
+        }
+      //  tableView.reloadData()
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
@@ -69,6 +81,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let vc = storyboard?.instantiateViewController(withIdentifier: "fullDetailsOfNewsViewController")
         
         self.navigationController?.pushViewController(vc!, animated: true)
+        
+        
         
     }
     
