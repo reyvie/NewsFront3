@@ -9,21 +9,18 @@
 import UIKit
 
 class TagsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    let images = ["TeamChamps Image", "PHP Image", "Radio Image", "Newsroom Image", "Mobile Image", "DotNet Image"]
-    let icon = ["TeamChamps", "PHP", "Radio", "Newsroom", "Mobile", "DotNet"]
-    
+    let dummyData = DummyData()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return icon.count
+        return dummyData.tagImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TagsCollectionViewCell
         let cellIndex = indexPath.item
-        cell.tagImage.image = UIImage(named: images[cellIndex] + ".jpg")
-        cell.tagIcon.image = UIImage(named: icon[cellIndex] + ".png")
-        cell.tagLabel.text = icon[cellIndex]
+        cell.tagImage.image = UIImage(named: dummyData.tagImage[cellIndex] + " Image" + ".jpg")
+        cell.tagIcon.image = UIImage(named: dummyData.tagImage[cellIndex] + ".png")
+        cell.tagLabel.text = dummyData.tagImage[cellIndex]
         
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.cornerRadius = 0.0

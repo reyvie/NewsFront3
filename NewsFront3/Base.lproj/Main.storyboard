@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LRl-Pb-f1m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -45,7 +45,16 @@
                                     <outletCollection property="gestureRecognizers" destination="X7B-NW-lAx" appends="YES" id="dHj-W6-mJF"/>
                                 </connections>
                             </imageView>
-                            <view userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k70-TG-udr" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWR-lm-V9a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="yYb-Ft-Ykh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k70-TG-udr" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
@@ -146,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-639.20000000000005" y="1029.5352323838081"/>
+            <point key="canvasLocation" x="912.79999999999995" y="-440.32983508245883"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="92l-ei-YN3">
@@ -164,7 +173,16 @@
                                     <outletCollection property="gestureRecognizers" destination="bNv-Kh-vGW" appends="YES" id="fQV-lF-EhC"/>
                                 </connections>
                             </imageView>
-                            <view userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-xi-bi4" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
+                            <visualEffectView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNP-0b-Fph">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="TXq-H6-bKb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-xi-bi4" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
@@ -200,19 +218,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code was sent to your email: beatricel@cloudstaff.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAH-ZC-zDb">
-                                <rect key="frame" x="20" y="191" width="335" height="37.5"/>
+                                <rect key="frame" x="20" y="190" width="335" height="38.5"/>
                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="16"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWSFRONT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-ad-0Rp">
-                                <rect key="frame" x="134.5" y="151" width="106" height="20"/>
+                                <rect key="frame" x="140" y="148.5" width="95.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Qanelas-Bold" family="Qanelas" pointSize="17"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newsfrontlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-ye-5uj">
-                                <rect key="frame" x="147.5" y="66" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="63.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="D46-14-WWG"/>
                                     <constraint firstAttribute="height" constant="80" id="GSi-1T-2FW"/>
@@ -329,7 +347,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="156" y="1029.5352323838081"/>
+            <point key="canvasLocation" x="913" y="255"/>
         </scene>
         <!--LIKED-->
         <scene sceneID="eb7-I0-6xz">
@@ -390,7 +408,7 @@
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34d 22h 59m ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chU-DT-KeF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chU-DT-KeF">
                                                     <rect key="frame" x="138" y="49" width="214" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="2Ao-Ab-eQR"/>
@@ -444,6 +462,9 @@
                         <viewLayoutGuide key="safeArea" id="GBt-Fy-UId"/>
                     </view>
                     <navigationItem key="navigationItem" title="NEWSFRONT" id="Cp4-7i-HCf"/>
+                    <connections>
+                        <outlet property="likeTableView" destination="XBf-Jo-P4E" id="hsb-Th-KLn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auJ-aZ-2WF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -708,13 +729,13 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-JE-OeA">
                                                 <rect key="frame" x="16" y="257" width="343" height="685.5"/>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas congue quisque egestas diam in. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat. Ut porttitor leo a diam sollicitudin. Dolor purus non enim praesent elementum facilisis leo vel. Integer quis auctor elit sed vulputate. In massa tempor nec feugiat nisl pretium fusce id. Sed risus ultricies tristique nulla aliquet. Molestie ac feugiat sed lectus. Dignissim convallis aenean et tortor at risus viverra adipiscing. Dui ut ornare lectus sit. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Viverra mauris in aliquam sem fringilla. Nec feugiat nisl pretium fusce id velit ut tortor pretium.
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas congue quisque egestas diam in. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat. Ut porttitor leo a diam sollicitudin. Dolor purus non enim praesent elementum facilisis leo vel. Integer quis auctor elit sed vulputate. In massa tempor nec feugiat nisl pretium fusce id. Sed risus ultricies tristique nulla aliquet. Molestie ac feugiat sed lectus. Dignissim convallis aenean et tortor at risus viverra adipiscing. Dui ut ornare lectus sit. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Viverra mauris in aliquam sem fringilla. Nec feugiat nisl pretium fusce id velit ut tortor pretium.
 
         Ut sem viverra aliquet eget sit.Nisi scelerisque eu ultrices vitae auctor eu augue ut. Ipsum consequat nisl vel pretium lectus quam id leo. Adipiscing bibendum est ultricies integer quis auctor elit. Nunc sed velit dignissim sodales ut eu sem. Lobortis mattis aliquam faucibus purus in massa tempor. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Sollicitudin ac orci phasellus egestas. Elementum tempus egestas sed sed risus pretium quam. Facilisi morbi tempus iaculis urna. Praesent tristique magna sit amet.
 
         Cras adipiscing enim eu turpis egestas pretium aenean pharetra.At augue eget arcu dictum varius duis.Morbi tincidunt ornare massa eget egestas. Aliquam faucibus purus in massa tempor nec feugiat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pharetra diam sit amet nisl. Ultrices mi tempus imperdiet nulla malesuada. Volutpat odio facilisis mauris sit. Sed ullamcorper morbi tincidunt ornare. Pellentesque pulvinar pellentesque habitant morbi tristique. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Ac turpis egestas integer eget aliquet nibh praesent. Elit pellentesque habitant morbi tristique senectus et netus. Malesuada fames ac turpis egestas integer eget aliquet nibh. At elementum eu facilisis sed odio morbi quis. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Cursus euismod quis viverra nibh cras pulvinar mattis nunc.
 
-        Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.Interdum velit euismod in pellentesque massa. Rhoncus aenean vel elit scelerisque mauris. Dapibus ultrices in iaculis nunc sed augue lacus. Vestibulum lorem sed risus ultricies tristique nulla aliquet. Quis auctor elit sed vulputate mi sit amet mauris. Lobortis feugiat vivamus at augue eget. Fringilla ut morbi tincidunt augue interdum velit euismod in. Elit at imperdiet dui accumsan sit amet nulla. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Ipsum dolor sit amet consectetur adipiscing.</mutableString>
+        Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.Interdum velit euismod in pellentesque massa. Rhoncus aenean vel elit scelerisque mauris. Dapibus ultrices in iaculis nunc sed augue lacus. Vestibulum lorem sed risus ultricies tristique nulla aliquet. Quis auctor elit sed vulputate mi sit amet mauris. Lobortis feugiat vivamus at augue eget. Fringilla ut morbi tincidunt augue interdum velit euismod in. Elit at imperdiet dui accumsan sit amet nulla. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Ipsum dolor sit amet consectetur adipiscing.</string>
                                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -796,7 +817,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up, up in the Clouds!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kn7-Td-XEX">
-                                                    <rect key="frame" x="15" y="183" width="345" height="27"/>
+                                                    <rect key="frame" x="15" y="182" width="345" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="1mm-N9-zyT"/>
                                                         <constraint firstAttribute="width" constant="345" id="Nge-AR-ELu"/>
@@ -806,12 +827,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYJ-ZZ-p9T">
-                                                    <rect key="frame" x="17" y="210" width="57" height="25"/>
+                                                    <rect key="frame" x="15" y="209" width="65" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="9Ia-l1-Bts"/>
-                                                        <constraint firstAttribute="height" constant="25" id="YaY-W7-2Lj"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="9Ia-l1-Bts"/>
+                                                        <constraint firstAttribute="height" constant="30" id="YaY-W7-2Lj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Qanelas-Light" family="Qanelas" pointSize="11"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="5" maxY="5"/>
                                                     <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title=" Liked" image="Liked">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -821,27 +843,31 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" image="Up up in the Clouds!" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Xs-pj-ZYf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="w8j-cm-3mi"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aS-mk-vjS">
-                                                    <rect key="frame" x="84" y="211" width="141" height="24"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aS-mk-vjS">
+                                                    <rect key="frame" x="80" y="209" width="183" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="Z4V-Fb-o5f"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Z4V-Fb-o5f"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="eqS-yt-loc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Qanelas-Light" family="Qanelas" pointSize="11"/>
+                                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="Acknowledged" image="Acknowledged">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="handleAcknowledge:" destination="baE-SR-9Gs" eventType="touchUpInside" id="ycd-Eg-ZLy"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34d 22h 59m ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBE-Eq-fcm">
-                                                    <rect key="frame" x="266" y="211" width="87" height="24"/>
+                                                    <rect key="frame" x="273" y="209" width="87" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="Zxf-xh-KFG"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Zxf-xh-KFG"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="nOG-9X-lYk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Qanelas-Light" family="Qanelas" pointSize="11"/>
@@ -850,22 +876,21 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" id="12y-6q-DNr"/>
-                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="leading" secondItem="3g3-fs-eUZ" secondAttribute="leadingMargin" constant="2" id="3Hw-7Z-lSN"/>
+                                                <constraint firstItem="pBE-Eq-fcm" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" id="1wa-vz-V3u"/>
+                                                <constraint firstItem="2aS-mk-vjS" firstAttribute="leading" secondItem="ZYJ-ZZ-p9T" secondAttribute="trailing" id="3B1-k4-3zs"/>
+                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="leading" secondItem="3g3-fs-eUZ" secondAttribute="leadingMargin" id="3Hw-7Z-lSN"/>
                                                 <constraint firstItem="3Xs-pj-ZYf" firstAttribute="top" secondItem="3g3-fs-eUZ" secondAttribute="topMargin" constant="-11" id="5Wt-mF-Pm7"/>
-                                                <constraint firstItem="pBE-Eq-fcm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2aS-mk-vjS" secondAttribute="trailing" constant="5" id="6wY-tB-jcu"/>
                                                 <constraint firstItem="Kn7-Td-XEX" firstAttribute="top" secondItem="3Xs-pj-ZYf" secondAttribute="bottom" constant="3" id="Adf-yH-llD"/>
                                                 <constraint firstItem="Kn7-Td-XEX" firstAttribute="leading" secondItem="3g3-fs-eUZ" secondAttribute="leadingMargin" id="D9j-q9-Hpe"/>
-                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" id="E4T-8j-2Bo"/>
-                                                <constraint firstItem="pBE-Eq-fcm" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" constant="1" id="FhA-Mp-9cA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="pBE-Eq-fcm" secondAttribute="bottom" constant="4" id="IIg-vd-g4H"/>
                                                 <constraint firstItem="3Xs-pj-ZYf" firstAttribute="leading" secondItem="3g3-fs-eUZ" secondAttribute="leadingMargin" constant="-15" id="Jhr-4d-3x6"/>
                                                 <constraint firstItem="Kn7-Td-XEX" firstAttribute="trailing" secondItem="3g3-fs-eUZ" secondAttribute="trailingMargin" id="LAw-y0-pZo"/>
-                                                <constraint firstItem="2aS-mk-vjS" firstAttribute="leading" secondItem="ZYJ-ZZ-p9T" secondAttribute="trailing" constant="10" id="N7B-Jj-Gmp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pBE-Eq-fcm" secondAttribute="trailing" constant="7" id="Ss2-eC-SdW"/>
-                                                <constraint firstItem="2aS-mk-vjS" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" constant="1" id="htk-d9-I2d"/>
+                                                <constraint firstItem="pBE-Eq-fcm" firstAttribute="leading" secondItem="2aS-mk-vjS" secondAttribute="trailing" constant="10" id="Ltr-Vd-N9v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pBE-Eq-fcm" secondAttribute="trailing" id="Qyn-mL-4Oj"/>
+                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="leading" secondItem="3g3-fs-eUZ" secondAttribute="leadingMargin" id="Rub-IX-nt9"/>
+                                                <constraint firstItem="ZYJ-ZZ-p9T" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" id="ajV-Ex-2jw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZYJ-ZZ-p9T" secondAttribute="bottom" id="axZ-1s-nET"/>
+                                                <constraint firstItem="2aS-mk-vjS" firstAttribute="top" secondItem="Kn7-Td-XEX" secondAttribute="bottom" id="oZ7-cZ-kUb"/>
                                                 <constraint firstItem="3Xs-pj-ZYf" firstAttribute="centerX" secondItem="3g3-fs-eUZ" secondAttribute="centerX" id="phd-pH-7tk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="2aS-mk-vjS" secondAttribute="bottom" constant="4" id="weq-Wb-Spb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -894,12 +919,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="NEWSFRONT" largeTitleDisplayMode="never" id="eMf-ye-mhr"/>
                     <connections>
+                        <outlet property="homeTableView" destination="3q6-S8-2KB" id="VE1-01-Y2z"/>
                         <segue destination="OXy-B8-miJ" kind="show" id="BHn-uc-Joo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyU-zF-DQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="2544"/>
+            <point key="canvasLocation" x="-220" y="2543.4782608695655"/>
         </scene>
         <!--My Tab Bar Controller-->
         <scene sceneID="WwQ-Ro-79g">

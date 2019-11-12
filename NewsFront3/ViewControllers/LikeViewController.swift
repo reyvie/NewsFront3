@@ -9,13 +9,10 @@
 import UIKit
 
 class LikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
+
+    @IBOutlet weak var likeTableView: UITableView!
     
-    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
-    
-    let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago"]
-    let likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
-    let acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledge"]
-    
+    let dummyData = DummyData()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        var likedTotal = 0;
@@ -26,40 +23,39 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //
 //        }
 //        print(likedTotal)
-        return images.count
+        return dummyData.images.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "likeCell", for: indexPath) as! LikeTableViewCell
-        if(likeStatus[indexPath.row] == "Liked"){
-            cell.prototypeImage.image = UIImage(named: images[indexPath.row] + ".jpg")
-            cell.prototypeLabel.text = images[indexPath.row]
+        if(dummyData.likeStatus[indexPath.row] == "Liked"){
+            cell.prototypeImage.image = UIImage(named: dummyData.images[indexPath.row] + ".jpg")
+            cell.prototypeLabel.text = dummyData.images[indexPath.row]
             
-            cell.dateAndTimePostedLabel.text = datePosted[indexPath.row]
+            cell.dateAndTimePostedLabel.text = dummyData.datePosted[indexPath.row]
             
-            cell.likeButton.setImage(UIImage(named: likeStatus[indexPath.row] + ".png"), for: .normal)
-            cell.likeButton.setTitle(likeStatus[indexPath.row], for: .normal)
-            cell.acknowledgeButton.setImage(UIImage(named: acknowledgeStatus[indexPath.row] + ".png"), for: .normal)
-            cell.acknowledgeButton.setTitle(acknowledgeStatus[indexPath.row], for: .normal)
+            cell.likeButton.setImage(UIImage(named: dummyData.likeStatus[indexPath.row] + ".png"), for: .normal)
+            cell.likeButton.setTitle(dummyData.likeStatus[indexPath.row], for: .normal)
+            cell.acknowledgeButton.setImage(UIImage(named: dummyData.acknowledgeStatus[indexPath.row] + ".png"), for: .normal)
+            cell.acknowledgeButton.setTitle(dummyData.acknowledgeStatus[indexPath.row], for: .normal)
             
-            if(acknowledgeStatus[indexPath.row] == "Acknowledge"){
+            if(dummyData.acknowledgeStatus[indexPath.row] == "Acknowledge"){
                 cell.acknowledgeButton.setTitleColor(UIColor.black, for: .normal)
             }else{
                 cell.acknowledgeButton.setTitleColor(UIColor.systemBlue, for: .normal)
             }
-            return (cell)
         } else{
 //            cell.isHidden = true
-            return cell
+            
         }
-        
+        return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        
+        likeTableView.reloadData()
+        print("Reload")
 //        let vc = storyboard?.instantiateViewController(withIdentifier: "LikeViewController")
 //
 //        self.navigationController?.pushViewController(vc!, animated: true)
@@ -69,10 +65,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 20
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        likeTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     

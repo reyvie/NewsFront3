@@ -9,22 +9,19 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    let tagImage = ["TeamChamps", "PHP", "Radio", "Newsroom", "Mobile", "DotNet", "Runners", "Paddlers", "SQA", "Human Resources", "Clinic"]
-    var statusSwitch = [false, false, true, true,true, true,true, true,true, true, true ]
-    
-    
+    let dummyData = DummyData()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tagImage.count
+        return dummyData.tagImage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingsTableViewCell
         
-        cell.tagLabelBtn.setImage(UIImage(named: tagImage[indexPath.row] + ".png"), for: UIControl.State.normal)
+        cell.tagLabelBtn.setImage(UIImage(named: dummyData.tagImage[indexPath.row] + ".png"), for: UIControl.State.normal)
         
-        cell.tagLabelBtn.setTitle(tagImage[indexPath.row], for: .normal)
-        cell.tagSwitch.isOn = statusSwitch[indexPath.row]
+        cell.tagLabelBtn.setTitle(dummyData.tagImage[indexPath.row], for: .normal)
+        cell.tagSwitch.isOn = dummyData.statusSwitch[indexPath.row]
         
         return (cell)
     }

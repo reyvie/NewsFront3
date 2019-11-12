@@ -9,17 +9,14 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var homeTableView: UITableView!
     
-    //MARK: Dummy Data
-    let images = ["Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines","Up up in the Clouds!", "Cloudstaff - The #1 workplace in the Philippines"]
-    
-    let datePosted = ["34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago","34d 22h 59m ago", "34d 22h 59m ago"]
-    var likeStatus = ["Like", "Liked","Liked", "Liked","Liked", "Liked","Like", "Liked","Like", "Liked"]
-    let acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledge"]
-    
+
+    let dummyData = DummyData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        tableView.delegate = self
 //        tableView.dataSource = self
         
@@ -29,31 +26,33 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (images.count)
+        return (dummyData.images.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
         
-        cell.myImage.image = UIImage(named: images[indexPath.row] + ".jpg")
+        cell.myImage.image = UIImage(named: dummyData.images[indexPath.row] + ".jpg")
         
-        cell.homeLabel.text = images[indexPath.row]
+        cell.homeLabel.text = dummyData.images[indexPath.row]
         
-        cell.dateTimePostedLabel.text = datePosted[indexPath.row]
+        cell.dateTimePostedLabel.text = dummyData.datePosted[indexPath.row]
         
         cell.likeButton.tag = indexPath.row
    
-        cell.likeButton.setImage(UIImage(named: likeStatus[indexPath.row] + ".png"), for: .normal)
-        cell.likeButton.setTitle(likeStatus[indexPath.row], for: .normal)
-        cell.acknowledgeButton.setImage(UIImage(named: acknowledgeStatus[indexPath.row] + ".png"), for: .normal)
-        cell.acknowledgeButton.setTitle(acknowledgeStatus[indexPath.row], for: .normal)
+        cell.likeButton.setImage(UIImage(named: dummyData.likeStatus[indexPath.row] + ".png"), for: .normal)
+        cell.likeButton.setTitle(dummyData.likeStatus[indexPath.row], for: .normal)
+        cell.acknowledgeButton.tag = indexPath.row
+        
+        cell.acknowledgeButton.setImage(UIImage(named: dummyData.acknowledgeStatus[indexPath.row] + ".png"), for: .normal)
+        cell.acknowledgeButton.setTitle(dummyData.acknowledgeStatus[indexPath.row], for: .normal)
 
-        if(likeStatus[indexPath.row] == "Like"){
+        if(dummyData.likeStatus[indexPath.row] == "Like"){
             cell.likeButton.setTitleColor(UIColor.black, for: .normal)
         }else{
             cell.likeButton.setTitleColor(UIColor.systemBlue, for: .normal)
         }
-        if(acknowledgeStatus[indexPath.row] == "Acknowledge"){
+        if(dummyData.acknowledgeStatus[indexPath.row] == "Acknowledge"){
             cell.acknowledgeButton.setTitleColor(UIColor.black, for: .normal)
         }else{
             cell.acknowledgeButton.setTitleColor(UIColor.systemBlue, for: .normal)
@@ -65,14 +64,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func handleLikes(_ sender: UIButton) {
         print(sender.tag)
-        if ( likeStatus[sender.tag] == "like") {
-            likeStatus[sender.tag] = "unlike"
+        if ( dummyData.likeStatus[sender.tag] == "Like") {
+            dummyData.likeStatus[sender.tag] = "Liked"
         }else{
-            likeStatus[sender.tag] = "like"
+            dummyData.likeStatus[sender.tag] = "Like"
         }
-      //  tableView.reloadData()
+        homeTableView.reloadData()
+        
     }
     
+    @IBAction func handleAcknowledge(_ sender: UIButton) {
+        if(dummyData.acknowledgeStatus[sender.tag] == "Acknowledge"){
+            dummyData.acknowledgeStatus[sender.tag] = "Acknowledged"
+        }
+        homeTableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -81,8 +87,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let vc = storyboard?.instantiateViewController(withIdentifier: "fullDetailsOfNewsViewController")
         
         self.navigationController?.pushViewController(vc!, animated: true)
-        
-        
         
     }
     
