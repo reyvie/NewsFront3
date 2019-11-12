@@ -32,7 +32,8 @@ import UIKit
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var resendCodeLabel: UILabel!
     
-
+    @IBOutlet weak var viewContent: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,10 +173,13 @@ import UIKit
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 && (keyboardSize.height * 1.5) > resendCodeLabel.frame.origin.y {
-                self.view.frame.origin.y -= (keyboardSize.height * 1.5) - resendCodeLabel.frame.origin.y
+            if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > resendCodeLabel.frame.origin.y {
+                self.view.frame.origin.y -= (keyboardSize.height * 2) - resendCodeLabel.frame.origin.y + 10
+                print("if KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeLabel.frame.origin.y)
+                
+                
             }else{
-
+                print("else KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeLabel.frame.origin.y)
             }
         }
     }
@@ -190,6 +194,9 @@ import UIKit
         self.view.endEditing(true)
     }
     
+    @IBAction func hideKeyboard2(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     func verificationBoxDesign(){
         field1.layer.borderColor = UIColor.white.cgColor
         field2.layer.borderColor = UIColor.white.cgColor

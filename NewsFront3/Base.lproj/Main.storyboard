@@ -196,135 +196,160 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-Db-jGK">
-                                <rect key="frame" x="67.5" y="313.5" width="240" height="40"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="C78-9U-Cij"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="ZJa-o8-rAW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Qanelas-Medium" family="Qanelas" pointSize="14"/>
-                                <state key="normal" title="Confirm">
-                                    <color key="titleColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirmButtonAction:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="12Q-sD-ihb"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-JT-Zg2">
-                                <rect key="frame" x="157" y="369.5" width="61.5" height="11.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code was sent to your email: beatricel@cloudstaff.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAH-ZC-zDb">
-                                <rect key="frame" x="20" y="190" width="335" height="38.5"/>
-                                <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="16"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWSFRONT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-ad-0Rp">
-                                <rect key="frame" x="140" y="148.5" width="95.5" height="21.5"/>
-                                <fontDescription key="fontDescription" name="Qanelas-Bold" family="Qanelas" pointSize="17"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newsfrontlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-ye-5uj">
-                                <rect key="frame" x="147.5" y="63.5" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="D46-14-WWG"/>
-                                    <constraint firstAttribute="height" constant="80" id="GSi-1T-2FW"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-od-Z6A">
-                                <rect key="frame" x="75" y="248.5" width="225" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeP-nS-vdg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uS0-od-Z6A">
+                                        <rect key="frame" x="75" y="311" width="225" height="45"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="HIl-89-cVQ"/>
+                                                    <constraint firstAttribute="width" constant="45" id="osB-Hu-1vM"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                <connections>
+                                                    <action selector="field1DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="UUu-BD-20k"/>
+                                                    <action selector="field1EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="vn7-Pp-Un2"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
+                                                <rect key="frame" x="60" y="0.0" width="45" height="45"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="8yA-7O-2w3"/>
+                                                    <constraint firstAttribute="width" constant="45" id="raR-2y-C1V"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                <connections>
+                                                    <action selector="field2DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="sjj-Ce-efh"/>
+                                                    <action selector="field2EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="ORJ-hp-R8u"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
+                                                <rect key="frame" x="120" y="0.0" width="45" height="45"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="V40-ch-wjb"/>
+                                                    <constraint firstAttribute="width" constant="45" id="prh-pF-dOU"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                <connections>
+                                                    <action selector="field3DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="Iit-Tg-n7K"/>
+                                                    <action selector="field3EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="9kw-DJ-Fcy"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
+                                                <rect key="frame" x="180" y="0.0" width="45" height="45"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="a6S-T7-7Gs"/>
+                                                    <constraint firstAttribute="width" constant="45" id="rkb-qy-1xT"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                                <connections>
+                                                    <action selector="field4DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="EQb-T6-E4X"/>
+                                                    <action selector="field4EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="0AO-Q2-aeJ"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="HIl-89-cVQ"/>
-                                            <constraint firstAttribute="width" constant="45" id="osB-Hu-1vM"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="6bD-Ve-ca0"/>
+                                            <constraint firstItem="EZL-Jf-IT0" firstAttribute="width" secondItem="JHN-JT-ftg" secondAttribute="width" id="HP5-ng-FoM"/>
+                                            <constraint firstItem="EZL-Jf-IT0" firstAttribute="height" secondItem="JHN-JT-ftg" secondAttribute="height" id="cdN-UM-0qg"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="xue-Lo-1pJ"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
-                                        <connections>
-                                            <action selector="field1DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="UUu-BD-20k"/>
-                                            <action selector="field1EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="vn7-Pp-Un2"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="0.0" width="45" height="45"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWSFRONT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-ad-0Rp">
+                                        <rect key="frame" x="137.5" y="210.5" width="100" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="8yA-7O-2w3"/>
-                                            <constraint firstAttribute="width" constant="45" id="raR-2y-C1V"/>
+                                            <constraint firstAttribute="height" constant="22" id="Aiz-ZY-sUJ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="SPF-Zz-uBR"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Qanelas-Bold" family="Qanelas" pointSize="17"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
-                                        <connections>
-                                            <action selector="field2DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="sjj-Ce-efh"/>
-                                            <action selector="field2EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="ORJ-hp-R8u"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
-                                        <rect key="frame" x="120" y="0.0" width="45" height="45"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code was sent to your email: beatricel@cloudstaff.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAH-ZC-zDb">
+                                        <rect key="frame" x="20" y="252.5" width="335" height="38.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="V40-ch-wjb"/>
-                                            <constraint firstAttribute="width" constant="45" id="prh-pF-dOU"/>
+                                            <constraint firstAttribute="height" constant="38.5" id="RJJ-2R-SCa"/>
+                                            <constraint firstAttribute="width" constant="335" id="dpl-Up-eVL"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="16"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
-                                        <connections>
-                                            <action selector="field3DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="Iit-Tg-n7K"/>
-                                            <action selector="field3EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="9kw-DJ-Fcy"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="45" height="45"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75E-Db-jGK">
+                                        <rect key="frame" x="67.5" y="376" width="240" height="40"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.82745098039999998" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="a6S-T7-7Gs"/>
-                                            <constraint firstAttribute="width" constant="45" id="rkb-qy-1xT"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="0gG-Fd-qnL"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="dTD-wW-o4w"/>
+                                            <constraint firstAttribute="height" constant="40" id="iFM-uc-Ss8"/>
                                         </constraints>
-                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="one-time-code"/>
+                                        <fontDescription key="fontDescription" name="Qanelas-Medium" family="Qanelas" pointSize="14"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" red="0.0" green="0.34733044130000001" blue="0.79679210840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="field4DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="EQb-T6-E4X"/>
-                                            <action selector="field4EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="0AO-Q2-aeJ"/>
+                                            <action selector="confirmButtonAction:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="12Q-sD-ihb"/>
                                         </connections>
-                                    </textField>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-JT-Zg2">
+                                        <rect key="frame" x="157" y="436" width="61.5" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newsfrontlogo" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-ye-5uj">
+                                        <rect key="frame" x="147.5" y="130.5" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="5Md-Az-04a"/>
+                                            <constraint firstAttribute="height" constant="80" id="COv-dv-fOH"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="EZL-Jf-IT0" firstAttribute="width" secondItem="JHN-JT-ftg" secondAttribute="width" id="HP5-ng-FoM"/>
-                                    <constraint firstItem="EZL-Jf-IT0" firstAttribute="height" secondItem="JHN-JT-ftg" secondAttribute="height" id="cdN-UM-0qg"/>
+                                    <constraint firstItem="uS0-od-Z6A" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="2vc-ZC-0Lf"/>
+                                    <constraint firstItem="uS0-od-Z6A" firstAttribute="top" secondItem="MAH-ZC-zDb" secondAttribute="bottom" constant="20" id="B7P-GE-A6q"/>
+                                    <constraint firstItem="75E-Db-jGK" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="D22-Dt-1tx"/>
+                                    <constraint firstItem="MAH-ZC-zDb" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="Dxc-NG-CKf"/>
+                                    <constraint firstItem="c2o-ad-0Rp" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="EFn-rC-R20"/>
+                                    <constraint firstItem="fG5-JT-Zg2" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="Q6N-Rx-sYO"/>
+                                    <constraint firstItem="MAH-ZC-zDb" firstAttribute="top" secondItem="c2o-ad-0Rp" secondAttribute="bottom" constant="20" id="SIX-BJ-8GJ"/>
+                                    <constraint firstItem="9O1-ye-5uj" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="X7b-Ig-m8h"/>
+                                    <constraint firstItem="75E-Db-jGK" firstAttribute="top" secondItem="uS0-od-Z6A" secondAttribute="bottom" constant="20" id="aTl-4p-eD4"/>
+                                    <constraint firstItem="c2o-ad-0Rp" firstAttribute="top" secondItem="9O1-ye-5uj" secondAttribute="bottom" id="fbb-SC-fFU"/>
+                                    <constraint firstItem="uS0-od-Z6A" firstAttribute="centerY" secondItem="NeP-nS-vdg" secondAttribute="centerY" id="tds-aa-zdk"/>
+                                    <constraint firstItem="fG5-JT-Zg2" firstAttribute="top" secondItem="75E-Db-jGK" secondAttribute="bottom" constant="20" id="zFH-2o-ZAI"/>
                                 </constraints>
-                            </stackView>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Bg-uI-hUE" appends="YES" id="i9i-Ll-8Gj"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uS0-od-Z6A" firstAttribute="top" secondItem="MAH-ZC-zDb" secondAttribute="bottom" constant="20" id="9iD-Cv-SqY"/>
+                            <constraint firstItem="NeP-nS-vdg" firstAttribute="top" secondItem="PTF-IL-c4Z" secondAttribute="top" id="3Lg-sH-w9M"/>
+                            <constraint firstItem="NeP-nS-vdg" firstAttribute="bottom" secondItem="PTF-IL-c4Z" secondAttribute="bottom" id="EMq-1q-kwb"/>
                             <constraint firstItem="4hQ-xi-bi4" firstAttribute="trailing" secondItem="Uld-A2-bBB" secondAttribute="trailing" id="F9X-sn-0xr"/>
-                            <constraint firstAttribute="trailing" secondItem="MAH-ZC-zDb" secondAttribute="trailing" constant="20" id="GxD-Uk-qqG"/>
-                            <constraint firstItem="75E-Db-jGK" firstAttribute="centerX" secondItem="Uld-A2-bBB" secondAttribute="centerX" id="LHT-Bm-mLK"/>
-                            <constraint firstItem="75E-Db-jGK" firstAttribute="top" secondItem="uS0-od-Z6A" secondAttribute="bottom" constant="20" id="Lgj-5f-vOa"/>
-                            <constraint firstItem="MAH-ZC-zDb" firstAttribute="top" secondItem="c2o-ad-0Rp" secondAttribute="bottom" constant="20" id="PIe-7S-BfH"/>
-                            <constraint firstItem="fG5-JT-Zg2" firstAttribute="centerX" secondItem="Uld-A2-bBB" secondAttribute="centerX" id="VWg-0L-TPh"/>
+                            <constraint firstItem="NeP-nS-vdg" firstAttribute="trailing" secondItem="PTF-IL-c4Z" secondAttribute="trailing" id="VbI-j2-eYA"/>
                             <constraint firstItem="4hQ-xi-bi4" firstAttribute="leading" secondItem="Uld-A2-bBB" secondAttribute="leading" id="WzF-Np-78j"/>
-                            <constraint firstItem="MAH-ZC-zDb" firstAttribute="leading" secondItem="Uld-A2-bBB" secondAttribute="leading" constant="20" id="Z36-z5-XWj"/>
                             <constraint firstItem="4hQ-xi-bi4" firstAttribute="bottom" secondItem="Uld-A2-bBB" secondAttribute="bottom" id="asq-dg-4d9"/>
                             <constraint firstItem="4hQ-xi-bi4" firstAttribute="top" secondItem="Uld-A2-bBB" secondAttribute="top" id="bs5-3h-W55"/>
-                            <constraint firstItem="c2o-ad-0Rp" firstAttribute="top" secondItem="9O1-ye-5uj" secondAttribute="bottom" constant="5" id="k0Q-Da-1YR"/>
-                            <constraint firstItem="9O1-ye-5uj" firstAttribute="centerX" secondItem="Uld-A2-bBB" secondAttribute="centerX" id="lGU-zi-Ohh"/>
-                            <constraint firstItem="c2o-ad-0Rp" firstAttribute="centerX" secondItem="Uld-A2-bBB" secondAttribute="centerX" id="rkN-6N-ehJ"/>
-                            <constraint firstItem="fG5-JT-Zg2" firstAttribute="top" secondItem="75E-Db-jGK" secondAttribute="bottom" constant="16" id="tVY-u8-i7B"/>
-                            <constraint firstItem="75E-Db-jGK" firstAttribute="centerY" secondItem="Uld-A2-bBB" secondAttribute="centerY" id="uTu-dJ-yBq"/>
-                            <constraint firstItem="uS0-od-Z6A" firstAttribute="centerX" secondItem="Uld-A2-bBB" secondAttribute="centerX" id="zXb-qu-YPB"/>
+                            <constraint firstItem="NeP-nS-vdg" firstAttribute="leading" secondItem="PTF-IL-c4Z" secondAttribute="leading" id="kVh-Vs-D8r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PTF-IL-c4Z"/>
                     </view>
@@ -337,6 +362,7 @@
                         <outlet property="field3" destination="fec-p2-PPK" id="h5i-0r-eiM"/>
                         <outlet property="field4" destination="z1X-Tn-m7V" id="rFU-vP-bOh"/>
                         <outlet property="resendCodeLabel" destination="fG5-JT-Zg2" id="BhU-Ej-DaK"/>
+                        <outlet property="viewContent" destination="NeP-nS-vdg" id="aYu-Hz-sEb"/>
                         <segue destination="LRl-Pb-f1m" kind="show" identifier="otpToHomePage" id="xFF-UT-X5G"/>
                     </connections>
                 </viewController>
@@ -346,8 +372,13 @@
                         <action selector="hideKeyboard:" destination="UCk-Ok-o0w" id="Z48-Wv-ox2"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="4Bg-uI-hUE">
+                    <connections>
+                        <action selector="hideKeyboard2:" destination="UCk-Ok-o0w" id="iXb-4r-Ig2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="913" y="255"/>
+            <point key="canvasLocation" x="912.79999999999995" y="254.12293853073464"/>
         </scene>
         <!--LIKED-->
         <scene sceneID="eb7-I0-6xz">
