@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class ViewController: UIViewController {
     @IBOutlet weak var RegisterButton: UIButton!
     @IBOutlet weak var EmailTextField: UITextField!
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         EmailTextField.resignFirstResponder()
     }
     
+    private let networkingClient = NetworkingClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +132,7 @@ class ViewController: UIViewController {
             
             
         }else {
+            
             self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
             
             correctFormatDesign()
@@ -143,6 +146,27 @@ class ViewController: UIViewController {
         {
             let controller = segue.destination as! OTPViewController
             controller.email = EmailTextField.text!
+            guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/register.json") else { return }
+            let params = ["username": EmailTextField.text]
+            
+            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
+                (response) -> Void in
+                 //check if ther result has a value
+                if let JSONResponse = response.result.value as? [String: Any]{
+                    let json = JSON(JSONResponse)
+                    let JSONresults = json["results"]
+                    
+                    let isSuccess = JSONresults["success"]
+                    let getMemberID = JSONresults["member_id"]
+                    
+                    
+                    print(isSuccess)
+
+
+                }
+                
+            }
+            
         }
     }
     

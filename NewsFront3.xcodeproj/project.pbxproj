@@ -16,6 +16,10 @@
 		B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E8D51236A889A00040214 /* OTPViewController.swift */; };
 		B339F5F12373F201009B61E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339F5F02373F201009B61E9 /* Extensions.swift */; };
 		B339F5F323740D62009B61E9 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339F5F223740D62009B61E9 /* HomeNavigationController.swift */; };
+		B33FBB6A237D0A2D005E181F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F8567B237CDFCC00AE45AF /* Alamofire.framework */; };
+		B33FBB6B237D0A2D005E181F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F8567B237CDFCC00AE45AF /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B33FBB6E237D18E3005E181F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33FBB6D237D18E3005E181F /* SwiftyJSON.framework */; };
+		B33FBB6F237D18E3005E181F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B33FBB6D237D18E3005E181F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B34BBD6F237A8A3F00353F7A /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BBD6E237A8A3F00353F7A /* DummyData.swift */; };
 		B358109B2372D3C600829BEC /* Qanelas-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810732372D3C600829BEC /* Qanelas-SemiBold.ttf */; };
 		B358109C2372D3C600829BEC /* Qanelas-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810742372D3C600829BEC /* Qanelas-ThinItalic.otf */; };
@@ -70,6 +74,7 @@
 		B3D4E24B2362BA3C007FF11E /* NewsFront3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E24A2362BA3C007FF11E /* NewsFront3UITests.swift */; };
 		B3E33857236FAF4C005DD61A /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E33856236FAF4C005DD61A /* HomeTableViewCell.swift */; };
 		B3E33859236FC010005DD61A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E33858236FC010005DD61A /* HomeViewController.swift */; };
+		B3F85681237CE14F00AE45AF /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F85680237CE14F00AE45AF /* NetworkingClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B33FBB6C237D0A2D005E181F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B33FBB6F237D18E3005E181F /* SwiftyJSON.framework in Embed Frameworks */,
+				B33FBB6B237D0A2D005E181F /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B30AC0142373D8AD0067159C /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B30AC01D2373E8050067159C /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +119,7 @@
 		B31E8D51236A889A00040214 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		B339F5F02373F201009B61E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B339F5F223740D62009B61E9 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		B33FBB6D237D18E3005E181F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		B34BBD6E237A8A3F00353F7A /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		B35810732372D3C600829BEC /* Qanelas-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-SemiBold.ttf"; sourceTree = "<group>"; };
 		B35810742372D3C600829BEC /* Qanelas-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-ThinItalic.otf"; sourceTree = "<group>"; };
@@ -159,6 +180,8 @@
 		B3D4E24C2362BA3C007FF11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3E33856236FAF4C005DD61A /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B3E33858236FC010005DD61A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B3F8567B237CDFCC00AE45AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		B3F85680237CE14F00AE45AF /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +189,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33FBB6E237D18E3005E181F /* SwiftyJSON.framework in Frameworks */,
+				B33FBB6A237D0A2D005E181F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +323,7 @@
 				B3D4E23E2362BA3C007FF11E /* NewsFront3Tests */,
 				B3D4E2492362BA3C007FF11E /* NewsFront3UITests */,
 				B3D4E2282362BA34007FF11E /* Products */,
+				B3F8567A237CDFCB00AE45AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				B3D4E22A2362BA34007FF11E /* AppDelegate.swift */,
+				B3F85682237CE22D00AE45AF /* Network */,
 				B30AC01C2373E2350067159C /* DesignableView */,
 				B30AC0192373E1290067159C /* ViewControllers */,
 				B30AC01A2373E1500067159C /* CollectionViewCell */,
@@ -349,6 +376,23 @@
 			path = NewsFront3UITests;
 			sourceTree = "<group>";
 		};
+		B3F8567A237CDFCB00AE45AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B33FBB6D237D18E3005E181F /* SwiftyJSON.framework */,
+				B3F8567B237CDFCC00AE45AF /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3F85682237CE22D00AE45AF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B3F85680237CE14F00AE45AF /* NetworkingClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +403,8 @@
 				B3D4E2232362BA34007FF11E /* Sources */,
 				B3D4E2242362BA34007FF11E /* Frameworks */,
 				B3D4E2252362BA34007FF11E /* Resources */,
+				B3F8567F237CE02700AE45AF /* Carthage Copy Frameworks */,
+				B33FBB6C237D0A2D005E181F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -518,6 +564,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B3F8567F237CE02700AE45AF /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/build/iOS/Alamofire.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B3D4E2232362BA34007FF11E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -532,6 +600,7 @@
 				B3A49F192372693000D73011 /* MyTextField.swift in Sources */,
 				B3A49F1D2372AE6C00D73011 /* SettingsTableViewCell.swift in Sources */,
 				B339F5F323740D62009B61E9 /* HomeNavigationController.swift in Sources */,
+				B3F85681237CE14F00AE45AF /* NetworkingClient.swift in Sources */,
 				B314A6D423710B11007CC5D7 /* LikeViewController.swift in Sources */,
 				B314A6D823714AC7007CC5D7 /* UIColor.swift in Sources */,
 				B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */,
@@ -717,6 +786,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US5HAKM4R4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NewsFront3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,6 +808,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US5HAKM4R4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NewsFront3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

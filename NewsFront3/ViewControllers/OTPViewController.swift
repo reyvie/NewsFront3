@@ -104,7 +104,13 @@ import UIKit
     @IBAction func field1EditingChanged(_ sender: UITextField) {
         
         maxLength(textFieldName: field1, max: 1, fieldNumber: 1)
-        
+        if (checkEmptyField(txtfield: field3) == true) {
+            //print("BCK")
+            
+        }else{
+            //print("else")
+            
+        }
     }
     @IBAction func field2EditingChanged(_ sender: UITextField) {
         didPressBackspace(textField: field2 as! MyTextField, txtfieldNumber: 2)
@@ -125,6 +131,7 @@ import UIKit
             //print("BCK")
             
             field2.becomeFirstResponder()
+            
         }else{
             //print("else")
         }
@@ -137,6 +144,7 @@ import UIKit
            // print("BCK")
             //didPressBackspace(textField: field4 as! MyTextField, txtfieldNumber: 4)
             field3.becomeFirstResponder()
+            
         }else{
             //print("else")
         }

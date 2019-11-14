@@ -204,7 +204,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="HIl-89-cVQ"/>
                                                     <constraint firstAttribute="width" constant="45" id="osB-Hu-1vM"/>
@@ -219,7 +219,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="60" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="8yA-7O-2w3"/>
                                                     <constraint firstAttribute="width" constant="45" id="raR-2y-C1V"/>
@@ -234,7 +234,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="V40-ch-wjb"/>
                                                     <constraint firstAttribute="width" constant="45" id="prh-pF-dOU"/>
@@ -249,7 +249,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="180" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="a6S-T7-7Gs"/>
                                                     <constraint firstAttribute="width" constant="45" id="rkb-qy-1xT"/>
@@ -707,7 +707,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaZ-C9-IXY">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="942.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="514.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up, Up in the Clouds!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCt-It-oi4">
                                                 <rect key="frame" x="16" y="180" width="343" height="41"/>
@@ -759,14 +759,8 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-JE-OeA">
-                                                <rect key="frame" x="16" y="257" width="343" height="685.5"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas congue quisque egestas diam in. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat. Ut porttitor leo a diam sollicitudin. Dolor purus non enim praesent elementum facilisis leo vel. Integer quis auctor elit sed vulputate. In massa tempor nec feugiat nisl pretium fusce id. Sed risus ultricies tristique nulla aliquet. Molestie ac feugiat sed lectus. Dignissim convallis aenean et tortor at risus viverra adipiscing. Dui ut ornare lectus sit. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Viverra mauris in aliquam sem fringilla. Nec feugiat nisl pretium fusce id velit ut tortor pretium.
-
-        Ut sem viverra aliquet eget sit.Nisi scelerisque eu ultrices vitae auctor eu augue ut. Ipsum consequat nisl vel pretium lectus quam id leo. Adipiscing bibendum est ultricies integer quis auctor elit. Nunc sed velit dignissim sodales ut eu sem. Lobortis mattis aliquam faucibus purus in massa tempor. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Sollicitudin ac orci phasellus egestas. Elementum tempus egestas sed sed risus pretium quam. Facilisi morbi tempus iaculis urna. Praesent tristique magna sit amet.
-
-        Cras adipiscing enim eu turpis egestas pretium aenean pharetra.At augue eget arcu dictum varius duis.Morbi tincidunt ornare massa eget egestas. Aliquam faucibus purus in massa tempor nec feugiat. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Pharetra diam sit amet nisl. Ultrices mi tempus imperdiet nulla malesuada. Volutpat odio facilisis mauris sit. Sed ullamcorper morbi tincidunt ornare. Pellentesque pulvinar pellentesque habitant morbi tristique. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Ac turpis egestas integer eget aliquet nibh praesent. Elit pellentesque habitant morbi tristique senectus et netus. Malesuada fames ac turpis egestas integer eget aliquet nibh. At elementum eu facilisis sed odio morbi quis. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Cursus euismod quis viverra nibh cras pulvinar mattis nunc.
-
-        Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.Interdum velit euismod in pellentesque massa. Rhoncus aenean vel elit scelerisque mauris. Dapibus ultrices in iaculis nunc sed augue lacus. Vestibulum lorem sed risus ultricies tristique nulla aliquet. Quis auctor elit sed vulputate mi sit amet mauris. Lobortis feugiat vivamus at augue eget. Fringilla ut morbi tincidunt augue interdum velit euismod in. Elit at imperdiet dui accumsan sit amet nulla. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Ipsum dolor sit amet consectetur adipiscing.</string>
+                                                <rect key="frame" x="16" y="257" width="343" height="257.5"/>
+                                                <mutableString key="text">&lt;p&gt;Cascading Style Sheets (CSS) is a markup language, which is used for representing the look and formatting of a document that is written in HTML. It is one of the most influential tools that can intensify the entire tone and design of a website.&lt;/p&gt;&lt;p&gt;Despite of its benefits, many web developers consider it as one of the most complicated language because of its hard structure. Therefore, it is necessary for them to know all the tips and tricks that can help them to avoid common CSS mistakes.&lt;/p&gt;&lt;p&gt;It becomes necessary for a professional and experienced developer to detect the little CSS mistakes and find out the best possible solutions.&lt;/p&gt;&lt;ol&gt; &lt;li&gt;&lt;strong&gt;Ignorance of Browser's Compatibility&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Using Frameworks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Certifying the HTML&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Don't Consider Smaller Browser Resolutions&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Validating the Cascading Style Sheet&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Mammoth Background Images&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Too many files&lt;/strong&gt;&lt;/li&gt;&lt;/ol&gt;</mutableString>
                                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
