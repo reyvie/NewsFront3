@@ -15,11 +15,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lblValidationMsg: UILabel!
     
+   //var activityIndicator = UIActivityIndicatorView()
+    
     @IBAction func HideKeyboard(_ sender: Any) {
         EmailTextField.resignFirstResponder()
     }
     
     private let networkingClient = NetworkingClient()
+    
+    //var actIndi:UIActivityIndicatorView = UIActivityIndicatorView()
+    var memberID: JSON = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,10 +110,12 @@ class ViewController: UIViewController {
         EmailTextField.layer.borderColor = UIColor.red.cgColor
                 EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         lblValidationMsg.textColor = UIColor.red
+
+        
     }
     func correctFormatDesign(){
         EmailTextField.layer.borderColor = UIColor.white.cgColor
-        lblValidationMsg.textColor = UIColor.white
+        //lblValidationMsg.isHidden = true
         EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
@@ -115,29 +123,94 @@ class ViewController: UIViewController {
     
     
     
+    @IBAction func emailTextFieldEditingChanged(_ sender: UITextField) {
+    correctFormatDesign()
+    lblValidationMsg.isHidden = true
+    }
     
+    @IBAction func emailTextFieldDidEditingBegin(_ sender: UITextField) {
+
+    }
     @IBAction func registerValidation(_ sender: UIButton) {
-        lblValidationMsg.isHidden = true
+//        actIndi.center = self.view.center
+//        actIndi.style = UIActivityIndicatorView.Style.whiteLarge
+//        actIndi.backgroundColor = .darkGray
+//        //actIndi.backgroundColor = UIColor
+//        actIndi.hidesWhenStopped = true
+//        view.addSubview(actIndi)
         
-        guard let email = EmailTextField.text, EmailTextField.text?.count != 0 else {
-            lblValidationMsg.text = "Please enter your email"
-            lblValidationMsg.isHidden = false
-            errorDesign()
-            return }
         
-        if isValidEmail(emailID: email) == false {
-            lblValidationMsg.isHidden = false
-            lblValidationMsg.text = "Please enter valid email address"
-            errorDesign()
-            
-            
-        }else {
-            
-            self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
-            
-            correctFormatDesign()
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/register.json") else { return }
+        let params = ["username": EmailTextField.text]
+        
+        var json: JSON!
+        var JSONresults: JSON!
+        var isSuccess: JSON!
+        var getMemberID: JSON!
+        
+        
+        if(EmailTextField.text == ""){
+            self.lblValidationMsg.isHidden = false
+            self.lblValidationMsg.text = "Please enter valid email address"
+            self.errorDesign()
+            self.EmailTextField.shake()
+        }else{
+        
+        activityIndicator("Please wait")
+            DispatchQueue.main.async {
+                AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
+                    (response) -> Void in
+                     //check if the result has a value
+                    if let JSONResponse = response.result.value as? [String: Any]{
+                         json = JSON(JSONResponse)
+                         JSONresults = json["results"]
+                         isSuccess = JSONresults["success"]
+                         getMemberID = JSONresults["member_id"]
+                    }
+                    
+                    
+                    guard let email = self.EmailTextField.text, self.EmailTextField.text?.count != 0 else {
+                        self.lblValidationMsg.text = "Please enter your email"
+                        self.lblValidationMsg.isHidden = false
+                        self.errorDesign()
+                        self.EmailTextField.shake()
+
+                        return
+                        
+                    }
+                   // print(isSuccess!)
+                    if self.isValidEmail(emailID: email) == false || isSuccess != "success"{
+                        self.lblValidationMsg.isHidden = false
+                        self.lblValidationMsg.text = "Please enter valid email address"
+                        self.errorDesign()
+                        self.EmailTextField.shake()
+
+                    }else {
+                        
+                        self.delayWithSeconds(0.5){
+                            //
+                        }
+                        self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
+                        self.memberID = getMemberID
+                        
+                        self.correctFormatDesign()
+                    }
+                        print("testing json 1" , self.memberID)
+                        
+                    //self.actIndi.stopAnimating()
+                    //self.activityIndicator.stopAnimating()
+                    self.stopActivityIndicator()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                }
+            }
+       // actIndi.startAnimating()
+
+        
         }
         
+
+        //self.actIndi.stopAnimating()
+        //UIApplication.shared.endIgnoringInteractionEvents()
         
     }
     
@@ -146,30 +219,64 @@ class ViewController: UIViewController {
         {
             let controller = segue.destination as! OTPViewController
             controller.email = EmailTextField.text!
-            guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/register.json") else { return }
-            let params = ["username": EmailTextField.text]
-            
-            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
-                (response) -> Void in
-                 //check if ther result has a value
-                if let JSONResponse = response.result.value as? [String: Any]{
-                    let json = JSON(JSONResponse)
-                    let JSONresults = json["results"]
-                    
-                    let isSuccess = JSONresults["success"]
-                    let getMemberID = JSONresults["member_id"]
-                    
-                    
-                    print(isSuccess)
-
-
-                }
-                
-            }
-            
+            controller.member_id = self.memberID
+            print("self memberID", self.memberID)
+            print("Controller id" ,controller.member_id!)
         }
     }
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
+    let messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    var strLabel = UILabel()
+    let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+
+    func activityIndicator(_ title: String) {
+
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+
+        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 160, height: 46))
+        strLabel.text = title
+        strLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        strLabel.textColor = UIColor(white: 0.9, alpha: 0.7)
+
+        effectView.frame = CGRect(x: view.frame.midX - strLabel.frame.width/2, y: view.frame.midY - strLabel.frame.height/2 , width: 160, height: 50)
+       // effectView.frame = CGRect(x: view.frame.midX, y: view.frame.midY , width: 50, height: 50)
+        effectView.layer.cornerRadius = 10
+        effectView.layer.masksToBounds = true
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.startAnimating()
+
+        effectView.contentView.addSubview(activityIndicator)
+        effectView.contentView.addSubview(strLabel)
+        view.addSubview(effectView)
+    }
     
+    func stopActivityIndicator(){
+        self.activityIndicator.stopAnimating()
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+        
+    }
 
 }
 
+extension UIView {
+    func shake(){
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 7, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 7, y: self.center.y))
+        self.layer.add(animation, forKey: "position")
+    }
+
+}

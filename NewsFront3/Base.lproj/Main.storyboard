@@ -32,7 +32,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,15 +45,6 @@
                                     <outletCollection property="gestureRecognizers" destination="X7B-NW-lAx" appends="YES" id="dHj-W6-mJF"/>
                                 </connections>
                             </imageView>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWR-lm-V9a">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="yYb-Ft-Ykh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
                             <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k70-TG-udr" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
@@ -80,6 +71,10 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="emailTextFieldDidEditingBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Ct4-c9-LUX"/>
+                                    <action selector="emailTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="kVZ-7n-ADB"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-3c-Dky">
                                 <rect key="frame" x="67.5" y="423.5" width="240" height="40"/>
@@ -141,6 +136,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="JK2-bb-IcX"/>
                     <connections>
                         <outlet property="EmailTextField" destination="3qb-Kh-76A" id="cc5-gU-yjM"/>
                         <outlet property="RegisterButton" destination="Udq-3c-Dky" id="ybn-1v-VNa"/>
@@ -155,7 +151,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="912.79999999999995" y="-440.32983508245883"/>
+            <point key="canvasLocation" x="81" y="214"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="92l-ei-YN3">
@@ -173,15 +169,6 @@
                                     <outletCollection property="gestureRecognizers" destination="bNv-Kh-vGW" appends="YES" id="fQV-lF-EhC"/>
                                 </connections>
                             </imageView>
-                            <visualEffectView opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNP-0b-Fph">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="TXq-H6-bKb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
                             <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-xi-bi4" customClass="GradientView" customModule="NewsFront3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
@@ -204,7 +191,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHN-JT-ftg" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="HIl-89-cVQ"/>
                                                     <constraint firstAttribute="width" constant="45" id="osB-Hu-1vM"/>
@@ -215,11 +202,12 @@
                                                 <connections>
                                                     <action selector="field1DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="UUu-BD-20k"/>
                                                     <action selector="field1EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="vn7-Pp-Un2"/>
+                                                    <action selector="field1TouchUpInside:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="PTk-Fj-RZm"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Jf-IT0" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="60" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="8yA-7O-2w3"/>
                                                     <constraint firstAttribute="width" constant="45" id="raR-2y-C1V"/>
@@ -230,11 +218,12 @@
                                                 <connections>
                                                     <action selector="field2DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="sjj-Ce-efh"/>
                                                     <action selector="field2EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="ORJ-hp-R8u"/>
+                                                    <action selector="field2TouchUpInside:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="lAD-W2-ioI"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fec-p2-PPK" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="V40-ch-wjb"/>
                                                     <constraint firstAttribute="width" constant="45" id="prh-pF-dOU"/>
@@ -245,11 +234,12 @@
                                                 <connections>
                                                     <action selector="field3DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="Iit-Tg-n7K"/>
                                                     <action selector="field3EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="9kw-DJ-Fcy"/>
+                                                    <action selector="field3TouchUpInside:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="9rB-ym-Wlk"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-Tn-m7V" customClass="MyTextField" customModule="NewsFront3" customModuleProvider="target">
                                                 <rect key="frame" x="180" y="0.0" width="45" height="45"/>
-                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="a6S-T7-7Gs"/>
                                                     <constraint firstAttribute="width" constant="45" id="rkb-qy-1xT"/>
@@ -260,6 +250,7 @@
                                                 <connections>
                                                     <action selector="field4DidBeginEditing:" destination="UCk-Ok-o0w" eventType="editingDidBegin" id="EQb-T6-E4X"/>
                                                     <action selector="field4EditingChanged:" destination="UCk-Ok-o0w" eventType="editingChanged" id="0AO-Q2-aeJ"/>
+                                                    <action selector="field4TouchUpInside:" destination="UCk-Ok-o0w" eventType="touchUpInside" id="NH1-cw-0vS"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -319,6 +310,17 @@
                                             <constraint firstAttribute="height" constant="80" id="COv-dv-fOH"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-em-XPS">
+                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="4Ef-UR-Xps"/>
+                                            <constraint firstAttribute="height" constant="50" id="elK-D6-HpO"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" animates="NO" id="Nv6-JH-oCq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -327,11 +329,13 @@
                                     <constraint firstItem="75E-Db-jGK" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="D22-Dt-1tx"/>
                                     <constraint firstItem="MAH-ZC-zDb" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="Dxc-NG-CKf"/>
                                     <constraint firstItem="c2o-ad-0Rp" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="EFn-rC-R20"/>
+                                    <constraint firstItem="GaZ-em-XPS" firstAttribute="leading" secondItem="NeP-nS-vdg" secondAttribute="leading" constant="5" id="FKJ-wp-fLX"/>
                                     <constraint firstItem="fG5-JT-Zg2" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="Q6N-Rx-sYO"/>
                                     <constraint firstItem="MAH-ZC-zDb" firstAttribute="top" secondItem="c2o-ad-0Rp" secondAttribute="bottom" constant="20" id="SIX-BJ-8GJ"/>
                                     <constraint firstItem="9O1-ye-5uj" firstAttribute="centerX" secondItem="NeP-nS-vdg" secondAttribute="centerX" id="X7b-Ig-m8h"/>
                                     <constraint firstItem="75E-Db-jGK" firstAttribute="top" secondItem="uS0-od-Z6A" secondAttribute="bottom" constant="20" id="aTl-4p-eD4"/>
                                     <constraint firstItem="c2o-ad-0Rp" firstAttribute="top" secondItem="9O1-ye-5uj" secondAttribute="bottom" id="fbb-SC-fFU"/>
+                                    <constraint firstItem="GaZ-em-XPS" firstAttribute="top" secondItem="NeP-nS-vdg" secondAttribute="top" constant="5" id="s5A-1L-n6F"/>
                                     <constraint firstItem="uS0-od-Z6A" firstAttribute="centerY" secondItem="NeP-nS-vdg" secondAttribute="centerY" id="tds-aa-zdk"/>
                                     <constraint firstItem="fG5-JT-Zg2" firstAttribute="top" secondItem="75E-Db-jGK" secondAttribute="bottom" constant="20" id="zFH-2o-ZAI"/>
                                 </constraints>
@@ -355,6 +359,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F7A-5X-H9H"/>
                     <connections>
+                        <outlet property="backButton" destination="GaZ-em-XPS" id="3pX-T4-Ctv"/>
                         <outlet property="codeSentLabel" destination="MAH-ZC-zDb" id="vEn-EA-Sgo"/>
                         <outlet property="confirmButton" destination="75E-Db-jGK" id="MmB-gY-brt"/>
                         <outlet property="field1" destination="JHN-JT-ftg" id="U5f-eU-iGe"/>
@@ -378,7 +383,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="912.79999999999995" y="254.12293853073464"/>
+            <point key="canvasLocation" x="912.79999999999995" y="213.64317841079463"/>
         </scene>
         <!--LIKED-->
         <scene sceneID="eb7-I0-6xz">
@@ -760,7 +765,7 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-JE-OeA">
                                                 <rect key="frame" x="16" y="257" width="343" height="257.5"/>
-                                                <mutableString key="text">&lt;p&gt;Cascading Style Sheets (CSS) is a markup language, which is used for representing the look and formatting of a document that is written in HTML. It is one of the most influential tools that can intensify the entire tone and design of a website.&lt;/p&gt;&lt;p&gt;Despite of its benefits, many web developers consider it as one of the most complicated language because of its hard structure. Therefore, it is necessary for them to know all the tips and tricks that can help them to avoid common CSS mistakes.&lt;/p&gt;&lt;p&gt;It becomes necessary for a professional and experienced developer to detect the little CSS mistakes and find out the best possible solutions.&lt;/p&gt;&lt;ol&gt; &lt;li&gt;&lt;strong&gt;Ignorance of Browser's Compatibility&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Using Frameworks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Certifying the HTML&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Don't Consider Smaller Browser Resolutions&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Validating the Cascading Style Sheet&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Mammoth Background Images&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Too many files&lt;/strong&gt;&lt;/li&gt;&lt;/ol&gt;</mutableString>
+                                                <string key="text">&lt;p&gt;Cascading Style Sheets (CSS) is a markup language, which is used for representing the look and formatting of a document that is written in HTML. It is one of the most influential tools that can intensify the entire tone and design of a website.&lt;/p&gt;&lt;p&gt;Despite of its benefits, many web developers consider it as one of the most complicated language because of its hard structure. Therefore, it is necessary for them to know all the tips and tricks that can help them to avoid common CSS mistakes.&lt;/p&gt;&lt;p&gt;It becomes necessary for a professional and experienced developer to detect the little CSS mistakes and find out the best possible solutions.&lt;/p&gt;&lt;ol&gt; &lt;li&gt;&lt;strong&gt;Ignorance of Browser's Compatibility&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Using Frameworks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Certifying the HTML&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Don't Consider Smaller Browser Resolutions&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Not Validating the Cascading Style Sheet&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Mammoth Background Images&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Utilizing Too many files&lt;/strong&gt;&lt;/li&gt;&lt;/ol&gt;</string>
                                                 <fontDescription key="fontDescription" name="Qanelas-Regular" family="Qanelas" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1100,6 +1105,7 @@
         <image name="TeamChamps" width="16" height="16"/>
         <image name="TeamChamps Image" width="240" height="80"/>
         <image name="Up up in the Clouds!" width="429" height="429"/>
+        <image name="back" width="32" height="32"/>
         <image name="bg-image" width="500" height="334"/>
         <image name="homeIcon" width="16" height="16"/>
         <image name="settings" width="16" height="16"/>
