@@ -5,7 +5,6 @@
 //  Created by ReyvieB on 10/25/19.
 //  Copyright © 2019 ReyvieB. All rights reserved.
 //
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -166,6 +165,7 @@ class ViewController: UIViewController {
                          JSONresults = json["results"]
                          isSuccess = JSONresults["success"]
                          getMemberID = JSONresults["member_id"]
+                         self.memberID = getMemberID
                     }
                     
                     
@@ -204,7 +204,6 @@ class ViewController: UIViewController {
                 }
             }
        // actIndi.startAnimating()
-
         
         }
         
@@ -221,9 +220,12 @@ class ViewController: UIViewController {
             controller.email = EmailTextField.text!
             controller.member_id = self.memberID
             print("self memberID", self.memberID)
-            print("Controller id" ,controller.member_id!)
+            print("Controller id" ,controller.member_id)
+            
         }
     }
+
+    
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()

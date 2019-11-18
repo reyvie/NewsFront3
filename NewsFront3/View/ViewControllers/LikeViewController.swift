@@ -7,12 +7,22 @@
 //
 
 import UIKit
-
+import SwiftyJSON
+import Alamofire
 class LikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
 
     @IBOutlet weak var likeTableView: UITableView!
+    var storiesData: [StoryModel] = []
+    
+    let token: String? = UserDefaults.standard.string(forKey:"token") ?? ""
+    let member_id: String? = UserDefaults.standard.string(forKey:"member_id") ?? ""
     
     let dummyData = DummyData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        likeTableView.reloadData()
+        // Do any additional setup after loading the view.
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        var likedTotal = 0;
@@ -65,13 +75,41 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 20
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        likeTableView.reloadData()
-        // Do any additional setup after loading the view.
-    }
-    
 
+    var json: JSON!
+    var JSONresults: JSON!
+    
+//    func fetchUsersData(){
+//        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/getstories.json") else { return }
+//        let params = ["APIkey": self.token ?? "", "member_id": self.member_id ?? ""] as [String : Any]
+//
+//        DispatchQueue.main.async{
+//            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+//             //check if the result has a value
+//                if response.result.isSuccess {
+//                    if let JSONResponse = response.result.value as? [String: Any]{
+//                        self.json = JSON(JSONResponse)
+//                        self.JSONresults = self.json["results"]
+//                        self.JSONresults.array?.forEach({ (story) in
+//
+//                            let story = StoryModel(title: story["Story"]["title"].stringValue, content: story["Story"]["content"].stringValue, created: story["Story"]["created"].stringValue, age: story["Story"]["age"].stringValue, acknowledged: story["Story"]["acknowledged"].stringValue, favorite: story["Story"]["favorite"].stringValue, id: story["Images"][0]["id"].stringValue, url: story["Images"][0]["url"].stringValue, story_id: story["Images"][0]["story_id"].stringValue  )
+//
+//                            self.storiesData.append(story)
+//                            print("Story:\(story)")
+//                        })
+//                        self.homeTableView.reloadData()
+//
+//
+//                        print("no of array: \(self.storiesData.count) results: \(self.storiesData[0].title)")
+//                    }
+//                }else{
+//                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
+//                }
+//
+//
+//            }
+//        }
+//    }
     /*
     // MARK: - Navigation
 

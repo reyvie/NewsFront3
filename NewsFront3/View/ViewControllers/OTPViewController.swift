@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
+
 
 @IBDesignable class OTPViewController: UIViewController, UITextFieldDelegate, MyTextFieldDelegate{
     @IBOutlet weak var codeSentLabel: UILabel!
@@ -25,8 +27,8 @@ import SwiftyJSON
     
     //MARK: Variables
     var email: String = ""
-    var member_id: JSON!
-
+    var member_id: JSON = []
+    var token_id: JSON = []
     //MARK: Properties
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -52,8 +54,14 @@ import SwiftyJSON
         field4.delegate = self
         
         
-        codeSentLabel.text = "Enter the code was sent to your \n email: " + email
-        print("testing json 2", member_id!)
+        codeSentLabel.text = "Enter the code was sent to your \n email: \(email)"
+        if(member_id == "68"){
+            print("testing json 2 \(member_id) ")
+        }else{
+            print("JSON test error \(member_id)")
+        }
+        
+        
         
         delayWithSeconds(0.4) {
             self.field1.becomeFirstResponder()
@@ -296,39 +304,91 @@ import SwiftyJSON
         self.view.endEditing(true)
     }
     
-    
+   
     
     func verificationBoxDesign(){
         
+        let arrayFields  = [UITextField] (arrayLiteral: field1, field2, field3, field4)
         
-        let arrayFields = [field1, field2, field3, field4]
         for field in arrayFields {
-            field!.layer.borderColor = UIColor.white.cgColor
-            field!.layer.cornerRadius = 5
-            field!.layer.borderWidth = 1.5;
+            field.layer.borderColor = UIColor.white.cgColor
+            field.layer.cornerRadius = 5
+            field.layer.borderWidth = 1.5;
         }
         confirmButton.layer.cornerRadius = 5
         
     }
     
+    
     @IBAction func confirmButtonAction(_ sender: UIButton) {
         let codetextFieldCombined: String = field1.text! + field2.text! + field3.text! + field4.text!
-        if(codetextFieldCombined == "1111"){
-        self.performSegue(withIdentifier: "otpToHomePage", sender: nil)
-        }else{
-            let alert = UIAlertController(title: "Error", message: "The OTP entered is incorrect", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-            
-        }
-
         
+        var json: JSON = []
+        var JSONresults: JSON = []
+        var isSuccess: JSON = []
+        var token: JSON = []
+        
+        
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/login.json") else { return }
+        let params = ["member_id": member_id, "code": codetextFieldCombined] as [String : Any]
+        
+        AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
+            (response) -> Void in
+             //check if the result has a value
+            if let JSONResponse = response.result.value as? [String: Any]{
+                json = JSON(JSONResponse)
+                JSONresults = json["results"]
+                isSuccess = JSONresults["success"]
+                token = JSONresults["token"]
+                self.token_id = token
+                //self.memberID = getMemberID
+                print("isSuccess: \(isSuccess)")
+            }
+            
+            if(isSuccess == "success"){
+                self.performSegue(withIdentifier: "otpToHomePage", sender: nil)
+                let controller = HomeViewController()
+                //controller.member_id = self.memberID
+                controller.token = self.token_id
+                
+                UserDefaults.standard.set(controller.token.stringValue, forKey: "token")
+                UserDefaults.standard.set(self.member_id.stringValue, forKey: "member_id")
+                
+
+//                if(returnValue ?? "" != ""){
+//                    print("token asd " ,returnValue ?? "")
+//
+//                }else{
+//                    print("userdefaults error")
+//                }
+                
+                
+            }else{
+                let alert = UIAlertController(title: "Error", message: "The OTP entered is incorrect", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         
     }
     
 
     
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "otpToHomePage"
+        {
+            let tabVc = segue.destination as! UITabBarController
+            let navVc = tabVc.viewControllers!.first as! UINavigationController
+            let homeVc = navVc.viewControllers.first as! HomeViewController
+            
+            homeVc.token = self.token_id
+            homeVc.member_id = self.member_id
+            print("contr id : \(homeVc.token): selfmemberID:\(self.token_id)")
+        }
+    }
+    
+    
+
 }
-
-

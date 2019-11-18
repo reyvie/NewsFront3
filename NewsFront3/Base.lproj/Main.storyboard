@@ -9,13 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Qanelas-Bold.ttf">
+        <array key="Qanelas-Bold.otf">
             <string>Qanelas-Bold</string>
         </array>
-        <array key="Qanelas-Heavy.otf">
+        <array key="Qanelas-Heavy.ttf">
             <string>Qanelas-Heavy</string>
         </array>
-        <array key="Qanelas-Light.ttf">
+        <array key="Qanelas-Light.otf">
             <string>Qanelas-Light</string>
         </array>
         <array key="Qanelas-Medium.otf">
@@ -142,6 +142,7 @@
                         <outlet property="RegisterButton" destination="Udq-3c-Dky" id="ybn-1v-VNa"/>
                         <outlet property="lblValidationMsg" destination="vfg-Ho-1Hi" id="hRC-qH-EAx"/>
                         <segue destination="UCk-Ok-o0w" kind="show" identifier="PushToOTPSegue" id="q3j-m8-eaa"/>
+                        <segue destination="LRl-Pb-f1m" kind="show" identifier="pushToHome" id="5uc-R4-ez5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -957,10 +958,10 @@
             </objects>
             <point key="canvasLocation" x="-220" y="2543.4782608695655"/>
         </scene>
-        <!--My Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="WwQ-Ro-79g">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="LRl-Pb-f1m" customClass="MyTabBarController" customModule="NewsFront3" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="LRl-Pb-f1m" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="M4g-Ak-A6S"/>
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="DOc-qb-mCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -1000,6 +1001,7 @@
                         <color key="badgeColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="REf-5r-rrS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WSv-tl-L9M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1019,7 +1021,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wku-e4-FOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="1835.5322338830586"/>
+            <point key="canvasLocation" x="-220" y="1836"/>
         </scene>
         <!--LIKED-->
         <scene sceneID="hZ3-uw-TI5">
@@ -1112,4 +1114,7 @@
         <image name="subscribe" width="32" height="32"/>
         <image name="tags" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5uc-R4-ez5"/>
+    </inferredMetricsTieBreakers>
 </document>
