@@ -9,19 +9,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Qanelas-Bold.otf">
+        <array key="Qanelas-Bold.ttf">
             <string>Qanelas-Bold</string>
         </array>
-        <array key="Qanelas-Heavy.ttf">
+        <array key="Qanelas-Heavy.otf">
             <string>Qanelas-Heavy</string>
         </array>
-        <array key="Qanelas-Light.otf">
+        <array key="Qanelas-Light.ttf">
             <string>Qanelas-Light</string>
         </array>
         <array key="Qanelas-Medium.otf">
             <string>Qanelas-Medium</string>
         </array>
-        <array key="Qanelas-Regular.ttf">
+        <array key="Qanelas-Regular.otf">
             <string>Qanelas-Regular</string>
         </array>
         <array key="Qanelas-SemiBold.otf">
@@ -591,7 +591,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="NEWSFRONT" id="CBS-e3-EwX"/>
                     <connections>
-                        <outlet property="collectionView" destination="qmz-au-BAf" id="da2-bv-eln"/>
+                        <outlet property="TagsCollectionView" destination="qmz-au-BAf" id="gcU-sq-vt0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBQ-8n-2aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -951,7 +951,7 @@
                     <navigationItem key="navigationItem" title="NEWSFRONT" largeTitleDisplayMode="never" id="eMf-ye-mhr"/>
                     <connections>
                         <outlet property="homeTableView" destination="3q6-S8-2KB" id="VE1-01-Y2z"/>
-                        <segue destination="OXy-B8-miJ" kind="show" id="BHn-uc-Joo"/>
+                        <segue destination="OXy-B8-miJ" kind="show" identifier="PushToFullDetails" id="BHn-uc-Joo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyU-zF-DQu" userLabel="First Responder" sceneMemberID="firstResponder"/>

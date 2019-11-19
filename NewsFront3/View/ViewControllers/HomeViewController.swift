@@ -12,21 +12,20 @@ import SwiftyJSON
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var homeTableView: UITableView!
     var storiesData: [StoryModel] = []
-
-    let dummyData = DummyData()
+    
     var token: JSON = []
     var member_id: JSON = []
     
     
-    
-    var json: JSON = []
-    var JSONresults: JSON = []
-    var isSuccess: JSON = []
+    private var storyID: String = ""
+    private var json: JSON = []
+    private var JSONresults: JSON = []
+    //private var isSuccess: JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("token: \(token)")
+        //print("token: \(token)")
         fetchUsersData()
     }
     
@@ -47,12 +46,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                             let story = StoryModel(title: story["Story"]["title"].stringValue, content: story["Story"]["content"].stringValue, created: story["Story"]["created"].stringValue, age: story["Story"]["age"].stringValue, acknowledged: story["Story"]["acknowledged"].stringValue, favorite: story["Story"]["favorite"].stringValue, id: story["Images"][0]["id"].stringValue, url: story["Images"][0]["url"].stringValue, story_id: story["Images"][0]["story_id"].stringValue  )
                             
                             self.storiesData.append(story)
-                            print("Story:\(story)")
+                           // print("Story:\(story)")
                         })
                         self.homeTableView.reloadData()
                         
                         
-                        print("no of array: \(self.storiesData.count) results: \(self.storiesData[0].title)")
+                        //print("no of array: \(self.storiesData.count) results: \(self.storiesData[0].title)")
                     }
                 }else{
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
@@ -62,38 +61,89 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-//
-//    func AddToFavorites(){
-//        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/addtofavorites.json") else { return }
-//        let params = ["APIkey": token, "member_id": member_id, "story": ] as [String : Any]
-//
-//        DispatchQueue.main.async{
-//            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
-//             //check if the result has a value
-//                if response.result.isSuccess {
-//                    if let JSONResponse = response.result.value as? [String: Any]{
-//                        self.json = JSON(JSONResponse)
-//                        self.JSONresults = self.json["results"]
-//                        self.JSONresults.array?.forEach({ (story) in
-//                            let story = StoryModel(title: story["Story"]["title"].stringValue, favorite: story["Story"]["favorite"].stringValue, acknowledged: story["Story"]["acknowledged"].stringValue, age: story["Story"]["age"].stringValue)
-//                            self.storiesData.append(story)
-//                            print("Story:\(story)")
-//                        })
-//                        self.homeTableView.reloadData()
-//
-//
-//                        print("no of array: \(self.storiesData.count) results: \(self.storiesData[0].title)")
-//                    }
-//                }else{
-//                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
-//                }
-//
-//
-//            }
-//        }
-//    }
+
+    func AddToFavorites(story_ID: String){
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/addtofavorites.json") else { return }
+        let params = ["APIkey": token, "member_id": member_id, "story": story_ID] as [String : Any]
+
+        DispatchQueue.main.async{
+            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+             //check if the result has a value
+                
+                if response.result.isSuccess {
+                    if let JSONResponse = response.result.value as? [String: Any]{
+                        self.json = JSON(JSONResponse)
+                        self.JSONresults = self.json["results"]
+                        
+                        if(self.JSONresults["success"]).stringValue == "1"{
+                           //print("Liked")
+                        }else{
+                           // print("false \(self.JSONresults["success"])")
+                            
+                        }
+                        
+                    }
+                }else{
+                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    func AcknowledgeStory(story_ID: String){
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/acknowledgestory.json") else { return }
+        let params = ["APIkey": token, "member_id": member_id, "story_id": story_ID] as [String : Any]
+
+        DispatchQueue.main.async{
+            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+             //check if the result has a value
+                
+                if response.result.isSuccess {
+                    if let JSONResponse = response.result.value as? [String: Any]{
+                        self.json = JSON(JSONResponse)
+                        self.JSONresults = self.json["result"]
+                       // print(self.JSONresults)
+                        if self.JSONresults.stringValue == "success" {
+                           // print("acknowledged")
+                        }else{
+                            
+                        }
+                    }
+                }else{
+                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
+                }
+            }
+        }
+    }
     
     
+    func RemoveFromFavorites(story_ID: String){
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/removefromfavorites.json") else { return }
+        let params = ["APIkey": token, "member_id": member_id, "story": story_ID] as [String : Any]
+
+        DispatchQueue.main.async{
+            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+             //check if the result has a value
+                
+                if response.result.isSuccess {
+                    if let JSONResponse = response.result.value as? [String: Any]{
+                        self.json = JSON(JSONResponse)
+                        self.JSONresults = self.json["results"]
+                        
+                        if(self.JSONresults["success"]).stringValue == "1"{
+                            //print("Like")
+                        }else{
+                            //print("false \(self.JSONresults["success"])")
+                            
+                        }
+                        
+                    }
+                }else{
+                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
+                }
+            }
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,7 +154,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
-        print("Title: \(self.storiesData[indexPath.row].title) favorite: \(self.storiesData[indexPath.row].favorite) acknowledge: \(self.storiesData[indexPath.row].acknowledged) create: \(self.storiesData[indexPath.row].age) image url: \(self.storiesData[indexPath.row].story_id) ")
+ 
         let url = URL(string: self.storiesData[indexPath.row].url)
         cell.myImage.downloadImage(from: url!)
         
@@ -140,19 +190,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func handleLikes(_ sender: UIButton) {
-        print(sender.tag)
+        //print(sender.tag)
+        storyID = self.storiesData[sender.tag].story_id
+        
+        //print("Story ID: \(storyID)")
         if ( self.storiesData[sender.tag].favorite == "0") {
             self.storiesData[sender.tag].favorite = "1"
+            AddToFavorites(story_ID: storyID)
         }else{
             self.storiesData[sender.tag].favorite = "0"
+            RemoveFromFavorites(story_ID: storyID)
         }
         homeTableView.reloadData()
         
     }
     
     @IBAction func handleAcknowledge(_ sender: UIButton) {
+        storyID = self.storiesData[sender.tag].story_id
+        
         if(self.storiesData[sender.tag].acknowledged == "0"){
             self.storiesData[sender.tag].acknowledged = "1"
+            AcknowledgeStory(story_ID: storyID)
+            //print("STORYID \(storyID)")
         }
         homeTableView.reloadData()
     }
@@ -161,14 +220,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
 
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "fullDetailsOfNewsViewController")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "fullDetailsOfNewsViewController") as? fullDetailsOfNewsViewController
+        vc?.titleContent = self.storiesData[indexPath.row].title
+        vc?.content = self.storiesData[indexPath.row].content
+        vc?.created = self.storiesData[indexPath.row].created
+        vc?.age = self.storiesData[indexPath.row].age
+        vc?.acknowledged = self.storiesData[indexPath.row].acknowledged
+        vc?.favorite = self.storiesData[indexPath.row].favorite
+        
+        vc?.id = self.storiesData[indexPath.row].id
+        vc?.url = self.storiesData[indexPath.row].url
+        vc?.story_id = self.storiesData[indexPath.row].story_id
+        
         
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "homeToPreviewSegue",
+//        if segue.identifier == "PushToFullDetails",
 //            let nextScene = segue.destination as? ViewController,
 //            let indexPath = self.tableView.indexPathForSelectedRow {
 //            let selectedRow = images[indexPath.row]

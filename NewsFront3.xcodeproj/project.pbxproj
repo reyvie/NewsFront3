@@ -62,6 +62,8 @@
 		B35810C02372D3C600829BEC /* Qanelas-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B35810982372D3C600829BEC /* Qanelas-Light.ttf */; };
 		B35810C12372D3C600829BEC /* Qanelas-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B35810992372D3C600829BEC /* Qanelas-HeavyItalic.otf */; };
 		B35810C22372D3C600829BEC /* Qanelas-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B358109A2372D3C600829BEC /* Qanelas-Heavy.otf */; };
+		B35E26EA2383DDC2000B916E /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E26E92383DDC2000B916E /* TagModel.swift */; };
+		B35E26EC2383E896000B916E /* LikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35E26EB2383E896000B916E /* LikeModel.swift */; };
 		B3856801236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */; };
 		B3A49F192372693000D73011 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F182372693000D73011 /* MyTextField.swift */; };
 		B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */; };
@@ -163,6 +165,8 @@
 		B35810982372D3C600829BEC /* Qanelas-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Light.ttf"; sourceTree = "<group>"; };
 		B35810992372D3C600829BEC /* Qanelas-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-HeavyItalic.otf"; sourceTree = "<group>"; };
 		B358109A2372D3C600829BEC /* Qanelas-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Qanelas-Heavy.otf"; sourceTree = "<group>"; };
+		B35E26E92383DDC2000B916E /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		B35E26EB2383E896000B916E /* LikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModel.swift; sourceTree = "<group>"; };
 		B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fullDetailsOfNewsViewController.swift; sourceTree = "<group>"; };
 		B3A49F182372693000D73011 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +338,8 @@
 			children = (
 				B34BBD6E237A8A3F00353F7A /* DummyData.swift */,
 				B3CE999D2382647100A616B0 /* StoryModel.swift */,
+				B35E26E92383DDC2000B916E /* TagModel.swift */,
+				B35E26EB2383E896000B916E /* LikeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -625,8 +631,10 @@
 				B314A6D823714AC7007CC5D7 /* UIColor.swift in Sources */,
 				B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */,
 				B34BBD6F237A8A3F00353F7A /* DummyData.swift in Sources */,
+				B35E26EA2383DDC2000B916E /* TagModel.swift in Sources */,
 				B339F5F12373F201009B61E9 /* Extensions.swift in Sources */,
 				B3E33857236FAF4C005DD61A /* HomeTableViewCell.swift in Sources */,
+				B35E26EC2383E896000B916E /* LikeModel.swift in Sources */,
 				B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */,
 				B3CE999E2382647200A616B0 /* StoryModel.swift in Sources */,
 				B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */,
