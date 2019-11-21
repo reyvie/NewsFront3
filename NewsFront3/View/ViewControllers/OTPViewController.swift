@@ -63,7 +63,7 @@ import Alamofire
         
         
         
-        delayWithSeconds(0.4) {
+        delayWithSeconds(0.1) {
             self.field1.becomeFirstResponder()
         }
         

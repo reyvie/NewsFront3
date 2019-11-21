@@ -12,10 +12,10 @@ import SwiftyJSON
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var homeTableView: UITableView!
     var storiesData: [StoryModel] = []
-    
     var token: JSON = []
     var member_id: JSON = []
-    
+    var indxRow = 0
+    var indexpathTable = IndexPath(row: 0, section: 0)
     
     private var storyID: String = ""
     private var json: JSON = []
@@ -26,13 +26,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         //print("token: \(token)")
-        fetchUsersData()
+        //fetchUsersData()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        storiesData.removeAll()
+        fetchUsersData()
+        self.homeTableView.reloadData()
+//        if(self.indexpathTable.row != 0){
+//           self.homeTableView.scrollToRow(at: self.indexpathTable, at: .bottom, animated: false)
+//        }
+//        print("home \(self.indexpathTable.row)")
+        
+    }
     func fetchUsersData(){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/getstories.json") else { return }
         let params = ["APIkey": token, "member_id": member_id] as [String : Any]
+        
         
         DispatchQueue.main.async{
             AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
@@ -57,7 +67,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
                 }
 
-                
             }
         }
     }
@@ -65,7 +74,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func AddToFavorites(story_ID: String){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/addtofavorites.json") else { return }
         let params = ["APIkey": token, "member_id": member_id, "story": story_ID] as [String : Any]
-
+        
+        
         DispatchQueue.main.async{
             AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
              //check if the result has a value
@@ -81,11 +91,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                            // print("false \(self.JSONresults["success"])")
                             
                         }
-                        
                     }
                 }else{
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
                 }
+                
             }
         }
     }
@@ -120,7 +130,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func RemoveFromFavorites(story_ID: String){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/removefromfavorites.json") else { return }
         let params = ["APIkey": token, "member_id": member_id, "story": story_ID] as [String : Any]
-
+        
         DispatchQueue.main.async{
             AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
              //check if the result has a value
@@ -156,6 +166,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
  
         let url = URL(string: self.storiesData[indexPath.row].url)
+        
+
         cell.myImage.downloadImage(from: url!)
         
         cell.homeLabel.text = self.storiesData[indexPath.row].title
@@ -201,6 +213,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.storiesData[sender.tag].favorite = "0"
             RemoveFromFavorites(story_ID: storyID)
         }
+
         homeTableView.reloadData()
         
     }
@@ -232,8 +245,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         vc?.url = self.storiesData[indexPath.row].url
         vc?.story_id = self.storiesData[indexPath.row].story_id
         
-        
+        vc?.indexRow = indexPath.row
         self.navigationController?.pushViewController(vc!, animated: true)
+
         
     }
     

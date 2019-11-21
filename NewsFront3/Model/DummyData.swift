@@ -16,8 +16,11 @@ class DummyData{
     var likeStatus = ["Liked", "Liked","Liked", "Liked","Liked", "Liked"]
     var acknowledgeStatus = ["Acknowledged", "Acknowledged","Acknowledge", "Acknowledged","Acknowledge", "Acknowledged"]
     
-    let tagImage = ["TeamChamps", "PHP", "Radio", "Newsroom", "Mobile", "DotNet", "Runners", "Paddlers", "SQA", "Human Resources", "Clinic"]
-    var statusSwitch = [false, false, true, true,true, true,true, true,true, true, true ]
+    
+    
+    
+    let tagName = ["TeamChamps", "PHP", "Newsroom", "Mobile", "DotNet", "Runners", "Paddlers", "SQA", "Classifieds", "Customer Travel"]
+    var statusSwitch = [false, false, false, false,false, false,false, false,false, false ]
     
     
 }

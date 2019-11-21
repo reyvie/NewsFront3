@@ -200,8 +200,9 @@ class ViewController: UIViewController {
                         
                     //self.actIndi.stopAnimating()
                     //self.activityIndicator.stopAnimating()
-                    self.stopActivityIndicator()
+                    
                     UIApplication.shared.endIgnoringInteractionEvents()
+                    self.stopActivityIndicator()
                 }
             }
        // actIndi.startAnimating()

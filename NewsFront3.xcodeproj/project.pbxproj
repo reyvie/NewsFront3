@@ -68,6 +68,8 @@
 		B3A49F192372693000D73011 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F182372693000D73011 /* MyTextField.swift */; };
 		B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */; };
 		B3A49F1D2372AE6C00D73011 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A49F1C2372AE6C00D73011 /* SettingsTableViewCell.swift */; };
+		B3AA80D02384F282000BA097 /* ReusableActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA80CF2384F282000BA097 /* ReusableActivityIndicator.swift */; };
+		B3AA80D22384FC58000BA097 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA80D12384FC58000BA097 /* SettingModel.swift */; };
 		B3CE999E2382647200A616B0 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CE999D2382647100A616B0 /* StoryModel.swift */; };
 		B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E22A2362BA34007FF11E /* AppDelegate.swift */; };
 		B3D4E2302362BA34007FF11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D4E22E2362BA34007FF11E /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		B3D4E2352362BA3B007FF11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D4E2332362BA3B007FF11E /* LaunchScreen.storyboard */; };
 		B3D4E2402362BA3C007FF11E /* NewsFront3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E23F2362BA3C007FF11E /* NewsFront3Tests.swift */; };
 		B3D4E24B2362BA3C007FF11E /* NewsFront3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E24A2362BA3C007FF11E /* NewsFront3UITests.swift */; };
+		B3DF1C13238613520019D2B1 /* LikeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF1C12238613520019D2B1 /* LikeDetailsViewController.swift */; };
+		B3DF1C1523864B1E0019D2B1 /* SelectedTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF1C1423864B1E0019D2B1 /* SelectedTags.swift */; };
 		B3E33857236FAF4C005DD61A /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E33856236FAF4C005DD61A /* HomeTableViewCell.swift */; };
 		B3E33859236FC010005DD61A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E33858236FC010005DD61A /* HomeViewController.swift */; };
 		B3F85681237CE14F00AE45AF /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F85680237CE14F00AE45AF /* NetworkingClient.swift */; };
@@ -171,6 +175,8 @@
 		B3A49F182372693000D73011 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B3A49F1C2372AE6C00D73011 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		B3AA80CF2384F282000BA097 /* ReusableActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableActivityIndicator.swift; sourceTree = "<group>"; };
+		B3AA80D12384FC58000BA097 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		B3CE999D2382647100A616B0 /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		B3D4E2272362BA34007FF11E /* NewsFront3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFront3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E22A2362BA34007FF11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +190,8 @@
 		B3D4E2462362BA3C007FF11E /* NewsFront3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsFront3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D4E24A2362BA3C007FF11E /* NewsFront3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFront3UITests.swift; sourceTree = "<group>"; };
 		B3D4E24C2362BA3C007FF11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3DF1C12238613520019D2B1 /* LikeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDetailsViewController.swift; sourceTree = "<group>"; };
+		B3DF1C1423864B1E0019D2B1 /* SelectedTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTags.swift; sourceTree = "<group>"; };
 		B3E33856236FAF4C005DD61A /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B3E33858236FC010005DD61A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3F8567B237CDFCC00AE45AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -245,6 +253,7 @@
 				B30AC01D2373E8050067159C /* TagsViewController.swift */,
 				B3A49F1A2372AE4A00D73011 /* SettingsViewController.swift */,
 				B3856800236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift */,
+				B3DF1C12238613520019D2B1 /* LikeDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				B3A49F182372693000D73011 /* MyTextField.swift */,
 				B314A6D723714AC7007CC5D7 /* UIColor.swift */,
 				B339F5F02373F201009B61E9 /* Extensions.swift */,
+				B3AA80CF2384F282000BA097 /* ReusableActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +350,8 @@
 				B3CE999D2382647100A616B0 /* StoryModel.swift */,
 				B35E26E92383DDC2000B916E /* TagModel.swift */,
 				B35E26EB2383E896000B916E /* LikeModel.swift */,
+				B3AA80D12384FC58000BA097 /* SettingModel.swift */,
+				B3DF1C1423864B1E0019D2B1 /* SelectedTags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -616,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AA80D02384F282000BA097 /* ReusableActivityIndicator.swift in Sources */,
 				B3856801236FFBAD008BED2F /* fullDetailsOfNewsViewController.swift in Sources */,
 				B30AC01E2373E8050067159C /* TagsViewController.swift in Sources */,
 				B30AC0152373D8AD0067159C /* TagsCollectionViewCell.swift in Sources */,
@@ -623,12 +636,14 @@
 				B314A6DA2371594F007CC5D7 /* GradientView.swift in Sources */,
 				B314A6D623711077007CC5D7 /* LikeTableViewCell.swift in Sources */,
 				B3A49F192372693000D73011 /* MyTextField.swift in Sources */,
+				B3AA80D22384FC58000BA097 /* SettingModel.swift in Sources */,
 				B3A49F1D2372AE6C00D73011 /* SettingsTableViewCell.swift in Sources */,
 				B339F5F323740D62009B61E9 /* HomeNavigationController.swift in Sources */,
 				B3F85681237CE14F00AE45AF /* NetworkingClient.swift in Sources */,
 				B32C01C423829F5B00CA827B /* ViewController.swift in Sources */,
 				B314A6D423710B11007CC5D7 /* LikeViewController.swift in Sources */,
 				B314A6D823714AC7007CC5D7 /* UIColor.swift in Sources */,
+				B3DF1C13238613520019D2B1 /* LikeDetailsViewController.swift in Sources */,
 				B31E8D53236A889A00040214 /* OTPViewController.swift in Sources */,
 				B34BBD6F237A8A3F00353F7A /* DummyData.swift in Sources */,
 				B35E26EA2383DDC2000B916E /* TagModel.swift in Sources */,
@@ -638,6 +653,7 @@
 				B3D4E22B2362BA34007FF11E /* AppDelegate.swift in Sources */,
 				B3CE999E2382647200A616B0 /* StoryModel.swift in Sources */,
 				B3A49F1B2372AE4A00D73011 /* SettingsViewController.swift in Sources */,
+				B3DF1C1523864B1E0019D2B1 /* SelectedTags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
