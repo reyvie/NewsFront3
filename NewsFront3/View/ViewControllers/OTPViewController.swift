@@ -13,22 +13,12 @@ import Alamofire
 
 @IBDesignable class OTPViewController: UIViewController, UITextFieldDelegate, MyTextFieldDelegate{
     @IBOutlet weak var codeSentLabel: UILabel!
-    func didPressBackspace(textField: MyTextField, txtfieldNumber: Int) {
-        print("BACKSPACED")
-        print(textField.hasText)
-        if(textField.hasText == true){
-            print("has text true")
-            print(txtfieldNumber)
-        }else{
-            print("has text false")
-            print(txtfieldNumber)
-        }
-    }
-    
+
     //MARK: Variables
     var email: String = ""
     var member_id: JSON = []
     var token_id: JSON = []
+    
     //MARK: Properties
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
@@ -36,11 +26,12 @@ import Alamofire
     @IBOutlet weak var field4: UITextField!
     
     @IBOutlet weak var confirmButton: UIButton!
-    @IBOutlet weak var resendCodeLabel: UILabel!
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var resendCodeBtn: UIButton!
     @IBOutlet weak var viewContent: UIView!
+    
     
     
     
@@ -53,15 +44,7 @@ import Alamofire
         field3.delegate = self
         field4.delegate = self
         
-        
-        codeSentLabel.text = "Enter the code was sent to your \n email: \(email)"
-        if(member_id == "68"){
-            print("testing json 2 \(member_id) ")
-        }else{
-            print("JSON test error \(member_id)")
-        }
-        
-        
+        verificationBoxDesign()
         
         delayWithSeconds(0.1) {
             self.field1.becomeFirstResponder()
@@ -70,7 +53,7 @@ import Alamofire
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        verificationBoxDesign();
+        
         // Do any additional setup after loading the view.
     }
     
@@ -80,6 +63,17 @@ import Alamofire
         }
     }
     
+    func didPressBackspace(textField: MyTextField, txtfieldNumber: Int) {
+        print("BACKSPACED")
+        print(textField.hasText)
+        if(textField.hasText == true){
+            print("has text true")
+            print(txtfieldNumber)
+        }else{
+            print("has text false")
+            print(txtfieldNumber)
+        }
+    }
     
     func maxLength (textFieldName: UITextField, max: Int, fieldNumber: Int){
         let length = (textFieldName.text?.count)
@@ -90,31 +84,22 @@ import Alamofire
             switch fieldNumber {
             case 1:
                 field2.text = ("\(splitString[1])")
-                //field2.isUserInteractionEnabled = true
                 field2.becomeFirstResponder()
-                //field1.isUserInteractionEnabled = false
             case 2:
                 field3.text = ("\(splitString[1])")
-               // field3.isUserInteractionEnabled = true
                 field3.becomeFirstResponder()
-                //field2.isUserInteractionEnabled = false
                 
             case 3:
                 field4.text = ("\(splitString[1])")
-               //field4.isUserInteractionEnabled = true
                 field4.becomeFirstResponder()
-                //field3.isUserInteractionEnabled = false
-                
             default:
                 break;
             }
         }
+        
         if(length ?? 0 > max){
             textFieldName.deleteBackward()
-        }else{
-            
         }
-        
     }
     func checkEmptyField(txtfield: UITextField) -> Bool{
         if(txtfield.text?.isEmpty ?? false){
@@ -139,101 +124,25 @@ import Alamofire
     @IBAction func field2EditingChanged(_ sender: UITextField) {
         didPressBackspace(textField: field2 as! MyTextField, txtfieldNumber: 2)
         if (checkEmptyField(txtfield: field2) == true) {
-           // print("BCK")
-           // field1.isUserInteractionEnabled = true
-            
-            
             field1.becomeFirstResponder()
-           
-            //getEmptyFieldText()
-            
-            //field2.isUserInteractionEnabled = false
-        }else{
-            //print("else")
         }
         maxLength(textFieldName: field2, max: 1, fieldNumber: 2)
-//        if(field4.text?.count ?? 0 < 1 || field4.text?.count == nil){
-//            //didPressBackspace(textField: field4 as! MyTextField)
-//            field1.becomeFirstResponder()
-//        }else{
-//            field2.resignFirstResponder()
-//        }
         
     }
     @IBAction func field3EditingChanged(_ sender: UITextField) {
         didPressBackspace(textField: field3 as! MyTextField, txtfieldNumber: 3)
-        
         if (checkEmptyField(txtfield: field3) == true) {
-            //print("BCK")
-           // field2.isUserInteractionEnabled = true
-            
-            
             field2.becomeFirstResponder()
-            //getEmptyFieldText()
-            
-            
-          //  field3.isUserInteractionEnabled = false
-            
-        }else{
-            //print("else")
         }
-        
         maxLength(textFieldName: field3, max: 1, fieldNumber: 3)
-//        if(field4.text?.count ?? 0 < 1 || field4.text?.count == nil){
-//            //didPressBackspace(textField: field4 as! MyTextField)
-//            field2.becomeFirstResponder()
-//        }else{
-//            field3.resignFirstResponder()
-//        }
-        
     }
     @IBAction func field4EditingChanged(_ sender: UITextField) {
         if (checkEmptyField(txtfield: field4) == true) {
-           // print("BCK")
             didPressBackspace(textField: field4 as! MyTextField, txtfieldNumber: 4)
-           // field3.isUserInteractionEnabled = true
-            
-            
             field3.becomeFirstResponder()
-            //getEmptyFieldText()
-            
-            
-           // field4.isUserInteractionEnabled = false
-        }else{
-            //print("else")
         }
-        
         maxLength(textFieldName: field4, max: 1, fieldNumber: 4)
-        
-        
-//        if(field4.text?.count ?? 0 < 1 || field4.text?.count == nil){
-//            //didPressBackspace(textField: field4 as! MyTextField)
-//            field3.becomeFirstResponder()
-//        }else{
-//            field4.resignFirstResponder()
-//        }
-        
     }
-    
-    @IBAction func field1DidBeginEditing(_ sender: UITextField) {
-        //field1.becomeFirstResponder()
-        //field1.selectAll(nil)
-    }
-    @IBAction func field2DidBeginEditing(_ sender: UITextField) {
-        //field2.becomeFirstResponder()
-        //field2.selectAll(nil)
-    }
-    @IBAction func field3DidBeginEditing(_ sender: UITextField) {
-        //field3.becomeFirstResponder()
-       // field3.selectAll(nil)
-    }
-    
-    @IBAction func field4DidBeginEditing(_ sender: UITextField) {
-        //field4.becomeFirstResponder()
-        //field4.selectAll(nil)
-    }
-    
-    
     
     @IBAction func field1TouchUpInside(_ sender: UITextField) {
         getEmptyFieldText()
@@ -279,13 +188,11 @@ import Alamofire
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > resendCodeLabel.frame.origin.y {
-                self.view.frame.origin.y -= (keyboardSize.height * 2) - resendCodeLabel.frame.origin.y + 10
-                print("if KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeLabel.frame.origin.y)
-                
-                
+            if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > resendCodeBtn.frame.origin.y {
+                self.view.frame.origin.y -= (keyboardSize.height * 2) - resendCodeBtn.frame.origin.y + 10
+                print("if KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeBtn.frame.origin.y)
             }else{
-                print("else KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeLabel.frame.origin.y)
+                print("else KeyboardSize: " , (keyboardSize.height * 2) , " resendCodeLabel Y " , resendCodeBtn.frame.origin.y)
             }
         }
     }
@@ -307,7 +214,7 @@ import Alamofire
    
     
     func verificationBoxDesign(){
-        
+        codeSentLabel.text = "Enter the code was sent to your \n email: \(email)"
         let arrayFields  = [UITextField] (arrayLiteral: field1, field2, field3, field4)
         
         for field in arrayFields {
@@ -332,7 +239,7 @@ import Alamofire
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/login.json") else { return }
         let params = ["member_id": member_id, "code": codetextFieldCombined] as [String : Any]
         
-        AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
+        Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{
             (response) -> Void in
              //check if the result has a value
             if let JSONResponse = response.result.value as? [String: Any]{
@@ -346,23 +253,8 @@ import Alamofire
             }
             
             if(isSuccess == "success"){
+                self.saveUserPreference()
                 self.performSegue(withIdentifier: "otpToHomePage", sender: nil)
-                let controller = HomeViewController()
-                //controller.member_id = self.memberID
-                controller.token = self.token_id
-                
-                UserDefaults.standard.set(controller.token.stringValue, forKey: "token")
-                UserDefaults.standard.set(self.member_id.stringValue, forKey: "member_id")
-                
-
-//                if(returnValue ?? "" != ""){
-//                    print("token asd " ,returnValue ?? "")
-//
-//                }else{
-//                    print("userdefaults error")
-//                }
-                
-                
             }else{
                 let alert = UIAlertController(title: "Error", message: "The OTP entered is incorrect", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
@@ -371,22 +263,81 @@ import Alamofire
         
     }
     
-
-    
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "otpToHomePage"
-        {
-            let tabVc = segue.destination as! UITabBarController
-            let navVc = tabVc.viewControllers!.first as! UINavigationController
-            let homeVc = navVc.viewControllers.first as! HomeViewController
-            
-            homeVc.token = self.token_id
-            homeVc.member_id = self.member_id
-            print("contr id : \(homeVc.token): selfmemberID:\(self.token_id)")
+    
+    @IBAction func resendCodeAction(_ sender: UIButton) {
+        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/register.json") else { return }
+        let params = ["username": self.email]
+        
+        activityIndicator("Please wait")
+        view.isUserInteractionEnabled = false
+        DispatchQueue.main.async {
+            Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{
+                (response) -> Void in
+                 //check if the result has a value
+                self.stopActivityIndicator()
+                self.view.isUserInteractionEnabled = true
+            }
         }
+    }
+    
+    
+    let messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    var strLabel = UILabel()
+    let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+
+    func activityIndicator(_ title: String) {
+
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+
+        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 160, height: 46))
+        strLabel.text = title
+        strLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        strLabel.textColor = UIColor(white: 0.9, alpha: 0.7)
+
+        effectView.frame = CGRect(x: view.frame.midX - strLabel.frame.width/2, y: view.frame.midY - strLabel.frame.height/2 , width: 160, height: 50)
+       // effectView.frame = CGRect(x: view.frame.midX, y: view.frame.midY , width: 50, height: 50)
+        effectView.layer.cornerRadius = 10
+        effectView.layer.masksToBounds = true
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.startAnimating()
+
+        effectView.contentView.addSubview(activityIndicator)
+        effectView.contentView.addSubview(strLabel)
+        view.addSubview(effectView)
+    }
+    
+    func stopActivityIndicator(){
+        self.activityIndicator.stopAnimating()
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     //   if segue.identifier == "otpToHomePage"
+      //  {
+//            let tabVc = segue.destination as! UITabBarController
+//            let navVc = tabVc.viewControllers!.first as! UINavigationController
+//            let homeVc = navVc.viewControllers.first as! HomeViewController
+//
+//           // homeVc.token = self.token_id
+//           // homeVc.member_id = self.member_id
+//
+//            print("contr id : \(homeVc.token): selfmemberID:\(self.token_id)")
+       // }
+    }
+    
+    func saveUserPreference(){
+        UserDefaults.standard.set(self.token_id.stringValue, forKey: "token")
+        UserDefaults.standard.set(self.member_id.stringValue, forKey: "member_id")
     }
     
     

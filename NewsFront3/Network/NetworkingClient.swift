@@ -17,7 +17,7 @@ class NetworkingClient{
 //        urlRequest.httpMethod = "PUT"
 //        AF.request(urlRequest)
         
-        AF.request(url, method: .post, parameters: params).validate().responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: params).validate().responseJSON { response in
             if let error = response.error{
                 completion(nil, error)
             } else if let jsonArray = response.value  {

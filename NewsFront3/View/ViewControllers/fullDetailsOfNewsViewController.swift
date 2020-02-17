@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
-
+import SDWebImage
 class fullDetailsOfNewsViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var textContent: UILabel!
@@ -35,6 +35,7 @@ class fullDetailsOfNewsViewController: UIViewController {
     var storiesData: [StoryModel] = []
     let homeVc = HomeViewController()
     var indexRow = 0
+    
     private var storyID: String = ""
     private var json: JSON = []
     private var JSONresults: JSON = []
@@ -46,35 +47,24 @@ class fullDetailsOfNewsViewController: UIViewController {
     //MARK: OVERRIDE
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleContent
-        let convertHtmltoString = content.htmlToString
-        textContent.text = convertHtmltoString
+        convertHtml()
         designButton()
         downloadImg()
+        
         //textContent.sizeToFit()
 //        scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-
-    //        if self.isMovingFromParent {
-    //            // Your code...
-    //            homeVc.indexpathTable = IndexPath(row: indexRow, section: 0)
-    //            print("fdn \(indexRow)")
-    //        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        
         if(self.story_id != ""){
             getNewsDetails(story_ID: story_id)
             designButton()
         }
-        
-
-        
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         
@@ -83,11 +73,28 @@ class fullDetailsOfNewsViewController: UIViewController {
               
         
     }
-    
-    
+    func convertHtml(){
+        titleLabel.text = titleContent
+        let convertHtmltoString = content.htmlToString
+        textContent.text = convertHtmltoString
+    }
     func downloadImg(){
         let url = URL(string: self.url)
-        image.downloadImage(from: url!)
+        self.image.sd_setImage(with: url!, placeholderImage: UIImage(contentsOfFile:"defaultImage.png"))
+        self.image.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        DispatchQueue.main.async{
+            Alamofire.request(url!).response{ response in
+                print(response.response?.statusCode ?? 0)
+                if(response.response?.statusCode == 404){
+                   // cell.myImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                    self.image.sd_imageIndicator = nil
+                    self.image.image = UIImage(named: "defaultImage.png")
+                }else{
+                    self.image.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                    self.image.sd_setImage(with: url!, placeholderImage: UIImage(contentsOfFile:"defaultImage.png"))
+                }
+             }
+        }
     }
 
     func designButton(){
@@ -115,10 +122,8 @@ class fullDetailsOfNewsViewController: UIViewController {
     func getNewsDetails(story_ID: String){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/getstories.json") else { return }
         let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story_id": story_ID] as [String : Any]
-        
-        
-        DispatchQueue.main.async{
-            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+        //DispatchQueue.main.async{
+            Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
              //check if the result has a value
                 if response.result.isSuccess {
                     if let JSONResponse = response.result.value as? [String: Any]{
@@ -136,22 +141,20 @@ class fullDetailsOfNewsViewController: UIViewController {
                 }else{
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
                 }
-
+                
             }
-        }
+       // }
     }
-    
-    
-    
     
     func AddToFavorites(story_ID: String){
        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/addtofavorites.json") else { return }
     let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story": story_ID] as [String : Any]
-
-       DispatchQueue.main.async{
-           AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+       
+//       self.view.isUserInteractionEnabled = false
+//       activityIndicator("Please wait...")
+//       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+           Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
             //check if the result has a value
-               
                if response.result.isSuccess {
                    if let JSONResponse = response.result.value as? [String: Any]{
                        self.json = JSON(JSONResponse)
@@ -163,24 +166,26 @@ class fullDetailsOfNewsViewController: UIViewController {
                           // print("false \(self.JSONresults["success"])")
                            
                        }
-                       
                    }
                }else{
                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
                }
            }
-       }
+//        self.stopActivityIndicator()
+//        self.view.isUserInteractionEnabled = true
+//       }
     }
 
        
    func AcknowledgeStory(story_ID: String){
        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/acknowledgestory.json") else { return }
     let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story_id": story_ID ] as [String : Any]
-
-       DispatchQueue.main.async{
-           AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+    
+    self.view.isUserInteractionEnabled = false
+    activityIndicator("Please wait...")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+           Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
             //check if the result has a value
-               
                if response.result.isSuccess {
                    if let JSONResponse = response.result.value as? [String: Any]{
                        self.json = JSON(JSONResponse)
@@ -195,7 +200,10 @@ class fullDetailsOfNewsViewController: UIViewController {
                }else{
                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
                }
+            self.stopActivityIndicator()
+            self.view.isUserInteractionEnabled = true
            }
+        
        }
    }
        
@@ -203,20 +211,15 @@ class fullDetailsOfNewsViewController: UIViewController {
    func RemoveFromFavorites(story_ID: String){
        guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/removefromfavorites.json") else { return }
     let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story": story_ID ] as [String : Any]
-
-       DispatchQueue.main.async{
-           AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
-            //check if the result has a value
-               
+           Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
                if response.result.isSuccess {
                    if let JSONResponse = response.result.value as? [String: Any]{
                        self.json = JSON(JSONResponse)
                        self.JSONresults = self.json["results"]
                        
                        if(self.JSONresults["success"]).stringValue == "1"{
-                           //print("Like")
+                        
                        }else{
-                           //print("false \(self.JSONresults["success"])")
                            
                        }
                        
@@ -225,14 +228,12 @@ class fullDetailsOfNewsViewController: UIViewController {
                    print("Alamofire Error: \(response.result.error!.localizedDescription)")
                }
            }
-       }
    }
     
     
     
     
     //MARK: ACTIONS
-    
     @IBAction func LikeAction(_ sender: UIButton) {
         //print(sender.tag)
         storyID = self.story_id
@@ -250,7 +251,6 @@ class fullDetailsOfNewsViewController: UIViewController {
         
     }
     
-    
     @IBAction func AcknowledgeAction(_ sender: Any) {
         storyID = self.story_id
         
@@ -265,12 +265,44 @@ class fullDetailsOfNewsViewController: UIViewController {
     }
     
 
+    let messageFrame = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    var strLabel = UILabel()
+    let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+
+    func activityIndicator(_ title: String) {
+
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+
+        strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 160, height: 46))
+        strLabel.text = title
+        strLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        strLabel.textColor = UIColor(white: 0.9, alpha: 0.7)
+
+        effectView.frame = CGRect(x: view.frame.midX - strLabel.frame.width/2, y: view.frame.midY - strLabel.frame.height/2 , width: 160, height: 50)
+       // effectView.frame = CGRect(x: view.frame.midX, y: view.frame.midY , width: 50, height: 50)
+        effectView.layer.cornerRadius = 10
+        effectView.layer.masksToBounds = true
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.startAnimating()
+
+        effectView.contentView.addSubview(activityIndicator)
+        effectView.contentView.addSubview(strLabel)
+        view.addSubview(effectView)
+    }
+    
+    func stopActivityIndicator(){
+        self.activityIndicator.stopAnimating()
+        strLabel.removeFromSuperview()
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
         
+    }
     
 }
-
-
-
 
 
 extension String {

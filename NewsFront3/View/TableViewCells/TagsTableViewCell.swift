@@ -10,6 +10,12 @@ import UIKit
 
 class TagsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var tagsLabel: UILabel!
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var acknowledgeBtn: UIButton!
+    
+    @IBOutlet weak var ageLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

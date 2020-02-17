@@ -11,6 +11,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import SDWebImage
 class LikeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource   {
 
     @IBOutlet weak var likeTableView: UITableView!
@@ -27,21 +28,25 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.fetchLikesData()
-        }
-        self.likeTableView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        fetchLikesData()
+        
     }
     
     func fetchLikesData(){
-        self.likesData.removeAll()
         
+
            guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/getfavorites.json") else { return }
            let params = ["APIkey": token!, "member_id": member_id!] as [String : Any]
-               AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+        
+            activityIndicator("Please wait...")
+            self.view.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            
+               Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
                 //check if the result has a value
                    if response.result.isSuccess {
+                    self.likesData.removeAll()
                        if let JSONResponse = response.result.value as? [String: Any]{
                            self.json = JSON(JSONResponse)
                            self.JSONresults = self.json["results"]
@@ -52,8 +57,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                self.likesData.append(story)
                               // print("Story:\(story)")
                            })
-                           self.likeTableView.reloadData()
                            
+                           self.likeTableView.reloadData()
+                           self.view.isUserInteractionEnabled = true
                            
                            //print("no of array: \(self.storiesData.count) results: \(self.storiesData[0].title)")
                        }
@@ -63,9 +69,13 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                    }
 
-                   
+                 //self.likeTableView.reloadData()
+                
                }
-        self.stopActivityIndicator()
+                self.view.isUserInteractionEnabled = true
+            self.stopActivityIndicator()
+        }
+        
         
        }
 
@@ -92,7 +102,23 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if(self.likesData[indexPath.row].favorite == "1"){
             let url = URL(string: self.likesData[indexPath.row].url)
-            cell.prototypeImage.downloadImage(from: url!)
+            cell.prototypeImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            DispatchQueue.main.async{
+                Alamofire.request(url!).response{ response in
+                    print(response.response?.statusCode ?? 0)
+                    if(response.response?.statusCode == 404){
+                        cell.prototypeImage.sd_imageIndicator = nil
+                        cell.prototypeImage.image = UIImage(named: "defaultImage.png")
+                    }else{
+                        cell.prototypeImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                        cell.prototypeImage.sd_setImage(with: url!, placeholderImage: UIImage(contentsOfFile:"defaultImage.png"))
+                    }
+                 }
+            }
+            
+            
+            
+            //cell.prototypeImage.downloadImage(from: url!)
             cell.prototypeLabel.text = self.likesData[indexPath.row].title
             
             cell.dateAndTimePostedLabel.text = self.likesData[indexPath.row].age
@@ -122,13 +148,29 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        self.likeTableView.reloadData()
-//        print("Reload")
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "LikeViewController")
-//
-//        self.navigationController?.pushViewController(vc!, animated: true)
+        activityIndicator("Please wait...")
+        self.view.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LikeDetailsViewController") as? LikeDetailsViewController
+            
+            vc?.titleContent = self.likesData[indexPath.row].title
+            vc?.content = self.likesData[indexPath.row].content
+            vc?.created = self.likesData[indexPath.row].created
+            vc?.age = self.likesData[indexPath.row].age
+            vc?.acknowledged = self.likesData[indexPath.row].acknowledged
+            vc?.favorite = self.likesData[indexPath.row].favorite
+
+            vc?.id = self.likesData[indexPath.row].id
+            vc?.url = self.likesData[indexPath.row].url
+            vc?.story_id = self.likesData[indexPath.row].story_id
+            vc?.indexRow = indexPath.row
+            self.navigationController?.pushViewController(vc!, animated: true)
+            self.stopActivityIndicator()
+            self.view.isUserInteractionEnabled = true
+        }
         
     }
+    
 //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 //        return 20
 //    }
@@ -136,7 +178,11 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func AcknowledgeStory(story_ID: String){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/acknowledgestory.json") else { return }
         let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story_id": story_ID] as [String : Any]
-            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+        
+        activityIndicator("Please wait...")
+        self.view.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
              //check if the result has a value
                 
                 if response.result.isSuccess {
@@ -154,6 +200,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
                 }
             }
+            self.view.isUserInteractionEnabled = true
+            self.stopActivityIndicator()
+        }
         
     }
     
@@ -161,8 +210,10 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func RemoveFromFavorites(story_ID: String){
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/removefromfavorites.json") else { return }
         let params = ["APIkey": token ?? "", "member_id": member_id ?? "", "story": story_ID] as [String : Any]
-        
-            AF.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
+        activityIndicator("Please wait...")
+        self.view.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            Alamofire.request(urlToExecute, method: .post, parameters: params).responseJSON{ (response) in
              //check if the result has a value
                 
                     if let JSONResponse = response.result.value as? [String: Any]{
@@ -183,10 +234,13 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }else{
                     print("Alamofire Error: \(response.result.error!.localizedDescription)")
                 }
-                self.stopActivityIndicator()
+                self.likeTableView.reloadData()
             }
+            self.stopActivityIndicator()
+            self.view.isUserInteractionEnabled = true
+        }
         //self.likesData.removeAll()
-        self.likeTableView.reloadData()
+        
     
     }
     let messageFrame = UIView()
@@ -238,14 +292,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             //print(self.JSONresults)
         }
         
-        self.activityIndicator("Please wait")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Change `2.0` to the desired number of seconds.
-           
-            // Code you want to be delayed
             self.fetchLikesData()
-        }
-
-        
         
     }
 
@@ -258,11 +305,15 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.AcknowledgeStory(story_ID: self.likesData[sender.tag].story_id)
           //print("STORYID \(storyID)")
       }
+        self.fetchLikesData()
+        //self.likeTableView.reloadData()
 //        likesData.removeAll()
 //        fetchLikesData()
 
         
   }
+    
+    
     
     
 }

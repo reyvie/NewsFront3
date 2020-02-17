@@ -9,41 +9,50 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 class ViewController: UIViewController {
-    @IBOutlet weak var RegisterButton: UIButton!
-    @IBOutlet weak var EmailTextField: UITextField!
-    
-    @IBOutlet weak var lblValidationMsg: UILabel!
-    
-   //var activityIndicator = UIActivityIndicatorView()
-    
-    @IBAction func HideKeyboard(_ sender: Any) {
-        EmailTextField.resignFirstResponder()
-    }
     
     private let networkingClient = NetworkingClient()
     
-    //var actIndi:UIActivityIndicatorView = UIActivityIndicatorView()
+    let token: String? = UserDefaults.standard.string(forKey:"token") ?? ""
+    let member_id: String? = UserDefaults.standard.string(forKey:"member_id") ?? ""
     var memberID: JSON = []
     
+    @IBOutlet weak var RegisterButton: UIButton!
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var lblValidationMsg: UILabel!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //EmailTextField.becomeFirstResponder()
+        print(token!)
+        print(member_id!)
+//        UserDefaults.standard.set("291b1c278bd2abb45ec002331ba0d3db6e589bc7", forKey: "token")
+//        UserDefaults.standard.set("66", forKey: "member_id")
+        print(token!)
+        print(member_id!)
+        checkToken()
         ButtonDesign()
         bgGradient()
         lblValidationMsg.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushToOTPSegue"
+        {   
+            let controller = segue.destination as! OTPViewController
+            controller.email = EmailTextField.text!
+            controller.member_id = self.memberID
+            print("self memberID", self.memberID)
+            print("Controller id" ,controller.member_id)
+            
+        }
+    }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 && (keyboardSize.height * 2) > RegisterButton.frame.origin.y {
                 self.view.frame.origin.y -= (keyboardSize.height * 2) - RegisterButton.frame.origin.y + 20
-//                print("label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)) )
-            }else{
-//                print("2label height: ", RegisterButton.frame.origin.y , "  keyboardSize height:" , (keyboardSize.height*2), "diff: ", (RegisterButton.frame.origin.y - (keyboardSize.height*2)))
             }
         }
     }
@@ -54,17 +63,12 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
     func ButtonDesign(){
         RegisterButton.layer.cornerRadius = 5
         EmailTextField.layer.cornerRadius = 5
         EmailTextField.layer.borderWidth = 1.5;
         EmailTextField.layer.borderColor = UIColor.white.cgColor
-        EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -89,7 +93,6 @@ class ViewController: UIViewController {
     }
     
     func bgGradient(){
-    
         let color1 = hexStringToUIColor(hex: "#8C9800")
         let color2 = hexStringToUIColor(hex: "#31C5E4")
         
@@ -108,7 +111,7 @@ class ViewController: UIViewController {
     
     func errorDesign() {
         EmailTextField.layer.borderColor = UIColor.red.cgColor
-                EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        EmailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         lblValidationMsg.textColor = UIColor.red
 
         
@@ -120,45 +123,82 @@ class ViewController: UIViewController {
                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
-    
-    
+    func checkToken(){
+        if(token != "" && member_id != ""){
+            DispatchQueue.main.async(execute: {
+            self.performSegue(withIdentifier: "loginToHome", sender: nil)
+            })
+        }
+    }
+    @IBAction func HideKeyboard(_ sender: Any) {
+        EmailTextField.resignFirstResponder()
+    }
     
     @IBAction func emailTextFieldEditingChanged(_ sender: UITextField) {
-    correctFormatDesign()
-    lblValidationMsg.isHidden = true
+        correctFormatDesign()
+        lblValidationMsg.isHidden = true
     }
     
-    @IBAction func emailTextFieldDidEditingBegin(_ sender: UITextField) {
-
-    }
+    
     @IBAction func registerValidation(_ sender: UIButton) {
-//        actIndi.center = self.view.center
-//        actIndi.style = UIActivityIndicatorView.Style.whiteLarge
-//        actIndi.backgroundColor = .darkGray
-//        //actIndi.backgroundColor = UIColor
-//        actIndi.hidesWhenStopped = true
-//        view.addSubview(actIndi)
-        
-        
         guard let urlToExecute = URL(string: "http://newsfront.cloudstaff.com/apisv2/register.json") else { return }
-        let params = ["username": EmailTextField.text]
+        let params = ["username": EmailTextField.text!]
         
         var json: JSON!
         var JSONresults: JSON!
         var isSuccess: JSON!
         var getMemberID: JSON!
-        
+        print(params)
         
         if(EmailTextField.text == ""){
             self.lblValidationMsg.isHidden = false
-            self.lblValidationMsg.text = "Please enter valid email address"
+            self.lblValidationMsg.text = "Please fill out the email text field"
             self.errorDesign()
             self.EmailTextField.shake()
         }else{
-        
-        activityIndicator("Please wait")
-            DispatchQueue.main.async {
-                AF.request(urlToExecute, method: .post, parameters: params).responseJSON{
+            activityIndicator("Please wait")
+            view.isUserInteractionEnabled = false
+            //DispatchQueue.main.async {
+            
+            Alamofire.request(urlToExecute, method: .post, parameters: params)
+                .validate(statusCode: 200..<300)
+                .responseJSON {
+                    response in
+                    
+                    if let JSONResponse = response.result.value as? [String: Any]{
+                         json = JSON(JSONResponse)
+                         JSONresults = json["results"]
+                         isSuccess = JSONresults["success"]
+                         getMemberID = JSONresults["member_id"]
+                         self.memberID = getMemberID
+                        print("JSON")
+                        print(JSON(JSONResponse))
+                    }
+                    
+                    switch response.result {
+                    case .success(let value):
+                        self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
+                        self.memberID = getMemberID
+                        
+                        self.correctFormatDesign()
+                    case .failure(let error):
+                        if (response.data?.count)! > 0 {
+                            self.lblValidationMsg.isHidden = false
+                            self.lblValidationMsg.text = "Please enter valid email address"
+                            self.errorDesign()
+                            self.EmailTextField.shake()
+                            print(error)
+                            
+                        }
+                        
+                    }
+                self.stopActivityIndicator()
+                self.view.isUserInteractionEnabled = true
+            }
+            
+            
+            
+                Alamofire.request(urlToExecute, method: .post, parameters: params as Parameters).responseJSON{
                     (response) -> Void in
                      //check if the result has a value
                     if let JSONResponse = response.result.value as? [String: Any]{
@@ -167,30 +207,16 @@ class ViewController: UIViewController {
                          isSuccess = JSONresults["success"]
                          getMemberID = JSONresults["member_id"]
                          self.memberID = getMemberID
+                        print("JSON")
+                        print(JSON(JSONResponse))
                     }
-                    
-                    
-                    guard let email = self.EmailTextField.text, self.EmailTextField.text?.count != 0 else {
-                        self.lblValidationMsg.text = "Please enter your email"
-                        self.lblValidationMsg.isHidden = false
-                        self.errorDesign()
-                        self.EmailTextField.shake()
-
-                        return
-                        
-                    }
-                   // print(isSuccess!)
-                    if self.isValidEmail(emailID: email) == false || isSuccess != "success"{
+                    if (isSuccess != "success"){
+                        print("IS SUCESS?! \(response)")
                         self.lblValidationMsg.isHidden = false
                         self.lblValidationMsg.text = "Please enter valid email address"
                         self.errorDesign()
                         self.EmailTextField.shake()
-
                     }else {
-                        
-                        self.delayWithSeconds(0.5){
-                            //
-                        }
                         self.performSegue(withIdentifier: "PushToOTPSegue", sender: nil)
                         self.memberID = getMemberID
                         
@@ -201,38 +227,28 @@ class ViewController: UIViewController {
                     //self.actIndi.stopAnimating()
                     //self.activityIndicator.stopAnimating()
                     
-                    UIApplication.shared.endIgnoringInteractionEvents()
+                    
                     self.stopActivityIndicator()
+                    self.view.isUserInteractionEnabled = true
                 }
-            }
-       // actIndi.startAnimating()
+            //}
+
         
         }
         
-
-        //self.actIndi.stopAnimating()
-        //UIApplication.shared.endIgnoringInteractionEvents()
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PushToOTPSegue"
-        {
-            let controller = segue.destination as! OTPViewController
-            controller.email = EmailTextField.text!
-            controller.member_id = self.memberID
-            print("self memberID", self.memberID)
-            print("Controller id" ,controller.member_id)
-            
-        }
-    }
 
-    
+
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
         }
     }
+    
+    
+    
     let messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
@@ -269,6 +285,8 @@ class ViewController: UIViewController {
         effectView.removeFromSuperview()
         
     }
+    
+    
 
 }
 

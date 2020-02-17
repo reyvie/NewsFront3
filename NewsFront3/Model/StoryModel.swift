@@ -25,5 +25,18 @@ struct StoryModel{
     var url: String
     var story_id: String
     
-    
+//    init(jsonData: JSON){
+//        
+//        self.title = jsonData["Story"]["title"].stringValue
+//        self.content = jsonData["Story"]["content"].stringValue
+//        self.created = jsonData["Story"]["created"].stringValue
+//        self.age = jsonData["Story"]["age"].stringValue
+//        self.acknowledged = jsonData["Story"]["acknowledged"].stringValue
+//        self.favorite = jsonData["Story"]["favorite"].stringValue
+//        
+//        self.id = jsonData["Images"]["id"].stringValue
+//        self.url = jsonData["Images"]["url"].stringValue
+//        self.story_id = jsonData["Images"]["story_id"].stringValue
+//        
+//    }
 }
